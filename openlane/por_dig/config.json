@@ -1,0 +1,7 @@
+{
+  "DESIGN_NAME": "por_dig",
+  "VERILOG_FILES": ["dir::por_dig.v"],
+  "CLOCK_PERIOD": 1000,
+  "CLOCK_PORT": "osc_ck",
+  "PL_TARGET_DENSITY": 0.83
+}
