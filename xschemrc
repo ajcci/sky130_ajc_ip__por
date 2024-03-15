@@ -67,7 +67,7 @@ set dircolor(devices$) red
 ###########################################################################
 #### If unset $USER_CONF_DIR/simulations is assumed (normally ~/.xschem/simulations) 
 # set netlist_dir $env(HOME)/.xschem/simulations
-set netlist_dir netlist
+set netlist_dir $env(PWD)/netlist
 #### if this is set to '1' netlists and simulations will go into a simulation/ folder
 #### inside the directory containing the top level schematic. Default: not set (0)
 # set local_netlist_dir 1
