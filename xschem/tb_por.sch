@@ -65,7 +65,7 @@ C {devices/gnd.sym} -740 210 0 0 {name=l1 lab=GND}
 C {devices/lab_pin.sym} -740 150 1 0 {name=p1 sig_type=std_logic lab=avss}
 C {devices/gnd.sym} -670 210 0 0 {name=l2 lab=GND}
 C {devices/lab_pin.sym} -670 150 1 0 {name=p5 sig_type=std_logic lab=avdd}
-C {devices/vsource.sym} -670 30 0 0 {name=Vena value="pwl (0 0 250u 0 250.01u dvdd 300u dvdd 300.01u 0)" savecurrent=false}
+C {devices/vsource.sym} -670 30 0 0 {name=Vena value="pwl (0 0 500u 0 500.01u dvdd 600u dvdd 600.01u 0)" savecurrent=false}
 C {devices/gnd.sym} -670 60 0 0 {name=l3 lab=GND}
 C {devices/lab_pin.sym} -670 0 1 0 {name=p6 sig_type=std_logic lab=force_pdn}
 C {devices/code.sym} -840 -140 0 0 {name=tb only_toplevel=false value="
@@ -87,15 +87,15 @@ R003 isrc_sel dvss 1e9
 .save @m.xipor.xiana.xirsmux.xmena.msky130_fd_pr__nfet_g5v0d10v5[id]
 
 .control
-tran 10n 700u
+tran 10u 1400u
 plot pwup_filt itest avdd force_pdn vbg_1v2 vin xipor.xiana.dcomp xipor.xiana.dcomp_filt
 plot i(Vavdd) i(Vdvdd)
-plot porb avdd pwup_filt
+plot porb avdd pwup_filt*0.5
 plot @m.xipor.xiana.xirsmux.xmena.msky130_fd_pr__nfet_g5v0d10v5[id]
 
 .endc
 "}
-C {devices/vsource.sym} -670 180 0 0 {name=Vavdd value="pwl (0 0 10u 0 200u avdd 350u avdd 450u 2 500u 2 600u avdd)" savecurrent=true}
+C {devices/vsource.sym} -670 180 0 0 {name=Vavdd value="pwl (0 0 20u 0 400u avdd 700u avdd 900u 2 1000u 2 1200u avdd)" savecurrent=true}
 C {devices/vsource.sym} -810 180 0 0 {name=Vbg value=1.2 savecurrent=false}
 C {devices/gnd.sym} -810 210 0 0 {name=l7 lab=GND}
 C {devices/lab_pin.sym} -810 150 1 0 {name=p11 sig_type=std_logic lab=vbg_1v2}
@@ -185,11 +185,11 @@ C {devices/lab_pin.sym} 310 270 0 1 {name=p36 lab=por_timed_out}
 C {devices/lab_pin.sym} 10 270 0 0 {name=p37 lab=isrc_sel}
 C {devices/gnd.sym} -670 520 0 0 {name=l6 lab=GND}
 C {devices/lab_pin.sym} -670 460 1 0 {name=p8 sig_type=std_logic lab=otrip[0]}
-C {devices/vsource.sym} -670 490 0 0 {name=Vvotrip0 value=dvss savecurrent=true}
+C {devices/vsource.sym} -670 490 0 0 {name=Vvotrip0 value="DC 0" savecurrent=true}
 C {devices/gnd.sym} -750 520 0 0 {name=l12 lab=GND}
 C {devices/lab_pin.sym} -750 460 1 0 {name=p10 sig_type=std_logic lab=otrip[1]}
-C {devices/vsource.sym} -750 490 0 0 {name=Vvotrip1 value=dvss savecurrent=true}
+C {devices/vsource.sym} -750 490 0 0 {name=Vvotrip1 value="DC 0" savecurrent=true}
 C {devices/gnd.sym} -830 520 0 0 {name=l13 lab=GND}
 C {devices/lab_pin.sym} -830 460 1 0 {name=p19 sig_type=std_logic lab=otrip[2]}
-C {devices/vsource.sym} -830 490 0 0 {name=Vvotrip2 value=dvss savecurrent=true}
+C {devices/vsource.sym} -830 490 0 0 {name=Vvotrip2 value="DC 0" savecurrent=true}
 C {devices/title-3.sym} -1400 1100 0 0 {name=l14 author="Ajacci, Ltd. Co." rev=1.0 lock=false title="Power-on-reset testbench"}

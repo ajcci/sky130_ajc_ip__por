@@ -74,7 +74,7 @@ output por_timed_out
     if (!cnt_rsb) begin
       cnt_por <= 0;
     end else begin
-      cnt_por <= por_unbuf ? force_short_oneshot ? (cnt_por & 15'b111100000000000) + 15'b000111111111111 : cnt_por + 1 : cnt_por;
+      cnt_por <= por_unbuf ? force_short_oneshot ? (cnt_por & 15'b111111000000000) + 15'b000001111111111 : cnt_por + 1 : cnt_por;
     end
   end
 
