@@ -376,8 +376,8 @@ model=pfet_g5v0d10v5
 spiceprefix=X
 }
 C {pfet_g5v0d10v5.sym} 270 -500 0 1 {name=Mh1
-W=1
-L=4
+W=1.5
+L=8
 nf=1
 mult=2
 ad="'int((nf+1)/2) * W/nf * 0.29'" 
@@ -390,8 +390,8 @@ model=pfet_g5v0d10v5
 spiceprefix=X
 }
 C {pfet_g5v0d10v5.sym} 80 -500 0 0 {name=Mh0
-W=1
-L=4
+W=1.5
+L=8
 nf=1
 mult=2
 ad="'int((nf+1)/2) * W/nf * 0.29'" 
