@@ -24,7 +24,6 @@ output porb, //negative logic por 1v8
 output por, //positive logic por 1v8
 //DEBUG OUTPUTS
 output osc_ck, //~656kHz, main clock
-output osc_ck_256, //divided down clock for testing ~2.5kHz
 output real itest, //700nA bias current
 output pwup_filt, //high when avdd > trip point
 output real vin, //avdd divided down voltage to compare to 1.2V bg
@@ -72,7 +71,6 @@ por_dig por_dig(
 .force_pdnb(force_pdnb),
 .por_unbuf(por_unbuf),
 //DEBUG OUTPUTS
-.osc_ck_256(osc_ck_256),
 .startup_timed_out(startup_timed_out),
 .por_timed_out(por_timed_out)
 );

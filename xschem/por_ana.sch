@@ -7,13 +7,11 @@ S {}
 E {}
 T {Copyright 2024 Ajacci, Ltd. Co.
 
-LICENSE:
-Apache License, Version 2.0
+LICENSE: Apache License, Version 2.0 with Addendum, see NOTICE
 
-DATE: 03/12/2024
+DATE: 03/12/2024   REVISION: 0
 
-DESCRIPTION:
-Power-on-reset (analog section)} -760 490 0 0 0.6 0.6 {}
+DESCRIPTION: Power-on-reset (analog section)} 90 270 0 0 0.4 0.4 {}
 N 590 -60 700 -60 {
 lab=dcomp}
 N 930 -60 930 -30 {
@@ -126,4 +124,3 @@ C {inv_4.sym} -560 370 0 0 {name=xIinv7 VGND=dvss VNB=dvss VPB=dvdd VPWR=dvdd pr
 C {inv_16.sym} -440 370 0 0 {name=xIinv88 VGND=dvss VNB=dvss VPB=dvdd VPWR=dvdd prefix=sky130_fd_sc_hd__ }
 C {devices/opin.sym} -80 370 0 0 {name=p45 lab=porb}
 C {inv_1.sym} -680 370 0 0 {name=xIinv6 VGND=dvss VNB=dvss VPB=dvdd VPWR=dvdd prefix=sky130_fd_sc_hd__ }
-C {devices/title-3.sym} -1140 850 0 0 {name=l1 author="Ajacci, Ltd. Co." rev=1.0 lock=false title="Power-on-reset (analog section)"}

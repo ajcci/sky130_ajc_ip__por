@@ -7,13 +7,11 @@ S {}
 E {}
 T {Copyright 2024 Ajacci, Ltd. Co.
 
-LICENSE:
-Apache License, Version 2.0
+LICENSE: Apache License, Version 2.0 with Addendum, see NOTICE
 
-DATE: 03/6/2024
+DATE: 03/6/2024   REVISION: 0
 
-DESCRIPTION:
-Trip voltage generator and analog mux} 240 890 0 0 0.6 0.6 {}
+DESCRIPTION: Trip voltage generator and analog mux} 240 890 0 0 0.4 0.4 {}
 T {3.00V} 320 -680 0 0 0.4 0.4 {}
 T {2.90V} 320 -740 0 0 0.4 0.4 {}
 T {2.80V} 320 -800 0 0 0.4 0.4 {}
@@ -559,4 +557,3 @@ C {inv_1_avdd.sym} 650 -520 0 0 {name=xIinv[7:0] VGND=avss VNB=avss VPB=avdd VPW
 C {devices/lab_pin.sym} 690 -520 2 0 {name=p5 sig_type=std_logic lab=otrip_decoded_b_avdd[7:0]}
 C {devices/ipin.sym} 590 -400 2 1 {name=p6 lab=dvss}
 C {devices/ipin.sym} 590 -420 2 1 {name=p7 lab=dvdd}
-C {devices/title.sym} -190 1330 0 0 {name=l1 author="Ajacci, Ltd. Co."}

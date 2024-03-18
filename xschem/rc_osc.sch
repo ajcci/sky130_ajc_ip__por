@@ -7,18 +7,16 @@ S {}
 E {}
 T {Copyright 2024 Ajacci, Ltd. Co.
 
-LICENSE:
-Apache License, Version 2.0
+LICENSE: Apache License, Version 2.0 with Addendum, see NOTICE
 
-DATE: 03/6/2024
+DATE: 03/6/2024   REVISION: 0
 
-DESCRIPTION:
-RC oscillator using a Schmitt trigger
+DESCRIPTION: Schmitt trigger RC relaxation oscillator
 
 REFERENCES:
-Multiple articles describe this circuit online but it is unclear who was first
-to report/publish this circuit used as an oscillator in transistor form.  
-Inventor of the Schmitt trigger is Otto Herbert Schmitt.} -1400 380 0 0 0.5 0.5 {}
+“Relaxation oscillator” Wikipedia, Wikimedia Foundation, 18 December 2023, en.wikipedia.org/wiki/Relaxation_oscillator.
+“Schmitt trigger” Wikipedia, Wikimedia Foundation, 20 January 2024, en.wikipedia.org/wiki/Schmitt_trigger.
+} -770 260 0 0 0.4 0.4 {}
 N 40 -70 40 130 {
 lab=m}
 N 40 160 50 160 {
@@ -262,10 +260,10 @@ model=pfet_01v8
 spiceprefix=X
 }
 C {devices/opin.sym} 510 -30 0 0 {name=p4 lab=out}
-C {cap_mim_m3_1.sym} -330 120 0 0 {name=C1 model=cap_mim_m3_1 W=25 L=25 MF=1 spiceprefix=X}
+C {cap_mim_m3_1.sym} -330 120 0 0 {name=C1 model=cap_mim_m3_1 W=30 L=30 MF=3 spiceprefix=X}
 C {res_xhigh_po.sym} -330 20 0 0 {name=R1
 W=2
-L=305
+L=1100
 model=res_xhigh_po
 spiceprefix=X
 mult=1}
@@ -286,7 +284,7 @@ spiceprefix=X
 }
 C {devices/lab_pin.sym} -30 -140 2 0 {name=p8 sig_type=std_logic lab=ena}
 C {devices/ipin.sym} -700 20 2 1 {name=p3 lab=ena}
-C {cap_mim_m3_2.sym} -470 120 0 0 {name=C2 model=cap_mim_m3_2 W=25 L=25 MF=1 spiceprefix=X}
+C {cap_mim_m3_2.sym} -470 120 0 0 {name=C2 model=cap_mim_m3_2 W=30 L=30 MF=3 spiceprefix=X}
 C {devices/lab_wire.sym} -20 60 0 0 {name=p5 sig_type=std_logic lab=in}
 C {devices/lab_wire.sym} 130 0 0 0 {name=p9 sig_type=std_logic lab=m}
 C {devices/lab_wire.sym} 280 20 0 0 {name=p10 sig_type=std_logic lab=n}
@@ -351,4 +349,3 @@ spiceprefix=X
 C {devices/lab_wire.sym} -660 30 0 1 {name=p6 sig_type=std_logic lab=ena_b}
 C {devices/lab_pin.sym} -180 -110 1 1 {name=p13 sig_type=std_logic lab=dvss}
 C {devices/lab_pin.sym} -180 50 1 1 {name=p14 sig_type=std_logic lab=dvdd}
-C {devices/title-3.sym} -1430 890 0 0 {name=l1 author="Ajacci, Ltd. Co." rev=1.0 lock=false title="Schmitt-trigger relaxation RC Oscillator"}

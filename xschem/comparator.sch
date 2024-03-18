@@ -7,19 +7,15 @@ S {}
 E {}
 T {Copyright 2024 Ajacci, Ltd. Co.
 
-LICENSE:
-Apache License, Version 2.0
+LICENSE: Apache License, Version 2.0 with Addendum, see NOTICE
 
-DATE: 03/6/2024
+DATE: 03/6/2024   REVISION: 0
 
-DESCRIPTION:
-Comparator w/ hysteresis
+DESCRIPTION: Comparator w/ hysteresis
 
 REFERENCES:
-[1] D. J. Allstot, “A Precision Variable-Supply CMOS Comparator,” IEEE J. Solid-State Circuits, 
-Vol. SC-17, No. 6, pp. 1080-1087, Dec. 1982.
-[2] Philip E. Allen and Douglas R. Holbert, CMOS Analog Circuit Design 2nd Edition, pp. 475, 
-Fig. 8.4-14, New York: Oxford University Press Inc., 2002} -1020 320 0 0 0.4 0.4 {}
+[1] D. J. Allstot, “A Precision Variable-Supply CMOS Comparator,” IEEE J. Solid-State Circuits, Vol. SC-17, No. 6, pp. 1080-1087, Dec. 1982.
+[2] Philip E. Allen and Douglas R. Holbert, CMOS Analog Circuit Design 2nd Edition, pp. 475, Fig. 8.4-14, New York: Oxford University Press Inc., 2002} -720 190 0 0 0.4 0.4 {}
 T {700n} -400 160 0 0 0.4 0.4 {}
 T {700n} 160 160 0 0 0.4 0.4 {}
 T {~100n} -210 160 0 0 0.4 0.4 {}
@@ -630,4 +626,3 @@ C {devices/lab_wire.sym} 0 -390 0 0 {name=p16 sig_type=std_logic lab=vnn}
 C {devices/lab_wire.sym} 350 -390 0 1 {name=p17 sig_type=std_logic lab=vpp}
 C {devices/lab_wire.sym} 560 -330 0 1 {name=p18 sig_type=std_logic lab=n0}
 C {devices/lab_wire.sym} 720 -330 0 1 {name=p19 sig_type=std_logic lab=n1}
-C {devices/title-3.sym} -1190 730 0 0 {name=l1 author="Ajacci, Ltd. Co." rev=1.0 lock=false title="Comparator w/ hysteresis"}

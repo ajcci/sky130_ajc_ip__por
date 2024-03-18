@@ -8,16 +8,14 @@ E {}
 T {Copyright 2024 Ajacci, Ltd. Co.
 
 LICENSE:
-Apache License, Version 2.0
+Apache License, Version 2.0 with Addendum, see NOTICE
 
-DATE: 03/6/2024
+DATE: 03/6/2024   REVISION: 0
 
-DESCRIPTION:
-Ibias generator
+DESCRIPTION: Ibias generator
 
 REFERENCES:
-Philip E. Allen and Douglas R. Holbert, CMOS Analog Circuit Design 2nd Edition, pp. 150, 
-Fig. 4.5-9, New York: Oxford University Press Inc., 2002} -1190 510 0 0 0.6 0.6 {}
+Philip E. Allen and Douglas R. Holbert, CMOS Analog Circuit Design 2nd Edition, pp. 150, Fig. 4.5-9, New York: Oxford University Press Inc., 2002} -670 290 0 0 0.4 0.4 {}
 T {700n} -470 240 0 0 0.4 0.4 {}
 T {700n} -80 240 0 0 0.4 0.4 {}
 T {700n} 300 -570 0 0 0.4 0.4 {}
@@ -814,4 +812,3 @@ model=pfet_g5v0d10v5
 spiceprefix=X
 }
 C {devices/opin.sym} 460 -320 1 0 {name=p43 lab=itest}
-C {devices/title-2.sym} -1550 1060 0 0 {name=l1 author="Ajacci, Ltd. Co." rev=1.0 lock=false title="Current gen w/ bandgap 200nA option"}

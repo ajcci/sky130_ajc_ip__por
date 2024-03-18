@@ -7,13 +7,11 @@ S {}
 E {}
 T {Copyright 2024 Ajacci, Ltd. Co.
 
-LICENSE:
-Apache License, Version 2.0
+LICENSE: Apache License, Version 2.0 with Addendum, see NOTICE
 
-DATE: 03/10/2024
+DATE: 03/10/2024   REVISION: 0
 
-DESCRIPTION:
-Power-on-reset testbench} -920 700 0 0 0.6 0.6 {}
+DESCRIPTION: Power-on-reset testbench} -350 360 0 0 0.4 0.4 {}
 N -200 -260 -190 -260 {
 lab=avdd}
 N -190 -310 -190 -260 {
@@ -56,9 +54,9 @@ N 310 110 570 110 {
 lab=porb}
 N 310 90 640 90 {
 lab=porb_h}
-N 310 190 480 190 {
+N 310 170 480 170 {
 lab=itest}
-N 480 190 480 320 {
+N 480 170 480 320 {
 lab=itest}
 C {devices/vsource.sym} -740 180 0 0 {name=Vavss value=0 savecurrent=false}
 C {devices/gnd.sym} -740 210 0 0 {name=l1 lab=GND}
@@ -87,7 +85,7 @@ R003 isrc_sel dvss 1e9
 .save @m.xipor.xiana.xirsmux.xmena.msky130_fd_pr__nfet_g5v0d10v5[id]
 
 .control
-tran 10u 1400u
+tran 10u 3m
 plot pwup_filt itest avdd force_pdn vbg_1v2 vin xipor.xiana.dcomp xipor.xiana.dcomp_filt
 plot i(Vavdd) i(Vdvdd)
 plot porb avdd pwup_filt*0.5
@@ -144,7 +142,7 @@ footprint=1206
 device=resistor
 m=1}
 C {devices/gnd.sym} 480 380 0 0 {name=l9 lab=GND}
-C {devices/lab_wire.sym} 470 190 0 0 {name=p7 sig_type=std_logic lab=itest}
+C {devices/lab_wire.sym} 470 170 0 0 {name=p7 sig_type=std_logic lab=itest}
 C {devices/gnd.sym} 640 300 0 0 {name=l8 lab=GND}
 C {devices/capa.sym} 640 270 0 0 {name=C1
 m=1
@@ -173,15 +171,14 @@ C {devices/lab_pin.sym} 10 130 0 0 {name=p20 lab=dvdd}
 C {devices/lab_pin.sym} 10 150 0 0 {name=p22 lab=dvss}
 C {devices/lab_pin.sym} 310 150 0 1 {name=p23 lab=osc_ck}
 C {devices/lab_pin.sym} 10 170 0 0 {name=p24 lab=vbg_1v2}
-C {devices/lab_pin.sym} 310 170 0 1 {name=p25 lab=osc_ck_256}
 C {devices/lab_pin.sym} 10 190 0 0 {name=p26 lab=otrip[2:0]}
-C {devices/lab_pin.sym} 310 210 0 1 {name=p28 lab=pwup_filt}
+C {devices/lab_pin.sym} 310 190 0 1 {name=p28 lab=pwup_filt}
 C {devices/lab_pin.sym} 10 210 0 0 {name=p30 lab=force_pdn}
-C {devices/lab_pin.sym} 310 230 0 1 {name=p32 lab=vin}
+C {devices/lab_pin.sym} 310 210 0 1 {name=p32 lab=vin}
 C {devices/lab_pin.sym} 10 230 0 0 {name=p33 lab=force_rc_osc}
 C {devices/lab_pin.sym} 10 250 0 0 {name=p34 lab=force_short_oneshot}
-C {devices/lab_pin.sym} 310 250 0 1 {name=p35 lab=startup_timed_out}
-C {devices/lab_pin.sym} 310 270 0 1 {name=p36 lab=por_timed_out}
+C {devices/lab_pin.sym} 310 230 0 1 {name=p35 lab=startup_timed_out}
+C {devices/lab_pin.sym} 310 250 0 1 {name=p36 lab=por_timed_out}
 C {devices/lab_pin.sym} 10 270 0 0 {name=p37 lab=isrc_sel}
 C {devices/gnd.sym} -670 520 0 0 {name=l6 lab=GND}
 C {devices/lab_pin.sym} -670 460 1 0 {name=p8 sig_type=std_logic lab=otrip[0]}
@@ -192,4 +189,3 @@ C {devices/vsource.sym} -750 490 0 0 {name=Vvotrip1 value="DC 0" savecurrent=tru
 C {devices/gnd.sym} -830 520 0 0 {name=l13 lab=GND}
 C {devices/lab_pin.sym} -830 460 1 0 {name=p19 sig_type=std_logic lab=otrip[2]}
 C {devices/vsource.sym} -830 490 0 0 {name=Vvotrip2 value="DC 0" savecurrent=true}
-C {devices/title-3.sym} -1400 1100 0 0 {name=l14 author="Ajacci, Ltd. Co." rev=1.0 lock=false title="Power-on-reset testbench"}

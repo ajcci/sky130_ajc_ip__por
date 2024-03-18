@@ -29,7 +29,6 @@ por por(
 .por(por),
 //DEBUG OUTPUTS
 .osc_ck(osc_ck),
-.osc_ck_256(osc_ck_256),
 .itest(itest),
 .pwup_filt(pwup_filt),
 .vin(vin),
@@ -48,11 +47,11 @@ initial begin
   //INPUTS
   avdd = 2.0;
   vbg_1v2 = 1.2;
-  otrip = 3'b111;
+  otrip = 3'b000;
   //DEBUG INPUTS
   force_pdn = 1'b0;
   force_rc_osc = 1'b0;
-  force_short_oneshot = 1'b0;
+  force_short_oneshot = 1'b1;
   isrc_sel = 1'b0;
   ibg_200n = 200e-9;
   #20000000
