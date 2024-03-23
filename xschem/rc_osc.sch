@@ -6,17 +6,13 @@ V {}
 S {}
 E {}
 T {Copyright 2024 Ajacci, Ltd. Co.
-
-LICENSE: Apache License, Version 2.0 with Addendum, see NOTICE
-
-DATE: 03/6/2024   REVISION: 0
-
-DESCRIPTION: Schmitt trigger RC relaxation oscillator
+Apache License, Version 2.0 with Addendum, see NOTICE
+Date: 03/6/2024   Rev: 0
+Description: Schmitt trigger RC relaxation oscillator
 
 REFERENCES:
 “Relaxation oscillator” Wikipedia, Wikimedia Foundation, 18 December 2023, en.wikipedia.org/wiki/Relaxation_oscillator.
-“Schmitt trigger” Wikipedia, Wikimedia Foundation, 20 January 2024, en.wikipedia.org/wiki/Schmitt_trigger.
-} -770 260 0 0 0.4 0.4 {}
+“Schmitt trigger” Wikipedia, Wikimedia Foundation, 20 January 2024, en.wikipedia.org/wiki/Schmitt_trigger.} -770 260 0 0 0.4 0.4 {}
 N 40 -70 40 130 {
 lab=m}
 N 40 160 50 160 {
@@ -145,7 +141,7 @@ N -650 160 -650 250 {
 lab=dvss}
 N -660 190 -660 250 {
 lab=dvss}
-C {nfet_01v8.sym} 20 160 0 0 {name=M1
+C {xschem/sky130_fd_pr/nfet_01v8.sym} 20 160 0 0 {name=M1
 W=1
 L=0.5
 nf=1 
@@ -159,11 +155,11 @@ sa=0 sb=0 sd=0
 model=nfet_01v8
 spiceprefix=X
 }
-C {pfet_01v8.sym} 20 -100 0 0 {name=M3
+C {xschem/sky130_fd_pr/pfet_01v8.sym} 20 -100 0 0 {name=M3
 W=1
 L=0.5
 nf=1
-mult=4
+mult=6
 ad="'int((nf+1)/2) * W/nf * 0.29'" 
 pd="'2*int((nf+1)/2) * (W/nf + 0.29)'"
 as="'int((nf+2)/2) * W/nf * 0.29'" 
@@ -175,7 +171,7 @@ spiceprefix=X
 }
 C {devices/ipin.sym} -800 -190 2 1 {name=p1 lab=dvdd}
 C {devices/ipin.sym} -800 250 2 1 {name=p2 lab=dvss}
-C {nfet_01v8.sym} 180 160 0 0 {name=M2
+C {xschem/sky130_fd_pr/nfet_01v8.sym} 180 160 0 0 {name=M2
 W=1
 L=1
 nf=1 
@@ -189,11 +185,11 @@ sa=0 sb=0 sd=0
 model=nfet_01v8
 spiceprefix=X
 }
-C {pfet_01v8.sym} 180 -100 0 0 {name=M4
+C {xschem/sky130_fd_pr/pfet_01v8.sym} 180 -100 0 0 {name=M4
 W=1
 L=1
 nf=1
-mult=2
+mult=3
 ad="'int((nf+1)/2) * W/nf * 0.29'" 
 pd="'2*int((nf+1)/2) * (W/nf + 0.29)'"
 as="'int((nf+2)/2) * W/nf * 0.29'" 
@@ -203,7 +199,7 @@ sa=0 sb=0 sd=0
 model=pfet_01v8
 spiceprefix=X
 }
-C {nfet_01v8.sym} 340 160 0 0 {name=M5
+C {xschem/sky130_fd_pr/nfet_01v8.sym} 340 160 0 0 {name=M5
 W=1
 L=0.5
 nf=1 
@@ -217,11 +213,11 @@ sa=0 sb=0 sd=0
 model=nfet_01v8
 spiceprefix=X
 }
-C {pfet_01v8.sym} 340 -100 0 0 {name=M6
+C {xschem/sky130_fd_pr/pfet_01v8.sym} 340 -100 0 0 {name=M6
 W=1
 L=0.5
 nf=1
-mult=2
+mult=3
 ad="'int((nf+1)/2) * W/nf * 0.29'" 
 pd="'2*int((nf+1)/2) * (W/nf + 0.29)'"
 as="'int((nf+2)/2) * W/nf * 0.29'" 
@@ -231,7 +227,7 @@ sa=0 sb=0 sd=0
 model=pfet_01v8
 spiceprefix=X
 }
-C {nfet_01v8.sym} 490 160 0 0 {name=M7
+C {xschem/sky130_fd_pr/nfet_01v8.sym} 490 160 0 0 {name=M7
 W=1
 L=0.5
 nf=1 
@@ -245,11 +241,11 @@ sa=0 sb=0 sd=0
 model=nfet_01v8
 spiceprefix=X
 }
-C {pfet_01v8.sym} 490 -100 0 0 {name=M8
+C {xschem/sky130_fd_pr/pfet_01v8.sym} 490 -100 0 0 {name=M8
 W=1
 L=0.5
 nf=1
-mult=2
+mult=3
 ad="'int((nf+1)/2) * W/nf * 0.29'" 
 pd="'2*int((nf+1)/2) * (W/nf + 0.29)'"
 as="'int((nf+2)/2) * W/nf * 0.29'" 
@@ -260,15 +256,15 @@ model=pfet_01v8
 spiceprefix=X
 }
 C {devices/opin.sym} 510 -30 0 0 {name=p4 lab=out}
-C {cap_mim_m3_1.sym} -330 120 0 0 {name=C1 model=cap_mim_m3_1 W=30 L=30 MF=3 spiceprefix=X}
-C {res_xhigh_po.sym} -330 20 0 0 {name=R1
+C {xschem/sky130_fd_pr/cap_mim_m3_1.sym} -330 120 0 0 {name=C1 model=cap_mim_m3_1 W=30 L=30 MF=3 spiceprefix=X}
+C {xschem/sky130_fd_pr/res_xhigh_po.sym} -330 20 0 0 {name=R1
 W=2
-L=1100
+L=1700
 model=res_xhigh_po
 spiceprefix=X
 mult=1}
 C {devices/lab_pin.sym} -350 20 2 1 {name=p7 sig_type=std_logic lab=dvss}
-C {pfet_01v8.sym} -50 -140 0 1 {name=M12
+C {xschem/sky130_fd_pr/pfet_01v8.sym} -50 -140 0 1 {name=M12
 W=1
 L=0.15
 nf=1
@@ -284,11 +280,11 @@ spiceprefix=X
 }
 C {devices/lab_pin.sym} -30 -140 2 0 {name=p8 sig_type=std_logic lab=ena}
 C {devices/ipin.sym} -700 20 2 1 {name=p3 lab=ena}
-C {cap_mim_m3_2.sym} -470 120 0 0 {name=C2 model=cap_mim_m3_2 W=30 L=30 MF=3 spiceprefix=X}
+C {xschem/sky130_fd_pr/cap_mim_m3_2.sym} -470 120 0 0 {name=C2 model=cap_mim_m3_2 W=30 L=30 MF=3 spiceprefix=X}
 C {devices/lab_wire.sym} -20 60 0 0 {name=p5 sig_type=std_logic lab=in}
 C {devices/lab_wire.sym} 130 0 0 0 {name=p9 sig_type=std_logic lab=m}
 C {devices/lab_wire.sym} 280 20 0 0 {name=p10 sig_type=std_logic lab=n}
-C {nfet_01v8.sym} -180 -130 1 0 {name=M9
+C {xschem/sky130_fd_pr/nfet_01v8.sym} -180 -130 1 0 {name=M9
 W=1
 L=0.18
 nf=1 
@@ -302,7 +298,7 @@ sa=0 sb=0 sd=0
 model=nfet_01v8
 spiceprefix=X
 }
-C {pfet_01v8.sym} -180 30 3 1 {name=M10
+C {xschem/sky130_fd_pr/pfet_01v8.sym} -180 30 3 1 {name=M10
 W=1
 L=0.18
 nf=1
@@ -318,7 +314,7 @@ spiceprefix=X
 }
 C {devices/lab_pin.sym} -200 -160 2 1 {name=p11 sig_type=std_logic lab=ena}
 C {devices/lab_pin.sym} -200 0 2 1 {name=p12 sig_type=std_logic lab=ena_b}
-C {nfet_01v8.sym} -680 160 0 0 {name=M11
+C {xschem/sky130_fd_pr/nfet_01v8.sym} -680 160 0 0 {name=M11
 W=1
 L=0.6
 nf=1 
@@ -332,7 +328,7 @@ sa=0 sb=0 sd=0
 model=nfet_01v8
 spiceprefix=X
 }
-C {pfet_01v8.sym} -680 -100 0 0 {name=M13
+C {xschem/sky130_fd_pr/pfet_01v8.sym} -680 -100 0 0 {name=M13
 W=1
 L=0.6
 nf=1

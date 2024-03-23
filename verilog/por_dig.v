@@ -1,8 +1,16 @@
+//############################################################################
+// Copyright 2024 Ajacci, Ltd. Co.
+// License: Apache License, Version 2.0 with Addendum, see NOTICE
+// Date: 22 March, 2024   Rev 0
+// Description: Power-on-reset digital section
+//############################################################################
+
 module por_dig(
 //INPUTS
 input logic [2:0] otrip,
 input logic force_pdn,
-input logic force_rc_osc,
+input logic force_ena_rc_osc,
+input logic force_dis_rc_osc,
 input logic force_short_oneshot,
 input logic pwup_filt,
 input logic osc_ck,
@@ -17,7 +25,7 @@ output por_timed_out
 );
 
   assign force_pdnb = ~force_pdn;
-  assign osc_ena = force_rc_osc | (pwup_filt & ~por_timed_out);
+  assign osc_ena = force_ena_rc_osc | (!force_dis_rc_osc & (pwup_filt & ~por_timed_out));
 
   //TRIP-VOLTAGE 3-to-8 DECODER
   always @ (otrip) begin
@@ -34,17 +42,15 @@ output por_timed_out
   end
 
   //COUNTER RESET
-  reg cnt_rsb_stg1, cnt_rsb_stg2, cnt_rsb;
+  reg cnt_rsb_stg1, cnt_rsb;
 
   always @ (posedge osc_ck or negedge pwup_filt) begin
     if (!pwup_filt) begin
       cnt_rsb_stg1 <= 0;
-      cnt_rsb_stg2 <= 0;
       cnt_rsb <= 0;
     end else begin
       cnt_rsb_stg1 <= 1;
-      cnt_rsb_stg2 <= cnt_rsb_stg1;
-      cnt_rsb <= cnt_rsb_stg2;
+      cnt_rsb <= cnt_rsb_stg1;
     end
   end
 
@@ -57,7 +63,7 @@ output por_timed_out
     if (!cnt_rsb) begin
       cnt_st <= 0;
     end else begin
-      cnt_st <= startup_timed_out ? cnt_st : force_short_oneshot ? (cnt_st & 5'b11110) + 5'b00011 : cnt_st + 1;
+      cnt_st <= startup_timed_out ? cnt_st : force_short_oneshot ? (cnt_st & 5'b11000) + 5'b01111 : cnt_st + 1;
     end
   end
 
@@ -73,7 +79,7 @@ output por_timed_out
     if (!cnt_rsb) begin
       cnt_por <= 0;
     end else begin
-      cnt_por <= por_unbuf ? force_short_oneshot ? (cnt_por & 11'b11111100000) + 11'b00000111111 : cnt_por + 1 : cnt_por;
+      cnt_por <= por_unbuf ? force_short_oneshot ? (cnt_por & 11'b11100000000) + 11'b00111111111 : cnt_por + 1 : cnt_por;
     end
   end
 

@@ -3,7 +3,7 @@
 #--------------------------------------------------------------
 
 name:		sky130_ajc_ip__por
-description:	Power-on-Reset
+description:	Power-on-reset
 commit:		N/A
 PDK:		sky130A
 
@@ -12,7 +12,7 @@ cace_format:	4.0
 authorship {
 	designer:	Robin Matthew Tsang
 	company:	Ajacci, Ltd. Co.
-	creation_date:	March 13, 2024
+	creation_date:	March 22, 2024
 	license:	Apache 2.0
 }
 
@@ -27,60 +27,24 @@ paths {
 	netlist:	netlist
 	testbench:	cace
 	simulation:	ngspice
-        reports:	reports
 	plots:		plots
 	logs:		ngspice/log
-}
-
-# Project dependencies
-
-dependencies {
 }
 
 # Pin names and descriptions
 
 pins {
-	name:		avdd
-	description:	Analog power supply
-	type:		power
-	direction:	in
-	Vmin:		2.0
-	Vmax:		6.0
 
-	+
-	name:		avss
-	description:	Analog ground
-	type:		ground
-	direction:	in
-	Vmin:		-0.3
-	Vmax:		0.3
-
-	+
-	name:		dvdd
-	description:	Digital power supply
-	type:		power
-	direction:	in
-	Vmin:		1.62
-	Vmax:		1.98
-
-	+
-	name:		dvss
-	description:	Digital ground
-	type:		ground
-	direction:	in
-	Vmin:		-0.3
-	Vmax:		0.3
-
-	+
 	name:		vbg_1v2
-	description:	bandgap voltage 1.20V
+	description:	Bandgap reference 1.20V
 	type:		signal
 	direction:	input
 	Vmin:		1.15
 	Vmax:		1.25
 
+	+
 	name:		otrip2:0
-	description:	trip voltage select
+	description:	Digital trip voltage select for brown-out detector
 	type:		digital
 	direction:	input
 	Vmin:		dvss - 0.3
@@ -88,67 +52,119 @@ pins {
 
 	+
 	name:		force_pdn
-	description:	force power-down (test mode)
+	description:	Force power-down
 	type:		digital
 	direction:	input
 	Vmin:		dvss - 0.3
 	Vmax:		dvdd + 0.3
-        note:		0=normal operation, 1=power down
-
-	+
-	name:		force_rc_osc
-	description:	force rc oscillator to stay on (test mode)
-	type:		digital
-	direction:	input
-	Vmin:		dvss - 0.3
-	Vmax:		dvdd + 0.3
-        note:		0=normal operation auto on/off, 1=force on
-
-	+
-	name:		force_short_oneshot
-	description:	force timers to be short for faster simulation (test mode)
-	type:		digital
-	direction:	input
-	Vmin:		dvss - 0.3
-	Vmax:		dvdd + 0.3
-	note:		0=normal operation, 1=short timeout periods
 
 	+
 	name:		isrc_sel
-	description:	select internal current gen or use bandgap 200nA current (test mode)
+	description:	Internal(0)/external(1) bias current select
 	type:		digital
 	direction:	input
 	Vmin:		dvss - 0.3
 	Vmax:		dvdd + 0.3
-	note:		0=internal current gen (default), 1=bandgap 200nA
+
+	+
+	name:		force_ena_rc_osc
+	description:	Force internal rc-oscillator to turn on, test-mode
+	type:		digital
+	direction:	input
+	Vmin:		dvss - 0.3
+	Vmax:		dvdd + 0.3
+
+	+
+	name:		force_dis_rc_osc
+	description:	Force internal rc-oscillator to turn off, test-mode
+	type:		digital
+	direction:	input
+	Vmin:		dvss - 0.3
+	Vmax:		dvdd + 0.3
+
+	+
+	name:		force_short_oneshot
+	description:	Force one-shot timeout period to be very short, test-mode
+	type:		digital
+	direction:	input
+	Vmin:		dvss - 0.3
+	Vmax:		dvdd + 0.3
 
 	+
 	name:		ibg_200n
-	description:	bandgap current 200nA
+	description:	External 200n bandgap reference current
 	type:		signal
 	direction:	input
 	Vmin:		avss - 0.3
 	Vmax:		avdd + 0.3
 
 	+
-	name:		porb_h
-	description:	power-on-reset output (negative-logic 3v3)
-	type:		digital
-	direction:	output
-	Vmin:		avss - 0.3
-	Vmax:		avdd + 0.3
-
-	+
-	name:		porb
-	description:	power-on-reset output (negative-logic 1v8)
+	name:		por
+	description:	power-on-reset (active high)
 	type:		digital
 	direction:	output
 	Vmin:		dvss - 0.3
 	Vmax:		dvdd + 0.3
 
 	+
-	name:		por
-	description:	power-on-reset output (positive-logic 1v8)
+	name:		porb
+	description:	power-on-reset (active low)
+	type:		digital
+	direction:	output
+	Vmin:		dvss - 0.3
+	Vmax:		dvdd + 0.3
+
+	+
+	name:		porb_h
+	description:	power-on-reset (active low 3v3)
+	type:		digital
+	direction:	output
+	Vmin:		avss - 0.3
+	Vmax:		avdd + 0.3
+
+	+
+	name:		itest
+	description:	Test current, send to external 1Mohm resistor if desired
+	type:		signal
+	direction:	output
+	Vmin:		avss - 0.3
+	Vmax:		avdd + 0.3
+
+	+
+	name:		dvdd
+	description:	Positive digital power supply
+	type:		power
+	direction:	inout
+	Vmin:		1.5
+	Vmax:		2.1
+
+	+
+	name:		dvss
+	description:	Digital ground
+	type:		ground
+	direction:	inout
+	Vmin:		-0.3
+	Vmax:		0.3
+
+	+
+	name:		avdd
+	description:	Positive analog power supply
+	type:		power
+	direction:	inout
+	Vmin:		3.0
+	Vmax:		6.0
+
+	+
+	name:		avss
+	description:	Analog ground
+	type:		ground
+	direction:	inout
+	Vmin:		-0.3
+	Vmax:		0.3
+
+	+
+	name:		pwup_filt
+	description:	Filtered analog comparator output, test-mode
 	type:		digital
 	direction:	output
 	Vmin:		dvss - 0.3
@@ -156,31 +172,7 @@ pins {
 
 	+
 	name:		osc_ck
-	description:	internal oscillator clock (test mode)
-	type:		digital
-	direction:	output
-	Vmin:		dvss - 0.3
-	Vmax:		dvdd + 0.3
-
-	+
-	name:		osc_ck_256
-	description:	1/256 internal oscillator clock (test mode)
-	type:		digital
-	direction:	output
-	Vmin:		dvss - 0.3
-	Vmax:		dvdd + 0.3
-
-	+
-	name:		itest
-	description:	bias current dump into external 1Mohm (test mode)
-	type:		signal
-	direction:	output
-	Vmin:		avss - 0.3
-	Vmax:		avdd + 0.3
-
-	+
-	name:		pwup_filt
-	description:	goes high when avdd is above trip voltage (test mode)
+	description:	RC oscillator output
 	type:		digital
 	direction:	output
 	Vmin:		dvss - 0.3
@@ -188,23 +180,31 @@ pins {
 
 	+
 	name:		vin
-	description:	divided-down avdd at input of comparator (test mode)
+	description:	Analog input to comparator
 	type:		signal
 	direction:	output
 	Vmin:		avss - 0.3
 	Vmax:		avdd + 0.3
 
 	+
-	name:		startup_timed_out
-	description:	when avdd rises above trip voltage, this goes high after first (~0.8ms) one-shot timer times out (test mode)
+	name:		por_timed_out
+	description:	Asserts high when one-shot timer expires after power-on-reset event ~50ms
 	type:		digital
 	direction:	output
 	Vmin:		dvss - 0.3
 	Vmax:		dvdd + 0.3
 
 	+
-	name:		por_timed_out
-	description:	when avdd rises above trip voltage, this goes high after second (~50ms) one-shot timer times out (test mode)
+	name:		startup_timed_out
+	description:	Asserts high when one-shot timer expires after initial powup-up for supply to stabilize ~1ms
+	type:		digital
+	direction:	output
+	Vmin:		dvss - 0.3
+	Vmax:		dvdd + 0.3
+
+	+
+	name:		dcomp
+	description:	Unfiltered analog comparator output, test-mode
 	type:		digital
 	direction:	output
 	Vmin:		dvss - 0.3
@@ -215,6 +215,20 @@ pins {
 # if not otherwise specified
 
 default_conditions {
+	name:		Vdvdd
+	description:	Digital power supply voltage
+	display:	dvdd
+	unit:		V
+	typical:	1.8
+
+	+
+	name:		Vdvss
+	description:	Digital ground
+	display:	dvss
+	unit:		V
+	typical:	0
+
+	+
 	name:		Vavdd
 	description:	Analog power supply voltage
 	display:	avdd
@@ -229,36 +243,47 @@ default_conditions {
 	typical:	0
 
 	+
-	name:		Vdvdd
-	description:	Digital power supply voltage
-	display:	dvdd
-	unit:		V
-	typical:	1.8
+	name:		cload
+	description:	Output load capatitance
+	display:	cload
+	unit:		pF
+	maximum:	20
 
 	+
-	name:		Cout
-	description:	Output load capacitance
-	display:	CLoad
-	unit:		fF
-	maximum:	100
-
-	+
-	name:		ena
-	description:	Amplifier enable
-	display:	ena
-	typical:	1
-
-	+
-	name:		Vcm
-	description:	Common-mode input voltage
-	display:	Vcm
-	typical:	1.65
-
-	+
-	name:		Vdiff
-	description:	Differential input voltage
-	display:	Vdiff
+	name:		force_pdn
+	description:	Force diable of power-on-reset circuit
+	display:	force_pdn
 	typical:	0
+
+	+
+	name:		isrc_sel
+	description:	Internal(0)/external(1) bias current select
+	display:	isrc_sel
+	typical:	0
+
+	+
+	name:		force_ena_rc_osc
+	description:	Force internal rc-oscillator to turn on, test-mode
+	display:	force_ena_rc_osc
+	typical:	0
+
+	+
+	name:		force_dis_rc_osc
+	description:	Force internal rc-oscillator to turn on, test-mode
+	display:	force_dis_rc_osc
+	typical:	0
+
+	+
+	name:		force_short_oneshot
+	description:	Force one-shot timeout period to be very short, test-mode
+	display:	force_short_oneshot
+	typical:	0
+
+	+
+	name:		otrip[2:0]
+	description:	Brown-out trip voltage digital input value
+	display:	otrip[2:0]
+	typical:	100
 
 	+
 	name:		temperature
@@ -277,726 +302,207 @@ default_conditions {
 	typical:	tt
 	maximum:	ff
 
-	+
-	name:		iterations
-	description:	Iterations to run
-	display:	Iterations
-	minimum:	1
-	maximum:	10
-	step:		linear
-	stepsize:	1
 }
 
 # List of electrical parameters to be measured and their specified limits
 
 electrical_parameters {
-	name:		Idd_enabled
-	description:	Current draw through analog supply, amplifier enabled, no load
-	display:	Idd
-	unit: 		{micro}A
-	spec {
-		minimum:	any
-		typical:	170
-		maximum:	250	fail
-	}
-	simulate {
-		tool:		ngspice
-		template:	dccurrent_vdd.spice
-		format:		ascii .data null result
-	}
-	conditions {
-		name: Vvdd
-		typical: 3.3
-
-		+
-		name: Vcm
-		maximum: 3.3
-		typical: 1.65
-		minimum: 0.0
-
-		+
-		name: temperature
-		typical: 27
-
-		+
-		name: corner
-		typical: tt
-	}
-
-	+
-	name:		Idd_dynamic
-	description:	Current draw through analog supply, amplifier enabled, no load
-	display:	Idd (dynamic)
-	unit: 		{micro}A
-	spec {
-		minimum:	any
-		typical:	40
-		maximum:	5000	fail
-	}
-	simulate {
-		tool:		ngspice
-		template:	dccurrent_dyn.spice
-		format:		ascii .data null result
-	}
-	conditions {
-		name: Vvdd
-		typical: 3.3
-
-		+
-		name: frequency
-		typical: 1
-		unit: kHz
-
-		+
-		name: Vcm
-		maximum: 2.8
-		minimum: 0.5
-
-		+
-		name: Vdiff
-		typical: 0.5
-		note: Zero-to-peak amplitude of sine input
-
-		+
-		name: temperature
-		typical: 27
-
-		+
-		name: corner
-		typical: tt
-	}
-
-	+
-	name:		Idd_disabled
-	description:	Current draw through analog supply, amplifier disabled
-	display:	Standby current
-	unit:		{micro}A
-	spec {
-		minimum:	any
-		typical:	170
-		maximum:	250	fail
-	}
-	simulate {
-		tool:		ngspice
-		template:	dccurrent_vdd.spice
-		format:		ascii .data null result
-	}
-	conditions {
-		name: Vvdd
-		typical: 3.3
-
-		+
-		name: Vcm
-		maximum: 3.3
-		typical: 1.65
-		minimum: 0.0
-
-		+
-		name: ena
-		typical: 0
-
-		+
-		name: temperature
-		typical: 27
-
-		+
-		name: corner
-		typical: tt
-	}
-
-	+
-	name:		Vol
+	name:		hysteresis
 	status:		skip
-	description:	Output voltage low
-	display:	Output voltage low (Vol)
+	description:	Check amount of hysteresis at each trip voltage
+	display:	Hysteresis (out)
 	unit:		V
 	spec {
-		maximum:	0.1	fail
-		typical:	any
+		minimum:	0.1	fail
+		typical:	0.2
+		maximum:	0.3	fail
 	}
 	simulate {
 		tool:		ngspice
-		template:	voltage_out.spice
+		template:	trip_up_down.spice
 		format:		ascii .data result
+		collate:        otrip[2:0]
 	}
+        measure {
+                tool:           octave
+                filename:       hysteresis.m
+        }
 	conditions {
-		name: Vvdd
-		typical: 3.3
+		name: otrip[2:0]
+		enumerate: 000 100 111
 
 		+
-		name: Vdiff
-		typical: -1
+		name: force_dis_rc_osc
+		typical: 1
 
 		+
 		name: temperature
-		maximum: 110
+		maximum: 85
 		typical: 27
 		minimum: -40
 
 		+
 		name: corner
-		minimum: ss
 		typical: tt
-		maximum: ff
+
 	}
 
 	+
-	name:		Voh
+	name:		accuracy
 	status:		skip
-	description:	Output voltage high
-	display:	Output voltage high (Voh)
+	description:	Check absolute accuracy of trip voltages (avg of pos- and neg-ramp trip voltages)
+	display:	Accuracy (out)
 	unit:		V
 	spec {
-		minimum:	2.4	fail
-		typical:	any
-	}
-	simulate {
-		tool:		ngspice
-		template:	voltage_out.spice
-		format:		ascii .data result
-	}
-	conditions {
-		name: Vvdd
-		typical: 3.3
-
-		+
-		name: Vdiff
-		typical: 1
-
-		+
-		name: temperature
-		maximum: 110
-		typical: 27
-		minimum: -40
-
-		+
-		name: corner
-		minimum: ss
-		typical: tt
-		maximum: ff
-	}
-
-	+
-	name:		offset_error
-	status:		skip
-	description:	Output offset error
-	display:	Offset Error
-	unit:		%FSR
-	spec {
-		minimum:	-6	fail
+		minimum:	-0.1	fail
 		typical:	0
-		maximum:	0.5	fail
+		maximum:	0.1	fail
 	}
 	simulate {
 		tool:		ngspice
-		template:	input_offset.spice
-		format:		ascii .data result null
-	}
-	conditions {
-		name: Vvdd
-		typical: 3.3
-
-		+
-		name: temperature
-		maximum: 110
-		typical: 27
-		minimum: -40
-
-		+
-		name: risetime
-		display: Trise
-		unit: ms
-		typical: 50
-		note: Ramp rate of Vdiff for input offset measurement
-
-		+
-		name: Vcm
-		minimum: 0.33
-		maximum: 2.97
-		note: offset measured at 10% and 90% values
-
-		+
-		name: corner
-		minimum: ss
-		typical: tt
-		maximum: ff
-	}
-
-	+
-	name:		avo
-	status:		skip
-	description:	open loop voltage gain
-	display:	Open-loop Voltage Gain
-	unit:		dB
-	spec {
-		minimum:	100	fail
-		typical:	125
-		maximum:	125	fail	maximum-above
-	}
-	simulate {
-		tool:		ngspice
-		template:	avo.spice
+		template:	trip_up_down.spice
 		format:		ascii .data result
+		collate:        otrip[2:0]
 	}
+        measure {
+                tool:           octave
+                filename:       accuracy.m
+        }
 	conditions {
-		name: Vvdd
-		typical: 3.3
+		name: otrip[2:0]
+		enumerate: 000 100 111
 
 		+
-		name: temperature
-		maximum: 110
-		typical: 27
-		minimum: -40
-
-		+
-		name: Vcm
-		typical: 1.65
-		note: AC analysis not dependent on Vcm
-
-		+
-		name: corner
-		minimum: ss
-		typical: tt
-		maximum: ff
-	}
-
-	+
-	name:		gain_bandwidth
-	status:		skip
-	description:	Gain Bandwidth Product
-	display:	Gain-Bandwidth 
-	unit:		MHz
-	spec {
-		minimum:	0.3	fail
-		typical:	4
-		maximum:	7	fail 	maximum-above
-	}
-	simulate {
-		tool:		ngspice
-		template:	gbw.spice
-		format:		ascii .data result null null
-	}
-	conditions {
-		name: Vvdd
-		typical: 3.3
-
-		+
-		name: temperature
-		maximum: 110
-		typical: 27
-		minimum: -40
-
-		+
-		name: Vcm
-		typical: 1.65
-		note: AC analysis not dependent on Vcm
-
-		+
-		name: Vdiff
-		typical: 0.1
-
-		+
-		name: corner
-		minimum: ss
-		typical: tt
-		maximum: ff
-	}
-
-	+
-	name:		slewrate_rise
-	status:		skip
-	description:	Slew Rate Risetime
-	display:	Slew Rate Risetime
-	unit:		V/{micro}s
-	spec {
-		minimum:	0.5	fail
-		typical:	12
-		maximum:	30	fail	maximum-above
-	}
-	simulate {
-		tool:		ngspice
-		template:	slew_rise.spice
-		format:		ascii .data result null
-	}
-	conditions {
-		name: Vvdd
-		typical: 3.3
-
-		+
-		name: temperature
-		maximum: 110
-		typical: 27
-		minimum: -40
-
-		+
-		name: Vcm
-		maximum: 2.97
-		minimum: 0.33
-		note: measured at 10% and 90% values
-
-		+
-		name: corner
-		minimum: ss
-		typical: tt
-		maximum: ff
-	}
-
-	+
-	name:		slewrate_fall
-	status:		skip
-	description:	Slew Rate Falltime
-	display:	Slew Rate Falltime
-	unit:		V/{micro}s
-	spec {
-		minimum:	1	fail
-		typical:	25
-		maximum:	45	fail	maximum-above
-	}
-	simulate {
-		tool:		ngspice
-		template:	slew_fall.spice
-		format:		ascii .data result null
-	}
-	conditions {
-		name: Vvdd
-		typical: 3.3
-
-		+
-		name: temperature
-		maximum: 110
-		typical: 27
-		minimum: -40
-
-		+
-		name: Vcm
-		maximum: 2.97
-		minimum: 0.33
-		note: measured at 10% and 90% values
-
-		+
-		name: corner
-		minimum: ss
-		typical: tt
-		maximum: ff
-	}
-
-	+
-	name:		full_power_bandwidth
-	status:		skip
-	description:	Full Power Bandwidth
-	display:	Full Power Bandwidth
-	unit:		MHz
-	spec {
-		minimum:	any
-		typical:	2.5
-		maximum:	any
-	}
-	simulate {
-		tool:		ngspice
-		template:	slew_fall.spice
-		format:		ascii .data null result
-	}
-	conditions {
-		name: Vvdd
-		typical: 3.3
-
-		+
-		name: temperature
-		maximum: 110
-		typical: 27
-		minimum: -40
-
-		+
-		name: Vcm
-		typical: 1.65
-		note: AC analysis not dependent on Vcm
-
-		+
-		name: corner
-		minimum: ss
-		typical: tt
-		maximum: ff
-	}
-
-	+
-	name:		phase_margin
-	status:		skip
-	description:	Phase margin
-	display:	Phase Margin
-	unit:		{degrees}
-	spec {
-		minimum:	100	fail
-		typical:	160
-		maximum:	any
-	}
-	simulate {
-		tool:		ngspice
-		template:	gbw.spice
-		format:		ascii .data null result null
-	}
-	conditions {
-		name: Vvdd
-		typical: 3.3
-
-		+
-		name: temperature
-		maximum: 110
-		typical: 27
-		minimum: -40
-
-		+
-		name: Vcm
-		typical: 1.65
-		note: AC analysis not dependent on Vcm
-
-		+
-		name: Vdiff 
-		typical: 0.1
-
-		+
-		name: corner
-		minimum: ss
-		typical: tt
-		maximum: ff
-	}
-
-	+
-	name:		gain_margin
-	status:		active
-	description:	Gain margin
-	display:	Gain Margin
-	unit:		dB
-	spec {
-		minimum:	any
-		typical:	-100
-		maximum:	any
-	}
-	simulate {
-		tool:		ngspice
-		template:	gbw.spice
-		format:		ascii .data null null result
-	}
-	conditions {
-		name: Vvdd
-		typical: 3.3
-
-		+
-		name: temperature
-		maximum: 110
-		typical: 27
-		minimum: -40
-
-		+
-		name: Vcm
-		typical: 1.65
-		note: AC analysis not dependent on Vcm
-
-		+
-		name: Vdiff 
-		typical: 0.1
-
-		+
-		name: corner
-		minimum: ss
-		typical: tt
-		maximum: ff
-	}
-
-	+
-	name:		equiv_noise_1k
-	status:		skip
-	description:	Equivalent Input Noise Voltage @ 1kHz
-	display:	Equivalent Input Noise Voltage @ 1kHz
-	unit:		nV/{sqrt}Hz
-	spec {
-		minimum:	any
-		typical:	280
-		maximum:	any
-	}
-	simulate {
-		tool:		ngspice
-		template:	eqvnoise.spice
-		format:		ascii .data result
-	}
-	conditions {
-		name: Vvdd
-		typical: 3.3
-
-		+
-		name: frequency
+		name: force_dis_rc_osc
 		typical: 1
-		unit: kHz
 
 		+
 		name: temperature
-		maximum: 110
+		maximum: 85
 		typical: 27
 		minimum: -40
 
 		+
-		name: Vcm
-		maximum: 2.97
-		minimum: 0.33
-		note: measured at 10% and 90% values
-
-		+
 		name: corner
-		minimum: ss
 		typical: tt
-		maximum: ff
+
 	}
 
 	+
-	name:		equiv_noise_10k
+	name:		startup_time
 	status:		skip
-	description:	Equivalent Input Noise Voltage @ 10kHz
-	display:	Equivalent Input Noise Voltage @ 10kHz
-	unit:		nV/{sqrt}Hz
+	description:	Measure time between when avdd crosses trip voltage to when POR reset is active, allows power supply to stabilize
+	display:	Startup time (actual)
+	unit:		ms
 	spec {
-		minimum:	any
-		typical:	100
-		maximum:	any
+		maximum:	2	fail
+		typical:	1
+		minimum:	0.5	fail
 	}
 	simulate {
 		tool:		ngspice
-		template:	eqvnoise.spice
+		template:	response_time.spice
 		format:		ascii .data result
 	}
+        measure {
+                tool:           octave
+                filename:       startup_time.m
+        }
 	conditions {
-		name: Vvdd
-		typical: 3.3
-
-		+
-		name: frequency
-		typical: 10
-		unit: kHz
-
-		+
 		name: temperature
-		maximum: 110
+		maximum: 85
 		typical: 27
 		minimum: -40
 
 		+
-		name: Vcm
-		maximum: 2.97
-		minimum: 0.33
-		note: measured at 10% and 90% values
-
-		+
 		name: corner
-		minimum: ss
+		maximum: ss
 		typical: tt
-		maximum: ff
+		minimum: ff
+
 	}
 
 	+
-	name:		cmrr_100k
+	name:		reset_active_time
 	status:		skip
-	description:	CMRR @ 100kHz
-	display:	CMRR @ 100kHz
-	unit:		dB
+	description:	Estimate reset active time by check rc oscillator period across 10 cycles, then multiplying by 2048.
+	display:	Reset active time (est.)
+	unit:		ms
 	spec {
-		maximum:	-40	fail
-		typical:	any
-		minimum:	any
+		maximum:	100	fail
+		typical:	50
+		minimum:	30	fail
 	}
 	simulate {
 		tool:		ngspice
-		template:	cmrr.spice
+		template:	response_time.spice
 		format:		ascii .data result
 	}
+        measure {
+                tool:           octave
+                filename:       response_time_osc.m
+        }
 	conditions {
-		name: Vvdd
-		typical: 3.3
+		name: force_short_oneshot
+		typical: 1
 
 		+
 		name: temperature
-		maximum: 110
+		maximum: 85
 		typical: 27
 		minimum: -40
 
 		+
-		name: Vcm
-		maximum: 2.97
-		minimum: 0.33
-		note: measured at 10% and 90% values
-
-		+
-		name: risetime
-		display: Trise
-		unit: ms
-		typical: 50
-		note: Ramp rate of Vdiff for CMRR measurement
-
-		+
 		name: corner
-		minimum: ss
+		maximum: ss
 		typical: tt
-		maximum: ff
+		minimum: ff
+
 	}
+
+#	+
+#	name:		reset_active_time_actual
+#	status:		skip
+#	description:	Actual reset active time (long sim ~50ms).
+#	display:	Reset active time (actual, long)
+#	unit:		ms
+#	spec {
+#		maximum:	100	fail
+#		typical:	50
+#		minimum:	30	fail
+#	}
+#	simulate {
+#		tool:		ngspice
+#		template:	transient_long.spice
+#		format:		ascii .data result
+#	}
+#	conditions {
+#		name: force_short_oneshot
+#		typical: 0
+#
+#		+
+#		name: temperature
+#		typical: 27
+#
+#		+
+#		name: corner
+#		typical: tt
+#
+#	}
 
 	+
-	name:		psrr_100k
+	name:		supply_ramp
 	status:		skip
-	description:	PSRR @ 100kHz
-	display:	PSRR @ 100kHz
-	unit:		dB
-	spec {
-		maximum:	-45	fail
-		typical:	any
-		minimum:	any
-	}
-	simulate {
-		tool:		ngspice
-		template:	psrr.spice
-		format:		ascii .data result
-	}
-	conditions {
-		name: Vvdd
-		minimum: 2.3
-		maximum: 3.3
-		note: Measured with 1V p-p signal on power supply
-
-		+
-		name: temperature
-		maximum: 110
-		typical: 27
-		minimum: -40
-
-		+
-		name: Vcmp
-		maximum: 0.90
-		minimum: 0.10
-		note: fraction of Vdd
-
-		+
-		name: risetime
-		display: Trise
-		unit: ms
-		typical: 50
-		note: Ramp rate of Vdiff for PSRR measurement
-
-		+
-		name: corner
-		minimum: ss
-		typical: tt
-		maximum: ff
-	}
-
-	+
-	name:		transient_response
-	status:		skip
-	description:	Large signal transient response
-	display:	Large signal transient response (Unity gain configuration, 2Vpp)
-	unit:		mV
+	description:	Demo of power-on-reset during a supply ramp and supply glitch with test-mode force_short_oneshot enabled.  Shortens startup to and reset active windows to 4 and 8 osc_ck cycles, from 32 and 2048 osc_ck cycles.
+	display:	Supply ramp/glitch demo (short)
+	unit:		V
 	simulate {
 		tool:		ngspice
 		template:	transient.spice
-		format:		ascii .data time result Vinp
+		format:		ascii .data time result avdd osc_ck
 	}
 	plot {
-		filename: transient.png
+		filename: supply_ramp.png
 		xaxis: time
 		yaxis: result
 	}
@@ -1006,24 +512,23 @@ electrical_parameters {
 		unit: ms
 
 		+
-		name: Vinp
-		display: Vinp
+		name: result
+		display: porb
 		unit: V
 
 		+
-		name: result
-		display: Vout
+		name: avdd
+		display: avdd
+		unit: V
+
+		+
+		name: osc_ck
+		display: osc_ck
 		unit: V
 	}
 	conditions {
-		name: Vvdd
-		typical: 3.3
-
-		+
-		name: Tmax
-		display: Simulation time
-		unit: ns
-		typical: 4000
+		name: force_short_oneshot
+		typical: 1
 
 		+
 		name: temperature
@@ -1032,44 +537,93 @@ electrical_parameters {
 		+
 		name: corner
 		typical: tt
-	}
-}
 
-# List of physical parameters to be measured and their specified limits
-
-physical_parameters {
-	name:		area
-	status:		skip
-	description:	Total circuit layout area
-	display:	area
-	unit: 		{micro}m{squared}
-	spec {
-		maximum:	50000	fail
-	}
-	evaluate {
-		tool:		cace_area
 	}
 
 	+
-	name:		LVS_errors
-	description:	LVS errors
-	display:	LVS errors
+	name:		Idd_enabled
+	status:		skip
+	description:	Current draw through analog supply, POR enabled
+	display:	Idd
+	unit:		{micro}A
 	spec {
-		maximum:	0	fail
+		minimum:	any
+		typical:	3
+		maximum:	5	fail
 	}
-	evaluate {
-		tool:		cace_lvs run_project_lvs.tcl
+	simulate {
+		tool:		ngspice
+		template:	dccurrent_avdd.spice
+		format:		ascii .data null result
+	}
+	conditions {
+		name: Vdvdd
+		typical: 1.8
+
+		+
+		name: Vavdd
+		typical: 3.3
+
+		+
+		name: otrip[2:0]
+		typical: 100
+
+		+
+		name: temperature
+		maximum: 85
+		typical: 27
+		minimum: -40
+
+		+
+		name: corner
+		maximum: ff
+		typical: tt
+		minimum: ss
 	}
 
 	+
-	name:		DRC_errors
+	name:		Idd_disabled
 	status:		skip
-	description:	DRC errors
-	display:	DRC errors
+	description:	Current draw through analog supply, POR disabled
+	display:	Standby current
+	unit:		{micro}A
 	spec {
-		maximum:	0	fail
+		minimum:	any
+		typical:	0.01
+		maximum:	0.1	fail
 	}
-	evaluate {
-		tool:		cace_drc
+	simulate {
+		tool:		ngspice
+		template:	dccurrent_avdd.spice
+		format:		ascii .data null result
 	}
+	conditions {
+		name: Vdvdd
+		typical: 1.8
+
+		+
+		name: Vavdd
+		typical: 3.3
+
+		+
+		name: otrip[2:0]
+		typical: 000
+
+		+
+		name: force_pdn
+		typical: 1
+
+		+
+		name: temperature
+		maximum: 85
+		typical: 27
+		minimum: -40
+
+		+
+		name: corner
+		maximum: ff
+		typical: tt
+		minimum: ss
+	}
+
 }

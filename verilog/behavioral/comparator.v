@@ -1,3 +1,10 @@
+//############################################################################
+// Copyright 2024 Ajacci, Ltd. Co.
+// License: Apache License, Version 2.0 with Addendum, see NOTICE
+// Date: 22 March, 2024   Rev 0
+// Description: Comparator model
+//############################################################################
+
 module comparator(
 input real avdd,
 input logic avss,

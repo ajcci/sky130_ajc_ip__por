@@ -1,0 +1,1 @@
+../xschem/rc_osc.sch

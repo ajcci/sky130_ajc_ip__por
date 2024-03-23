@@ -1,0 +1,1 @@
+../xschem/ibias_gen.sch

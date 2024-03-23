@@ -37,8 +37,9 @@ append XSCHEM_LIBRARY_PATH :[file dirname [info script]]
 
 #append XSCHEM_LIBRARY_PATH :/usr/local/share/pdk/sky130A/libs.tech/xschem/sky130_fd_pr
 #append XSCHEM_LIBRARY_PATH :/usr/local/share/pdk/sky130A/libs.tech/xschem/sky130_stdcells/
-append XSCHEM_LIBRARY_PATH :$env(PDK_ROOT)/$env(PDK)/libs.tech/xschem/sky130_fd_pr
-append XSCHEM_LIBRARY_PATH :$env(PDK_ROOT)/$env(PDK)/libs.tech/xschem/sky130_stdcells/
+#append XSCHEM_LIBRARY_PATH :$env(PDK_ROOT)/$env(PDK)/libs.tech/xschem/sky130_fd_pr
+append XSCHEM_LIBRARY_PATH :$env(PDK_ROOT)/$env(PDK)/libs.tech
+#append XSCHEM_LIBRARY_PATH :$env(PDK_ROOT)/$env(PDK)/libs.tech/xschem/sky130_stdcells
 
 
 ###########################################################################
@@ -99,7 +100,7 @@ set netlist_dir $env(PWD)/netlist
 #### default: empty (use xschem default, [ ])
 # set bus_replacement_char {<>}
 #### for XSPICE: replace square brackets as the are used for XSPICE vector nodes.
-set bus_replacement_char {__} 
+# set bus_replacement_char {__} 
 
 ###########################################################################
 #### SOME DEFAULT BEHAVIOR

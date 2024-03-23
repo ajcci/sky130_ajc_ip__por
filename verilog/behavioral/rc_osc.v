@@ -1,4 +1,9 @@
-//`timescale 1ns/100fs
+//############################################################################
+// Copyright 2024 Ajacci, Ltd. Co.
+// License: Apache License, Version 2.0 with Addendum, see NOTICE
+// Date: 22 March, 2024   Rev 0
+// Description: RC oscillator model
+//############################################################################
 
 module rc_osc(
 input logic osc_ena,
@@ -7,7 +12,6 @@ input logic dvss,
 output logic osc_ck
 );
 
-//656kHz
 always #12195.2 osc_ck = osc_ena ? ~osc_ck : 0;
 
 initial begin

@@ -1,3 +1,10 @@
+//############################################################################
+// Copyright 2024 Ajacci, Ltd. Co.
+// License: Apache License, Version 2.0 with Addendum, see NOTICE
+// Date: 22 March, 2024   Rev 0
+// Description: Power-on-reset analog model
+//############################################################################
+
 module por_ana(
 //INPUTS
 input real avdd,
