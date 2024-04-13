@@ -1,0 +1,187 @@
+timestamp 1707688321
+version 8.3
+tech sky130A
+style ngspice()
+scale 1000 1 500000
+resistclasses 4400000 2200000 950000 3050000 120000 197000 114000 191000 120000 197000 114000 191000 48200 319800 2000000 48200 48200 12800 125 125 47 47 29 5
+parameters sky130_fd_pr__special_nfet_01v8 l=l w=w a1=as p1=ps a2=ad p2=pd
+parameters sky130_fd_pr__nfet_01v8 l=l w=w a1=as p1=ps a2=ad p2=pd
+parameters sky130_fd_pr__special_pfet_01v8_hvt l=l w=w a1=as p1=ps a2=ad p2=pd
+parameters sky130_fd_pr__pfet_01v8_hvt l=l w=w a1=as p1=ps a2=ad p2=pd
+parameters sky130_fd_pr__nfet_g5v0d10v5 l=l w=w a1=as p1=ps a2=ad p2=pd
+parameters sky130_fd_pr__nfet_20v0 l=l w=w a1=as a2=ad p1=ps p2=pd
+parameters sky130_fd_pr__nfet_g5v0d16v0 l=l w=w a1=as p1=ps a2=ad p2=pd
+parameters sky130_fd_pr__pfet_g5v0d10v5 l=l w=w a1=as p1=ps a2=ad p2=pd
+parameters sky130_fd_pr__pfet_20v0 l=l w=w a1=as a2=ad p1=ps p2=pd
+parameters sky130_fd_pr__pfet_g5v0d16v0 l=l w=w a1=as p1=ps a2=ad p2=pd
+port "X" 7 703 390 737 424 li
+port "X" 7 703 464 737 498 li
+port "X" 7 703 538 737 572 li
+port "X" 7 703 242 737 276 li
+port "X" 7 703 168 737 202 li
+port "X" 7 703 316 737 350 li
+port "VPWR" 6 0 689 1632 763 m1
+port "VPWR" 6 32 695 66 729 v0
+port "VPWR" 6 104 695 138 729 v0
+port "VPWR" 6 0 689 1632 763 m1
+port "VGND" 3 0 51 1632 125 m1
+port "VGND" 3 185 85 219 119 v0
+port "VGND" 3 257 85 291 119 v0
+port "VGND" 3 520 85 554 119 v0
+port "VGND" 3 592 85 626 119 v0
+port "VGND" 3 832 85 866 119 v0
+port "VGND" 3 904 85 938 119 v0
+port "VGND" 3 826 79 944 303 li
+port "VGND" 3 514 79 632 782 li
+port "VGND" 3 0 51 1632 125 m1
+port "VPWR" 6 0 865 1632 939 m1
+port "VPWR" 6 32 899 66 933 v0
+port "VPWR" 6 104 899 138 933 v0
+port "VPWR" 6 26 893 144 939 li
+port "VPWR" 6 26 939 92 1176 li
+port "VPWR" 6 0 865 1632 939 m1
+port "A" 1 223 982 257 1016 li
+port "A" 1 127 982 161 1016 li
+port "VGND" 3 0 1503 1632 1577 m1
+port "VGND" 3 185 1509 219 1543 v0
+port "VGND" 3 257 1509 291 1543 v0
+port "VGND" 3 512 1509 546 1543 v0
+port "VGND" 3 584 1509 618 1543 v0
+port "VGND" 3 506 1123 624 1549 li
+port "VGND" 3 179 1349 297 1549 li
+port "VGND" 3 0 1503 1632 1577 m1
+port "LVPWR" 2 14 604 1618 661 m1
+port "LVPWR" 2 832 621 866 655 v0
+port "LVPWR" 2 904 621 938 655 v0
+port "LVPWR" 2 14 604 1618 661 m1
+port "VPB" 5 0 791 1632 837 m1
+port "VPB" 5 31 797 65 831 v0
+port "VPB" 5 127 797 161 831 v0
+port "VPB" 5 1471 797 1505 831 v0
+port "VPB" 5 1567 797 1601 831 v0
+port "VPB" 5 1455 797 1632 831 li
+port "VPB" 5 0 791 1632 837 m1
+port "VNB" 4 0 1605 1632 1651 m1
+port "VNB" 4 0 -23 1632 23 m1
+port "VNB" 4 31 -17 65 17 v0
+port "VNB" 4 31 1611 65 1645 v0
+port "VNB" 4 127 -17 161 17 v0
+port "VNB" 4 127 1611 161 1645 v0
+port "VNB" 4 223 -17 257 17 v0
+port "VNB" 4 223 1611 257 1645 v0
+port "VNB" 4 319 -17 353 17 v0
+port "VNB" 4 319 1611 353 1645 v0
+port "VNB" 4 415 -17 449 17 v0
+port "VNB" 4 415 1611 449 1645 v0
+port "VNB" 4 511 -17 545 17 v0
+port "VNB" 4 511 1611 545 1645 v0
+port "VNB" 4 607 -17 641 17 v0
+port "VNB" 4 607 1611 641 1645 v0
+port "VNB" 4 703 -17 737 17 v0
+port "VNB" 4 703 1611 737 1645 v0
+port "VNB" 4 799 -17 833 17 v0
+port "VNB" 4 799 1611 833 1645 v0
+port "VNB" 4 895 -17 929 17 v0
+port "VNB" 4 895 1611 929 1645 v0
+port "VNB" 4 991 -17 1025 17 v0
+port "VNB" 4 991 1611 1025 1645 v0
+port "VNB" 4 1087 -17 1121 17 v0
+port "VNB" 4 1087 1611 1121 1645 v0
+port "VNB" 4 1183 -17 1217 17 v0
+port "VNB" 4 1183 1611 1217 1645 v0
+port "VNB" 4 1279 -17 1313 17 v0
+port "VNB" 4 1279 1611 1313 1645 v0
+port "VNB" 4 1375 -17 1409 17 v0
+port "VNB" 4 1375 1611 1409 1645 v0
+port "VNB" 4 1471 -17 1505 17 v0
+port "VNB" 4 1471 1611 1505 1645 v0
+port "VNB" 4 1567 -17 1601 17 v0
+port "VNB" 4 1567 1611 1601 1645 v0
+port "VNB" 4 0 1611 1632 1645 li
+port "VNB" 4 0 1605 1632 1628 m1
+port "VNB" 4 0 0 1632 23 m1
+node "X" 1235 54.3483 703 316 li 0 0 0 0 0 0 0 0 7844 402 11872 554 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 47690 1194 0 0 0 0 0 0 0 0 0 0 0 0
+node "VPWR" 354 103.853 0 689 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 4788 282 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 21070 802 120768 3412 0 0 0 0 0 0 0 0 0 0
+node "VGND" 2503 1433.06 0 51 m1 0 0 0 0 0 0 0 0 7844 402 0 0 38160 1722 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 132986 2962 120768 3412 0 0 0 0 0 0 0 0 0 0
+node "a_30_207#" 1190 665.049 30 207 mvndif 0 0 0 0 0 0 0 0 0 0 0 0 4788 282 4452 274 0 0 0 0 0 0 0 0 0 0 0 0 0 0 104762 2436 0 0 36804 1372 0 0 0 0 0 0 0 0 0 0 0 0
+node "a_389_141#" 4238 635.783 389 141 mvndif 0 0 0 0 0 0 0 0 0 0 11872 554 24300 1224 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 80226 3390 0 0 83068 2708 0 0 0 0 0 0 0 0 0 0 0 0
+node "VPWR" 354 190.625 0 865 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 4788 282 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 21070 802 120768 3412 0 0 0 0 0 0 0 0 0 0
+node "a_389_1337#" 3413 510.776 389 1337 mvndif 0 0 0 0 0 0 0 0 0 0 11872 554 24300 1224 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 17304 964 0 0 122884 4552 0 0 0 0 0 0 0 0 0 0 0 0
+node "A" 352 284.924 127 982 li 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 50879 1346 0 0 8844 400 0 0 0 0 0 0 0 0 0 0 0 0
+node "VGND" 1491 1329.72 0 1503 m1 0 0 0 0 0 0 0 0 0 0 0 0 30660 1322 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 73868 1724 120768 3412 0 0 0 0 0 0 0 0 0 0
+node "a_30_1337#" 1869 1036.13 30 1337 mvndif 0 0 0 0 0 0 0 0 0 0 0 0 4788 282 4452 274 0 0 0 0 0 0 0 0 0 0 0 0 0 0 142496 3868 0 0 87534 2658 0 0 0 0 0 0 0 0 0 0 0 0
+node "LVPWR" 4847 712.212 14 604 m1 0 0 0 0 214620 2048 0 0 22644 648 24416 1114 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 59484 1720 91428 3322 0 0 0 0 0 0 0 0 0 0
+node "VPB" 9251 1878.44 0 791 m1 0 0 0 0 585580 4836 0 0 0 0 0 0 13804 948 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 12036 844 75072 3356 0 0 0 0 0 0 0 0 0 0
+substrate "VNB" 0 0 0 0 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 110976 6664 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 110976 6664 150144 6712 0 0 0 0 0 0 0 0 0 0
+cap "A" "a_30_1337#" 187.128
+cap "VPB" "a_30_1337#" 299.63
+cap "VPWR" "a_30_1337#" 114.542
+cap "A" "VPWR" 2.15739
+cap "LVPWR" "VGND" 4.31167
+cap "VPB" "VPWR" 1046.48
+cap "A" "a_389_1337#" 3.38099
+cap "VPB" "a_389_1337#" 52.9408
+cap "LVPWR" "X" 171.836
+cap "VPWR" "a_389_1337#" 81.0233
+cap "X" "a_30_207#" 0.58704
+cap "LVPWR" "a_389_141#" 469.283
+cap "a_30_207#" "a_389_141#" 249.269
+cap "LVPWR" "VGND" 244.256
+cap "VGND" "a_30_207#" 254.325
+cap "VPB" "A" 193.945
+cap "VGND" "a_389_141#" 1.54255
+cap "A" "VPWR" 87.9305
+cap "VPB" "VPWR" 1068.16
+cap "LVPWR" "a_30_1337#" 68.515
+cap "X" "a_389_141#" 116.307
+cap "a_30_1337#" "a_30_207#" 170.258
+cap "LVPWR" "VPWR" 1020.04
+cap "VPWR" "a_30_207#" 39.7769
+cap "LVPWR" "a_389_1337#" 443.515
+cap "VGND" "X" 229.25
+cap "a_389_1337#" "a_30_207#" 0.79683
+cap "VGND" "a_389_141#" 376.745
+cap "a_30_1337#" "VGND" 267.094
+cap "a_30_1337#" "X" 0.0692991
+cap "a_389_1337#" "VGND" 341.985
+cap "X" "VPWR" 3.17555
+cap "a_30_1337#" "a_389_141#" 166.612
+cap "LVPWR" "A" 2.3593
+cap "X" "a_389_1337#" 0.310154
+cap "VPB" "LVPWR" 95.3091
+cap "VPWR" "a_389_141#" 52.9787
+cap "LVPWR" "VPWR" 55.7999
+cap "VPB" "a_30_207#" 47.7224
+cap "VGND" "a_30_1337#" 29.7226
+cap "VPWR" "a_30_207#" 0.533152
+cap "a_389_1337#" "a_389_141#" 136.815
+cap "VGND" "VPWR" 52.8328
+cap "VGND" "a_389_1337#" 7.55317
+cap "A" "VGND" 36.1076
+cap "VPB" "VGND" 16.6358
+cap "VPWR" "VGND" 126.389
+cap "a_30_1337#" "VPWR" 101.22
+cap "VPB" "X" 1.42579
+cap "a_30_1337#" "a_389_1337#" 249.533
+cap "A" "a_389_141#" 0.15739
+cap "VPB" "a_389_141#" 78.0093
+cap "a_389_1337#" "VPWR" 32.1857
+cap "VPWR" "a_389_141#" 111.754
+cap "VPB" "VGND" 25.0176
+cap "LVPWR" "a_30_207#" 33.0371
+device msubckt sky130_fd_pr__nfet_01v8 795 151 796 152 l=30 w=148 "VNB" "a_389_141#" 60 0 "X" 148 7844,402 "VGND" 148 7844,402
+device msubckt sky130_fd_pr__nfet_g5v0d10v5 445 141 446 142 l=100 w=150 "VNB" "a_30_207#" 200 0 "a_389_141#" 150 4200,206 "VGND" 150 7950,406
+device msubckt sky130_fd_pr__nfet_g5v0d10v5 289 141 290 142 l=100 w=150 "VNB" "a_30_207#" 200 0 "VGND" 150 7155,252 "a_389_141#" 150 4200,206
+device msubckt sky130_fd_pr__nfet_g5v0d10v5 87 207 88 208 l=100 w=84 "VNB" "a_30_1337#" 200 0 "a_30_207#" 84 4788,282 "VGND" 84 7155,252
+device msubckt sky130_fd_pr__pfet_01v8_hvt 881 421 882 422 l=30 w=224 "LVPWR" "a_389_141#" 60 0 "LVPWR" 224 6272,280 "a_389_1337#" 224 11872,554
+device msubckt sky130_fd_pr__pfet_01v8_hvt 795 421 796 422 l=30 w=224 "LVPWR" "a_389_141#" 60 0 "X" 224 11872,554 "LVPWR" 224 6272,280
+device msubckt sky130_fd_pr__nfet_g5v0d10v5 445 425 446 426 l=100 w=150 "VNB" "a_30_207#" 200 0 "a_389_141#" 150 7950,406 "VGND" 150 7950,406
+device msubckt sky130_fd_pr__pfet_g5v0d10v5 87 443 88 444 l=100 w=84 "VPB" "a_30_1337#" 200 0 "VPWR" 84 4788,282 "a_30_207#" 84 4452,274
+device msubckt sky130_fd_pr__nfet_g5v0d10v5 445 635 446 636 l=100 w=150 "VNB" "a_30_207#" 200 0 "a_389_141#" 150 7950,406 "VGND" 150 7950,406
+device msubckt sky130_fd_pr__pfet_01v8_hvt 795 855 796 856 l=30 w=224 "LVPWR" "a_389_1337#" 60 0 "a_389_141#" 224 11872,554 "LVPWR" 224 11872,554
+device msubckt sky130_fd_pr__nfet_g5v0d10v5 445 1127 446 1128 l=100 w=150 "VNB" "a_30_1337#" 200 0 "a_389_1337#" 150 7950,406 "VGND" 150 7950,406
+device msubckt sky130_fd_pr__pfet_g5v0d10v5 87 1101 88 1102 l=100 w=84 "VPB" "A" 200 0 "VPWR" 84 4788,282 "a_30_1337#" 84 4452,274
+device msubckt sky130_fd_pr__nfet_g5v0d10v5 601 1337 602 1338 l=100 w=150 "VNB" "a_30_1337#" 200 0 "VGND" 150 4200,206 "a_389_1337#" 150 7950,406
+device msubckt sky130_fd_pr__nfet_g5v0d10v5 445 1337 446 1338 l=100 w=150 "VNB" "a_30_1337#" 200 0 "a_389_1337#" 150 4200,206 "VGND" 150 4200,206
+device msubckt sky130_fd_pr__nfet_g5v0d10v5 289 1337 290 1338 l=100 w=150 "VNB" "a_30_1337#" 200 0 "VGND" 150 7155,252 "a_389_1337#" 150 4200,206
+device msubckt sky130_fd_pr__nfet_g5v0d10v5 87 1337 88 1338 l=100 w=84 "VNB" "A" 200 0 "a_30_1337#" 84 4788,282 "VGND" 84 7155,252
