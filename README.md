@@ -43,11 +43,17 @@ DRC was performed in Magic and then Klayout for the 'MR' rules.  Design passes a
 ![](magic_drc_violation.png)
 DRC rule violations that are false positives (not actual violations) related to 'MV diffusion spacing'
 
+
+
 ![](drc_sky130A.png)
 Output from Klayout showing no DRC rule violations (all green) for sky130A DRC runset
 
+
+
 ![](drc_sky130A_mr.png)
 Output from Klayout showing no DRC rule violations for sky130A 'mr' DRC rules
+
+
 
 ## Layout vs Schematic (LVS)
 LVS was performed using Magic for layout-to-spice netlist extraction, and then Netgen for netlist comparison vs schematic.
