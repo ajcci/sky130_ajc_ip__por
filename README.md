@@ -199,7 +199,7 @@ New `sky130_ajc_ip__por` showing `por_ana_rcx` (extracted from layout, with RC p
 
 Save it and run CACE the usual way __without__ selecting `R-C Extracted` from the `cace-gui` window.  Once again, this is done because this circuit uses xspice models to simulate the behavior of the digital route and the digital route was not extracted from the layout for faster simulation (as well as a higher likelihood of simulation convergence).
 
-Without any changes to Ngspice parameters, the extracted netlist will run into `Timestep too small` issues during simulation and quit prematurely.
+Without any changes to Ngspice parameters, the extracted netlist will run into __'Timestep too small'__ issues during simulation and quit prematurely.
 
 To make it run all the way through, add the following two options to reduce the tolerance of the simulation (prodces less accurate simulation results):
 
