@@ -38,16 +38,24 @@ the schematic of this circuit.
 Layout of `sky130_ajc_ip__por`, approximate size is 230um x 230um sq.
 
 ## Design-Rule-Check (DRC)
-DRC was performed in Magic and then Klayout for the 'MR' rules.  Design passes all rules in Magic except the 'MV diffusion spacing rules'.  But according to Tim Edwards, these are not actual violations and are false positives, see pictured below.
+DRC is automatic in Magic.  Design passes all rules in Magic except the 'MV diffusion spacing rules'.  However, according to Tim Edwards at eFabless Inc., these are not actual violations and are false positives, see picture below.
 
 ![](magic_drc_violation.png)
 DRC rule violations that are false positives (not actual violations) related to 'MV diffusion spacing'
 
 
 
+Check the design using Klayout sky130 DRC deck for consistency:
+1. In the Magic Tcl interpreter, run `gds write sky130_ajc_ip__por.gds` to stream out a gds file from Magic.
+2. Load `sky130_ajc_ip__por.gds` into Klayout by running `klayout sky130ajc_ip__por.gds`
+3. Run sky130A DRC rule deck (assumes Klayout environment is already setup for sky130 pdk, not described here)
+
+
 ![](drc_sky130A.png)
 Output from Klayout showing no DRC rule violations (all green) for sky130A DRC runset
 
+
+Some special 'manufacturing rules' are not checked in Magic, so a special 'mr' rule deck in Klayout is used to check for those violations.  Simply load the `sky130A_mr` DRC deck and run to produce the all-pass result pictured below:
 
 
 ![](drc_sky130A_mr.png)
