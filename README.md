@@ -64,12 +64,12 @@ Output from Klayout showing no DRC rule violations for sky130A 'mr' DRC rules
 
 
 ## Layout vs Schematic (LVS)
-LVS was performed using Magic for layout-to-spice netlist extraction, and then Netgen for netlist comparison vs schematic.
+Run using Magic for layout-to-spice netlist extraction, and then Netgen for netlist comparison vs schematic.
 
 Steps taken to perform LVS:
 
 1. Created a blackbox for the digital block `por_dig` and replace the xspice model of `por_dig` with the blackbox `por_dig`.  Save the new schematic as `sky130_ajc_ip__por_lvs`.
-Netlist out `sky130_ajc_ip__por_lvs` and name the netlist `sky130_ajc_ip__por_lvs.xschem`.  Edit `sky130_ajc_ip__por_lvs.xschem` and add the following lines to the file:
+Netlist out `sky130_ajc_ip__por_lvs` in xschem and rename the netlist as `sky130_ajc_ip__por_lvs.xschem`.  Edit `sky130_ajc_ip__por_lvs.xschem` and add the following lines to the file (change $PDK_ROOT/$PDK to the location of your setup):
 
 ```
 .include $PDK_ROOT/$PDK/libs.ref/sky130_fd_sc_hvl/spice/sky130_fd_sc_hvl.spice
@@ -90,6 +90,61 @@ Put the files in the same directory and run the following command:
 
 ```netgen -batch lvs "sky130_ajc_ip__por.spice sky130_ajc_ip__por" "sky130_ajc_ip__por_lvs.xschem sky130_ajc_ip__por_lvs" $PDK_ROOT/$PDK/libs.tech/netgen/sky130A_setup.tcl```
 
+Netgen should produce the following output:
+
+```
+Circuit was modified by parallel/series device merging.
+New circuit summary:
+
+Contents of circuit 1:  Circuit: 'sky130_ajc_ip__por'
+Circuit sky130_ajc_ip__por contains 170 device instances.
+  Class: sky130_fd_pr__cap_mim_m3_2 instances:   1
+  Class: sky130_fd_sc_hd__inv_4 instances:   5
+  Class: sky130_fd_pr__pnp_05v5_W0p68L0p68 instances:   1
+  Class: por_dig               instances:   1
+  Class: schmitt_trigger       instances:   1
+  Class: sky130_fd_sc_hvl__lsbufhv2lv_1 instances:   2
+  Class: sky130_fd_pr__nfet_g5v0d10v5 instances:  59
+  Class: sky130_fd_sc_hvl__inv_1 instances:  18
+  Class: sky130_fd_sc_hvl__inv_4 instances:   1
+  Class: sky130_fd_sc_hd__inv_16 instances:   4
+  Class: sky130_fd_sc_hvl__lsbuflv2hv_1 instances:  19
+  Class: sky130_fd_sc_hvl__inv_16 instances:   1
+  Class: sky130_fd_pr__res_xhigh_po_1p41 instances:  10
+  Class: sky130_fd_pr__pfet_g5v0d10v5 instances:  45
+  Class: ibias_gen             instances:   1
+  Class: rc_osc                instances:   1
+Circuit contains 113 nets.
+Contents of circuit 2:  Circuit: 'sky130_ajc_ip__por'
+Circuit sky130_ajc_ip__por contains 170 device instances.
+  Class: sky130_fd_pr__cap_mim_m3_2 instances:   1
+  Class: sky130_fd_sc_hd__inv_4 instances:   5
+  Class: sky130_fd_pr__pnp_05v5_W0p68L0p68 instances:   1
+  Class: por_dig               instances:   1
+  Class: schmitt_trigger       instances:   1
+  Class: sky130_fd_sc_hvl__lsbufhv2lv_1 instances:   2
+  Class: sky130_fd_pr__nfet_g5v0d10v5 instances:  59
+  Class: sky130_fd_sc_hvl__inv_1 instances:  18
+  Class: sky130_fd_sc_hvl__inv_4 instances:   1
+  Class: sky130_fd_sc_hd__inv_16 instances:   4
+  Class: sky130_fd_sc_hvl__lsbuflv2hv_1 instances:  19
+  Class: sky130_fd_sc_hvl__inv_16 instances:   1
+  Class: sky130_fd_pr__res_xhigh_po_1p41 instances:  10
+  Class: sky130_fd_pr__pfet_g5v0d10v5 instances:  45
+  Class: ibias_gen             instances:   1
+  Class: rc_osc                instances:   1
+Circuit contains 118 nets.
+
+Circuit 1 contains 170 devices, Circuit 2 contains 170 devices.
+Circuit 1 contains 113 nets,    Circuit 2 contains 113 nets.
+
+
+Final result: 
+Circuits match uniquely.
+.
+Logging to file "comp.out" disabled
+LVS Done.
+```
 
 ## Parasitic Resistance and Capacitance Extraction (RCX)
 RCX was performed using Magic after passing DRC and LVS.  This circuit includes a digital route which we chose not to include in RCX and rely on Openlane to make sure timing was done correctly.  Therefore, only the analog section of the circuit is extracted.
