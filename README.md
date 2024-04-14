@@ -203,7 +203,8 @@ Without any changes to Ngspice parameters, the extracted netlist will run into `
 
 To make it run all the way through, add the following two options to reduce the tolerance of the simulation (prodces less accurate simulation results):
 
-```.option reltol=1e-3
+```
+.option reltol=1e-3
 .option abstol=1e-3
 ```
 
