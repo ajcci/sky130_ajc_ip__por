@@ -217,8 +217,6 @@ For comparison, run the same simulation with relaxed tolerances using the schema
 ![](sky130_ajc_ip__por_schematic_reltol1e-3_abstol_1e-3.png)
 Schematic netlist with .options reltol=1e-3 abstol=1e-3
 
-
-
+Finally, because some elements of the circuit were changed during the layout phase, the schematic circuit is simulated again and the results provided here.  Simulation tolerances are default (no .options).
 ![](sky130_ajc_ip__por_schematic_default_tol.png)
-
- `por_ana` and re-ordered the ports according to the port order of `por_ana`.  A simply way to accomplish this is to open up `sky130_ajc_`
+Schematic netlist without .options changing the simualtion tolerance (i.e. default tolerance of Ngspice)
