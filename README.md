@@ -169,7 +169,7 @@ ext2spice cthresh 0.1
 ext2spice extresist on
 ext2spice -p extfiles
 ```
-A netlist should be created named `por_ana_rcx.spice`, which has a top-level subckt named `por_ana_rcx`
+A netlist should be created named `por_ana_rcx.spice`, which has a top-level subckt named `por_ana_rcx`.  As a side note, `extresist tolerance 0.001` was used here to reduce the number of nodes created by the extraction algorithm, which created convergence problems for Ngspice later during simulation.  Changing `extresist tolerance 10` to `extresist tolerance 0.001`, for this circuit, roughly reduced the number of nodes by 30%.
 
 In order to use `por_ana_rcx` in a simulation, do the following:
 1. Create a blackbox schematic named `por_ana_rcx` with all the associated pins and pin-order exactly the same as `por_ana.sym`
@@ -199,6 +199,15 @@ New `sky130_ajc_ip__por` showing `por_ana_rcx` (extracted from layout, with RC p
 
 Save it and run CACE the usual way __without__ selecting `R-C Extracted` from the `cace-gui` window.  Once again, this is done because this circuit uses xspice models to simulate the behavior of the digital route and the digital route was not extracted from the layout for faster simulation (as well as a higher likelihood of simulation convergence).
 
+Without any changes to Ngspice parameters, the extracted netlist will run into `Timestep too small` issues during simulation and quit prematurely.
+
+To make it run all the way through, add the following two options to reduce the tolerance of the simulation (prodces less accurate simulation results):
+
+```.option reltol=1e-3
+.option abstol=1e-3
+```
+
+The result after simulation is shown in the figure below. All pass except for the lower-bound of __Startup time (actual)__ at 0.4493ms where the spec limit is 0.5ms
 ![](sky130_ajc_ip__por_rcx_reltol1e-3_abstol_1e-3.png)
 ![](sky130_ajc_ip__por_schematic_reltol1e-3_abstol_1e-3.png)
 ![](sky130_ajc_ip__por_schematic_default_tol.png)
