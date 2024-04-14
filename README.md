@@ -40,6 +40,10 @@ Layout of `sky130_ajc_ip__por`, approximate size is 230um x 230um sq.
 ## Design-Rule-Check (DRC)
 DRC was performed in Magic and then Klayout for the 'MR' rules.  Design passes all rules.
 
+![](drc_sky130A.png)
+![](drc_sky130A_mr.png)
+
+
 ## Layout vs Schematic (LVS)
 LVS was performed using Magic for layout-to-spice netlist extraction, and then Netgen for netlist comparison vs schematic.
 
@@ -110,7 +114,7 @@ xIana vin otrip_decoded[7] otrip_decoded[6] otrip_decoded[5] otrip_decoded[4]
 ```
 
 ![](sky130_ajc_ip__por_rcx_reltol1e-3_abstol_1e-3.png)
-![](sky130_ajc_ip__por_schematic_default_tol.png)
 ![](sky130_ajc_ip__por_schematic_reltol1e-3_abstol_1e-3.png)
+![](sky130_ajc_ip__por_schematic_default_tol.png)
 
  `por_ana` and re-ordered the ports according to the port order of `por_ana`.  A simply way to accomplish this is to open up `sky130_ajc_`
