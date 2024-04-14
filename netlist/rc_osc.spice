@@ -1,0 +1,37 @@
+** sch_path: /home/rtsang/chipalooza/sky130_ajc_ip__por/xschem/rc_osc.sch
+.subckt rc_osc dvdd out ena dvss
+*.PININFO dvdd:I dvss:I out:O ena:I
+XM1 m in dvss dvss sky130_fd_pr__nfet_01v8 L=0.5 W=1 nf=1 m=2
+XM3 m in dvdd dvdd sky130_fd_pr__pfet_01v8 L=0.5 W=1 nf=1 m=6
+XM2 m n dvss dvss sky130_fd_pr__nfet_01v8 L=1 W=1 nf=1 m=1
+XM4 m n dvdd dvdd sky130_fd_pr__pfet_01v8 L=1 W=1 nf=1 m=3
+XM5 n m dvss dvss sky130_fd_pr__nfet_01v8 L=0.5 W=1 nf=1 m=1
+XM6 n m dvdd dvdd sky130_fd_pr__pfet_01v8 L=0.5 W=1 nf=1 m=3
+XM7 out n dvss dvss sky130_fd_pr__nfet_01v8 L=0.5 W=1 nf=1 m=1
+XM8 out n dvdd dvdd sky130_fd_pr__pfet_01v8 L=0.5 W=1 nf=1 m=3
+XC1 in dvss sky130_fd_pr__cap_mim_m3_2 W=30 L=30 m=6
+XR1 net1 in dvss sky130_fd_pr__res_xhigh_po_1p41 L=111 mult=1 m=1
+XM12 in ena dvdd dvdd sky130_fd_pr__pfet_01v8 L=0.15 W=1 nf=1 m=1
+XM9 out ena vr dvss sky130_fd_pr__nfet_01v8 L=0.18 W=1 nf=1 m=1
+XM10 out ena_b vr dvdd sky130_fd_pr__pfet_01v8 L=0.18 W=1 nf=1 m=1
+XM11 ena_b ena dvss dvss sky130_fd_pr__nfet_01v8 L=0.6 W=1 nf=1 m=1
+XM13 ena_b ena dvdd dvdd sky130_fd_pr__pfet_01v8 L=0.6 W=1 nf=1 m=1
+XR2 net2 net1 dvss sky130_fd_pr__res_xhigh_po_1p41 L=111 mult=1 m=1
+XR3 net3 net2 dvss sky130_fd_pr__res_xhigh_po_1p41 L=111 mult=1 m=1
+XR4 net4 net3 dvss sky130_fd_pr__res_xhigh_po_1p41 L=111 mult=1 m=1
+XR5 net5 net4 dvss sky130_fd_pr__res_xhigh_po_1p41 L=111 mult=1 m=1
+XR6 net6 net5 dvss sky130_fd_pr__res_xhigh_po_1p41 L=111 mult=1 m=1
+XR7 net7 net6 dvss sky130_fd_pr__res_xhigh_po_1p41 L=111 mult=1 m=1
+XR8 net8 net7 dvss sky130_fd_pr__res_xhigh_po_1p41 L=111 mult=1 m=1
+XR9 net9 net8 dvss sky130_fd_pr__res_xhigh_po_1p41 L=111 mult=1 m=1
+XR10 vr net9 dvss sky130_fd_pr__res_xhigh_po_1p41 L=111 mult=1 m=1
+XMdum0 vr dvss dvss dvss sky130_fd_pr__nfet_01v8 L=0.6 W=1 nf=1 m=1
+XMdum1 out dvss dvss dvss sky130_fd_pr__nfet_01v8 L=0.18 W=1 nf=1 m=1
+XMdum2 m dvss dvss dvss sky130_fd_pr__nfet_01v8 L=0.5 W=1 nf=1 m=1
+XMdum3 n dvss dvss dvss sky130_fd_pr__nfet_01v8 L=0.5 W=1 nf=1 m=1
+XMdum4 m dvdd n dvdd sky130_fd_pr__pfet_01v8 L=0.5 W=1 nf=1 m=1
+XMdum5 dvdd dvdd dvdd dvdd sky130_fd_pr__pfet_01v8 L=0.18 W=1 nf=1 m=1
+XMdum6 ena_b dvdd vr dvdd sky130_fd_pr__pfet_01v8 L=0.5 W=1 nf=1 m=1
+XMdum7 dvdd dvdd out dvdd sky130_fd_pr__pfet_01v8 L=0.18 W=1 nf=1 m=1
+.ends
+.end

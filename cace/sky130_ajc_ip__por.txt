@@ -337,9 +337,7 @@ electrical_parameters {
 
 		+
 		name: temperature
-		maximum: 85
 		typical: 27
-		minimum: -40
 
 		+
 		name: corner
@@ -378,9 +376,7 @@ electrical_parameters {
 
 		+
 		name: temperature
-		maximum: 85
 		typical: 27
-		minimum: -40
 
 		+
 		name: corner
@@ -410,15 +406,11 @@ electrical_parameters {
         }
 	conditions {
 		name: temperature
-		maximum: 85
-		typical: 27
-		minimum: -40
+		typical: 85
 
 		+
 		name: corner
-		maximum: ss
-		typical: tt
-		minimum: ff
+		typical: ff
 
 	}
 
@@ -448,15 +440,11 @@ electrical_parameters {
 
 		+
 		name: temperature
-		maximum: 85
-		typical: 27
-		minimum: -40
+		typical: -40
 
 		+
 		name: corner
-		maximum: ss
-		typical: tt
-		minimum: ff
+		typical: ss
 
 	}
 
@@ -570,15 +558,11 @@ electrical_parameters {
 
 		+
 		name: temperature
-		maximum: 85
 		typical: 27
-		minimum: -40
 
 		+
 		name: corner
-		maximum: ff
 		typical: tt
-		minimum: ss
 	}
 
 	+
@@ -615,15 +599,11 @@ electrical_parameters {
 
 		+
 		name: temperature
-		maximum: 85
 		typical: 27
-		minimum: -40
 
 		+
 		name: corner
-		maximum: ff
 		typical: tt
-		minimum: ss
 	}
 
 }

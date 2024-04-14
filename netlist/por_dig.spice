@@ -1,0 +1,8 @@
+** sch_path: /home/rtsang/chipalooza/sky130_ajc_ip__por/xschem/por_dig.sch
+.subckt por_dig por_unbuf VPWR VGND force_pdnb osc_ena otrip[2] otrip[1] otrip[0] otrip_decoded[7] otrip_decoded[6]
++ otrip_decoded[5] otrip_decoded[4] otrip_decoded[3] otrip_decoded[2] otrip_decoded[1] otrip_decoded[0] force_dis_rc_osc force_ena_rc_osc
++ startup_timed_out por_timed_out force_pdn pwup_filt force_short_oneshot osc_ck
+*.PININFO VPWR:I VGND:I otrip[2:0]:I por_unbuf:O force_dis_rc_osc:I force_ena_rc_osc:I force_pdn:I force_pdnb:O pwup_filt:I
+*+ force_short_oneshot:I osc_ck:I osc_ena:O otrip_decoded[7:0]:O startup_timed_out:O por_timed_out:O
+.ends
+.end

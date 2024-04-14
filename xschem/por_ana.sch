@@ -71,6 +71,12 @@ N 920 -230 940 -230 {
 lab=vl}
 N 920 -230 920 -60 {
 lab=vl}
+N 180 80 200 80 {
+lab=avss}
+N 200 80 200 130 {
+lab=avss}
+N 180 130 200 130 {
+lab=avss}
 C {devices/lab_pin.sym} -220 -60 0 0 {name=p1 lab=avdd}
 C {devices/lab_pin.sym} 80 -60 0 1 {name=p2 lab=vin}
 C {devices/lab_pin.sym} -220 -40 0 0 {name=p6 lab=force_pdnb_avdd}
@@ -138,11 +144,6 @@ C {xschem/sky130_stdcells/inv_16.sym} 1720 -80 0 0 {name=xIinv3 VGND=dvss VNB=dv
 C {xschem/sky130_stdcells/inv_4.sym} 1610 -80 0 0 {name=xIinv9 VGND=dvss VNB=dvss VPB=dvdd VPWR=dvdd prefix=sky130_fd_sc_hd__}
 C {devices/lab_wire.sym} 1570 -80 0 0 {name=p49 sig_type=std_logic lab=vsch}
 C {devices/opin.sym} 1140 -230 0 0 {name=p50 lab=dcomp}
-C {xschem/sky130_fd_pr/pnp_05v5.sym} 160 80 0 0 {name=Q1
-model=pnp_05v5_W0p68L0p68
-m=1
-spiceprefix=X
-}
 C {devices/lab_pin.sym} 110 130 0 0 {name=p51 lab=avss}
 C {devices/lab_pin.sym} 960 -40 1 1 {name=p52 lab=avss}
 C {xschem/sky130_fd_pr/res_xhigh_po_1p41.sym} 960 -60 3 0 {name=R2
@@ -170,3 +171,8 @@ C {xschem/sky130_stdcells/inv_16.sym} 1100 -230 0 0 {name=xIinv11 VGND=dvss VNB=
 C {devices/lab_wire.sym} 910 -60 0 0 {name=p46 sig_type=std_logic lab=vl}
 C {devices/lab_pin.sym} 80 -40 0 1 {name=p58 lab=not_used}
 C {devices/lab_pin.sym} 230 510 0 0 {name=p63 lab=not_used}
+C {xschem/pnp_05v5.sym} 160 80 0 0 {name=Q1
+model=pnp_05v5_W0p68L0p68
+m=1
+spiceprefix=X
+}

@@ -1,0 +1,52 @@
+** sch_path: /home/rtsang/chipalooza/sky130_ajc_ip__por/xschem/sky130_ajc_ip__por.sch
+.subckt sky130_ajc_ip__por avdd porb_h porb avss dvdd por dvss osc_ck vbg_1v2 dcomp otrip[2] otrip[1] otrip[0] itest force_pdn
++ pwup_filt vin force_ena_rc_osc force_dis_rc_osc startup_timed_out por_timed_out force_short_oneshot isrc_sel ibg_200n
+*.PININFO avdd:I avss:I dvdd:I dvss:I vbg_1v2:I otrip[2:0]:I force_pdn:I force_ena_rc_osc:I force_short_oneshot:I isrc_sel:I
+*+ ibg_200n:I vin:O porb_h:O porb:O por:O osc_ck:O pwup_filt:O itest:O startup_timed_out:O por_timed_out:O force_dis_rc_osc:I dcomp:O
+xIana vin otrip_decoded_7_ otrip_decoded_6_ otrip_decoded_5_ otrip_decoded_4_ otrip_decoded_3_ otrip_decoded_2_ otrip_decoded_1_
++ otrip_decoded_0_ vbg_1v2 avdd itest avss ibg_200n force_pdnb dvdd dvss dcomp isrc_sel pwup_filt osc_ck osc_ena porb_h por_unbuf por porb
++ por_ana_rcx
+**** begin user architecture code
+
+
+
+r0 otrip[0] otrip0 1
+r1 otrip[1] otrip1 1
+r2 otrip[2] otrip2 1
+
+*XSPICE CO-SIM netlist
+.include por_dig.out.spice
+xipor_dig dvss dvdd force_dis_rc_osc force_ena_rc_osc force_pdn force_pdnb force_short_oneshot osc_ck osc_ena
++otrip0 otrip1 otrip2
++otrip_decoded_0_ otrip_decoded_1_ otrip_decoded_2_ otrip_decoded_3_ otrip_decoded_4_ otrip_decoded_5_ otrip_decoded_6_ otrip_decoded_7_
++por_timed_out por_unbuf pwup_filt startup_timed_out por_dig
+
+
+**** end user architecture code
+.ends
+
+* expanding   symbol:  xschem/por_ana_rcx.sym # of pins=19
+** sym_path: /home/rtsang/chipalooza/sky130_ajc_ip__por/xschem/por_ana_rcx.sym
+** sch_path: /home/rtsang/chipalooza/sky130_ajc_ip__por/xschem/por_ana_rcx.sch
+.subckt por_ana_rcx vin otrip_decoded[7] otrip_decoded[6] otrip_decoded[5] otrip_decoded[4] otrip_decoded[3] otrip_decoded[2]
++ otrip_decoded[1] otrip_decoded[0] vbg_1v2 avdd itest avss ibg_200n force_pdnb dvdd dvss dcomp isrc_sel pwup_filt osc_ck osc_ena porb_h por_unbuf
++ por porb
+*.PININFO vbg_1v2:I avdd:I avss:I dvdd:I dvss:I force_pdnb:I isrc_sel:I ibg_200n:I pwup_filt:O itest:O osc_ena:I osc_ck:O
+*+ otrip_decoded[7:0]:I vin:O por_unbuf:I porb_h:O por:O porb:O dcomp:O
+**** begin user architecture code
+
+
+
+.include mag/rcx/por_ana_rcx.spice
+
+xIana vin otrip_decoded[7] otrip_decoded[6] otrip_decoded[5] otrip_decoded[4]
++otrip_decoded[3] otrip_decoded[2] otrip_decoded[1] otrip_decoded[0]
++vbg_1v2 avdd itest avss ibg_200n force_pdnb dvdd dvss dcomp isrc_sel
++pwup_filt osc_ck osc_ena porb_h por_unbuf por porb por_ana
+
+
+
+**** end user architecture code
+.ends
+
+.end

@@ -1,0 +1,39 @@
+** sch_path: /home/rtsang/chipalooza/sky130_ajc_ip__por/xschem/por_ana_cc.sch
+**.subckt por_ana_cc vbg_1v2 avdd avss dvdd dvss force_pdnb isrc_sel ibg_200n pwup_filt itest osc_ena osc_ck
+*+ otrip_decoded[7],otrip_decoded[6],otrip_decoded[5],otrip_decoded[4],otrip_decoded[3],otrip_decoded[2],otrip_decoded[1],otrip_decoded[0] vin por_unbuf porb_h por porb dcomp
+*.ipin vbg_1v2
+*.ipin avdd
+*.ipin avss
+*.ipin dvdd
+*.ipin dvss
+*.ipin force_pdnb
+*.ipin isrc_sel
+*.ipin ibg_200n
+*.opin pwup_filt
+*.opin itest
+*.ipin osc_ena
+*.opin osc_ck
+*.ipin
+*+ otrip_decoded[7],otrip_decoded[6],otrip_decoded[5],otrip_decoded[4],otrip_decoded[3],otrip_decoded[2],otrip_decoded[1],otrip_decoded[0]
+*.opin vin
+*.ipin por_unbuf
+*.opin porb_h
+*.opin por
+*.opin porb
+*.opin dcomp
+**** begin user architecture code
+
+
+
+.include mag/cc/por_ana_cc.spice
+
+xIana vin otrip_decoded[7] otrip_decoded[6] otrip_decoded[5] otrip_decoded[4]
++otrip_decoded[3] otrip_decoded[2] otrip_decoded[1] otrip_decoded[0]
++vbg_1v2 avdd itest avss ibg_200n force_pdnb dvdd dvss dcomp isrc_sel
++pwup_filt osc_ck osc_ena porb_h por_unbuf por porb por_ana
+
+
+
+**** end user architecture code
+**.ends
+.end
