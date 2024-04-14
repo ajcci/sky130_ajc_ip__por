@@ -189,7 +189,15 @@ xIana vin otrip_decoded[7] otrip_decoded[6] otrip_decoded[5] otrip_decoded[4]
 "
 ```
 
-Open up `sky130_ajc_ip__por` and substitute `por_ana.sym` with `por_ana_rcx.sym`.  Save it and run CACE the usual way __without__ selecting `R-C Extracted` from the `cace-gui` window.
+Open up `sky130_ajc_ip__por` and substitute `por_ana.sym` with `por_ana_rcx.sym` (see pictures below):
+
+![](por_ana.png)
+Original `sky130_ajc_ip__por` showing `por_ana` (schematic-based, no RC parasitics)
+
+![](por_ana_rcx.png)
+New `sky130_ajc_ip__por` showing `por_ana_rcx` (extracted from layout, with RC parasitics)
+
+Save it and run CACE the usual way __without__ selecting `R-C Extracted` from the `cace-gui` window.  Once again, this is done because this circuit uses xspice models to simulate the behavior of the digital route and the digital route was not extracted from the layout for faster simulation (as well as a higher likelihood of simulation convergence).
 
 ![](sky130_ajc_ip__por_rcx_reltol1e-3_abstol_1e-3.png)
 ![](sky130_ajc_ip__por_schematic_reltol1e-3_abstol_1e-3.png)
