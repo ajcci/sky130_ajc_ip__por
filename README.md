@@ -37,10 +37,10 @@ the schematic of this circuit.
 ![](sky130_ajc_ip__por_layout.png)
 Layout of `sky130_ajc_ip__por`, approximate size is 230um x 230um sq.
 
-Design-Rule-Check (DRC)
+##Design-Rule-Check (DRC)
 DRC was performed in Magic and then Klayout for the 'MR' rules.  Design passes all rules.
 
-Layout vs Schematic (LVS)
+##Layout vs Schematic (LVS)
 LVS was performed using Magic for layout-to-spice netlist extraction, and then Netgen for netlist comparison vs schematic.
 
 Steps taken to perform LVS:
@@ -68,7 +68,7 @@ Put the files in the same directory and run the following command:
 ```netgen -batch lvs "sky130_ajc_ip__por.spice sky130_ajc_ip__por" "sky130_ajc_ip__por_lvs.xschem sky130_ajc_ip__por_lvs" $PDK_ROOT/$PDK/libs.tech/netgen/sky130A_setup.tcl```
 
 
-Parasitic Resistance and Capacitance Extraction (RCX)
+##Parasitic Resistance and Capacitance Extraction (RCX)
 RCX was performed using Magic after passing DRC and LVS.  This circuit includes a digital route which we chose not to include in RCX and rely on Openlane to make sure timing was done correctly.  Therefore, only the analog section of the circuit is extracted.
 
 Open up `por_ana.mag` and enter the following in the Tcl interpreter to generate and an extracted spice netlist with parasitic resistance and capacitance included in the netlist:
