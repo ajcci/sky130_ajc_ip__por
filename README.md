@@ -147,9 +147,11 @@ LVS Done.
 ```
 
 ## Parasitic Resistance and Capacitance Extraction (RCX)
-RCX was performed using Magic after passing DRC and LVS.  This circuit includes a digital route which we chose not to include in RCX and rely on Openlane to make sure timing was done correctly.  Therefore, only the analog section of the circuit is extracted.
+Perform RCX using Magic after passing DRC and LVS.  The purpose is to check how parasitics (interconnect resistance and capacitance) from layout affects the circuit.
 
-Open up `por_ana.mag` and enter the following in the Tcl interpreter to generate and an extracted spice netlist with parasitic resistance and capacitance included in the netlist:
+This circuit includes a digital route which is not included in RCX because we will rely on Openlane to make sure timing is done correctly in the digital route.  Therefore, only the analog section of the circuit is extracted.
+
+Open up `por_ana.mag` (analog section of `sky130_ajc_ip__por`) and enter the following in the Tcl interpreter to generate an extracted spice netlist with parasitic resistance and capacitance included in the netlist:
 
 ```
 flatten por_ana_rcx
@@ -186,6 +188,8 @@ xIana vin otrip_decoded[7] otrip_decoded[6] otrip_decoded[5] otrip_decoded[4]
 +pwup_filt osc_ck osc_ena porb_h por_unbuf por porb por_ana
 "
 ```
+
+Open up `sky130_ajc_ip__por` and substitute `por_ana.sym` with `por_ana_rcx.sym`.  Save it and run CACE the usual way __without__ selecting `R-C Extracted` from the `cace-gui` window.
 
 ![](sky130_ajc_ip__por_rcx_reltol1e-3_abstol_1e-3.png)
 ![](sky130_ajc_ip__por_schematic_reltol1e-3_abstol_1e-3.png)
