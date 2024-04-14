@@ -212,7 +212,7 @@ The result after simulation is shown in the figure below. All pass except for th
 ![](sky130_ajc_ip__por_rcx_reltol1e-3_abstol_1e-3.png)
 RCX netlist with .options reltol=1e-3 abstol=1e-3
 
-For comparison, run the same simulation with relaxed tolerances using the schematic.  Results (below) show all pass, but there are some inconsistencies.  Namely, for both __Startup time (actual)__ and __Reset active time (est.)__, the __Min__ result shows that the RCX value is ***lower** than the schematic value, which doesn't make sense here because both these parameters depend on the oscillation frequency of an RC oscillator, and in the RCX netlist, there is more R and more C, which should result in longer delays, slower circuits.
+For comparison, run the same simulation with relaxed tolerances using the schematic.  Results (below) show all pass, but there are some inconsistencies.  Namely, for both __Startup time (actual)__ and __Reset active time (est.)__, the __Min__ result shows that the RCX value is ***lower*** than the schematic value, which doesn't make sense here because both these parameters depend on the oscillation frequency of an RC oscillator, and in the RCX netlist, there is more R and more C, which should result in longer delays, slower circuits.
 
 ![](sky130_ajc_ip__por_schematic_reltol1e-3_abstol_1e-3.png)
 Schematic netlist with .options reltol=1e-3 abstol=1e-3
