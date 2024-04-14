@@ -86,7 +86,7 @@ ext2spice
 
 Magic should generate a file named `sky130_ajc_ip__por.spice`
 
-Put the files in the same directory and run the following command:
+3. Put the files in the same directory and run the following command:
 
 ```netgen -batch lvs "sky130_ajc_ip__por.spice sky130_ajc_ip__por" "sky130_ajc_ip__por_lvs.xschem sky130_ajc_ip__por_lvs" $PDK_ROOT/$PDK/libs.tech/netgen/sky130A_setup.tcl```
 
@@ -220,3 +220,9 @@ Schematic netlist with .options reltol=1e-3 abstol=1e-3
 Finally, because some elements of the circuit were changed during the layout phase, the schematic circuit is simulated again and the results provided here.  Simulation tolerances are default (no .options).
 ![](sky130_ajc_ip__por_schematic_default_tol.png)
 Schematic netlist without .options changing the simualtion tolerance (i.e. default tolerance of Ngspice)
+
+
+### Digital Route DRC & LVS
+DRC and LVS is performed by Openlane during synthesis.  It performs LVS by extracting the digital route using Magic, and then comparing it to the verilog file generated after fill-insersion.  Here is the result:
+![](openlane.png)
+
