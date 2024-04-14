@@ -145,6 +145,8 @@ Circuits match uniquely.
 Logging to file "comp.out" disabled
 LVS Done.
 ```
+4. It is imporant to check the layout to ensure no wires crossover or short out any part of the digital route as that will not be checked by this LVS procedure.
+
 
 ## Parasitic Resistance and Capacitance Extraction (RCX)
 Perform RCX using Magic after passing DRC and LVS.  The purpose is to check how parasitics (interconnect resistance and capacitance) from layout affects the circuit.
