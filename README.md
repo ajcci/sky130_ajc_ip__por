@@ -33,14 +33,22 @@ Demo of a supply ramp on `avdd` (orange), causing the `porb` (blue) to assert a 
 This is a mixed-signal design so there is a digital component to it.  Digital circuits are designed using Verilog, compiled and simulated using Icarus Verilog, and viewed using GTKWave.  Location of the digital files are in the `verilog` directory.  Below is a screen capture of some signals of the testbench `sky130_ajc_ip__por_tb.v`.
 
 ![](por_verilog_sim.png)
+Behavioral simulation of POR using Verilog
 
 ## Layout
-Most of the circuits in this design is similar to `sky130_ajc_ip__brownout`. In order to speed-up layout, the layout from `sky130_ajc_ip__brownout`
-was used as a starting point.  Unused circuits were tied off/disabled and connections that needed to be changed were modified accordingly to match
-the schematic of this circuit.
+The layout was drawn in Magic, so it is best viewed and edited in Magic.
+
+Open layout using Magic by typing the following in the `mag` directory:
+
+`magic -d XR -rcfile $PDK_ROOT/$PDK/libs.tech/magic/sky130A.magicrc sky130_ajc_ip__por.mag`
+
+Alternatively, if using Klayout, in base directory, enter the following in the terminal:
+
+`klayout -e gds/sky130_ajc_ip__por.gds`
 
 ![](sky130_ajc_ip__por_layout.png)
 Layout of `sky130_ajc_ip__por`, approximate size is 230um x 230um sq.
+
 
 ## Design-Rule-Check (DRC)
 DRC is automatic in Magic.  Design passes all rules in Magic except the 'MV diffusion spacing rules'.  However, according to Tim Edwards at eFabless Inc., these are not actual violations and are false positives, see picture below.
