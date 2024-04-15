@@ -59,7 +59,6 @@ xIinv1 net1 avss avss avdd avdd net2 sky130_fd_sc_hvl__inv_1
 xIschmitt dvdd dcomp_filt vsch dvss schmitt_trigger
 xIinv3 net7 dvss dvss dvdd dvdd pwup_filt sky130_fd_sc_hd__inv_16
 xIinv9 vsch dvss dvss dvdd dvdd net7 sky130_fd_sc_hd__inv_4
-XQ1 avss avss net8 sky130_fd_pr__pnp_05v5_W0p68L0p68 m=1
 XR2 dcomp_filt vl avss sky130_fd_pr__res_xhigh_po_1p41 L=700 mult=1 m=1
 xIlvls3[7] dvss dvdd dvss dvss avdd avdd vtrip_decoded_avdd[7] sky130_fd_sc_hvl__lsbuflv2hv_1
 xIlvls3[6] dvss dvdd dvss dvss avdd avdd vtrip_decoded_avdd[6] sky130_fd_sc_hvl__lsbuflv2hv_1
@@ -74,6 +73,7 @@ xIlvls5 net9 dvdd dvss dvss avdd avdd vlu sky130_fd_sc_hvl__lsbufhv2lv_1
 * noconn vlu
 xIinv10 vl dvss dvss dvdd dvdd net10 sky130_fd_sc_hd__inv_4
 xIinv11 net10 dvss dvss dvdd dvdd dcomp sky130_fd_sc_hd__inv_16
+XQ1 avss avss net8 avss sky130_fd_pr__pnp_05v5_W0p68L0p68 m=1
 .ends
 
 

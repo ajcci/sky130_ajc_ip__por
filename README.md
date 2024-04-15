@@ -234,21 +234,15 @@ To make it run all the way through, add the following two options to reduce the 
 .option abstol=1e-3
 ```
 
-The result after simulation is shown in the figure below. All pass except for the lower-bound of __Startup time (actual)__ at 0.4493ms where the spec limit is 0.5ms.
-![](sky130_ajc_ip__por_rcx_reltol1e-3_abstol_1e-3.png)
+The result after simulation is shown in the figure below. All pass.
+![](sky130_ajc_ip__por_cace_rcx.png)
 RCX netlist with .options reltol=1e-3 abstol=1e-3
 
-For comparison, run the same simulation with relaxed tolerances using the schematic.  Results (below) show all pass, but there are some inconsistencies.  Namely, for both __Startup time (actual)__ and __Reset active time (est.)__, the __Min__ result shows that the RCX value is ***lower*** than the schematic value, which doesn't make sense here because both these parameters depend on the oscillation frequency of an RC oscillator, and in the RCX netlist, there is more R and more C, which should result in longer delays, slower circuits.
+For comparison, run the same simulation with relaxed tolerances using the schematic. All pass.  It should be noted that after the initial design (above), during the layout phase the design was changed to re-center the timing against the spec.
 
-![](sky130_ajc_ip__por_schematic_reltol1e-3_abstol_1e-3.png)
+![](sky130_ajc_ip__por_cace_schematic.png)
 Schematic netlist with .options reltol=1e-3 abstol=1e-3
-
-Finally, because some elements of the circuit were changed during the layout phase, the schematic circuit is simulated again and the results provided here.  Simulation tolerances are default (no .options).
-![](sky130_ajc_ip__por_schematic_default_tol.png)
-Schematic netlist without .options changing the simualtion tolerance (i.e. default tolerance of Ngspice)
-
 
 ### Digital Route DRC & LVS
 DRC and LVS is performed by Openlane during synthesis.  It performs LVS by extracting the digital route using Magic, and then comparing it to the verilog file generated after fill-insersion.  Here is the result:
 ![](openlane.png)
-

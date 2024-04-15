@@ -54,32 +54,32 @@ output por_timed_out
     end
   end
 
-  //9-BIT STARTUP ONE-SHOT
-  reg [4:0] cnt_st;
+  //6-BIT STARTUP ONE-SHOT
+  reg [5:0] cnt_st;
 
-  assign startup_timed_out = (cnt_st == 5'b11111);
+  assign startup_timed_out = (cnt_st == 6'b100101);
 
   always @ (posedge osc_ck or negedge cnt_rsb) begin
     if (!cnt_rsb) begin
       cnt_st <= 0;
     end else begin
-      cnt_st <= startup_timed_out ? cnt_st : force_short_oneshot ? (cnt_st & 5'b11000) + 5'b01111 : cnt_st + 1;
+      cnt_st <= startup_timed_out ? cnt_st : force_short_oneshot ? (cnt_st & 6'b111000) + 6'b001101 : cnt_st + 1;
     end
   end
 
   //OUTPUT
   assign por_unbuf = startup_timed_out & (!por_timed_out);
 
-  //15-BIT POR ONE-SHOT
+  //11-BIT POR ONE-SHOT
   reg [10:0] cnt_por;
 
-  assign por_timed_out = (cnt_por == 11'b11111111111);
+  assign por_timed_out = (cnt_por == 11'b11100110010);
 
   always @ (posedge osc_ck or negedge cnt_rsb) begin
     if (!cnt_rsb) begin
       cnt_por <= 0;
     end else begin
-      cnt_por <= por_unbuf ? force_short_oneshot ? (cnt_por & 11'b11100000000) + 11'b00111111111 : cnt_por + 1 : cnt_por;
+      cnt_por <= por_unbuf ? force_short_oneshot ? (cnt_por & 11'b11100000000) + 11'b00100110010 : cnt_por + 1 : cnt_por;
     end
   end
 

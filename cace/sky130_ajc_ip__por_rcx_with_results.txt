@@ -12,7 +12,7 @@ authorship {
 	designer:	Robin Matthew Tsang
 	company:	Ajacci, Ltd. Co.
 	creation_date:	March 22, 2024
-	modification_date:	April 14, 2024 at 07:46am
+	modification_date:	April 15, 2024 at 12:15pm
 	license:	Apache 2.0
 }
 
@@ -553,9 +553,9 @@ electrical_parameters {
 	}
 	results {
 		name:		schematic
-		minimum:	0.4493 fail
-		typical:	0.864 pass
-		maximum:	1.418 pass
+		minimum:	0.7645 pass
+		typical:	1.043 pass
+		maximum:	1.692 pass
 	}
 	simulate {
 		tool:		ngspice
@@ -595,7 +595,7 @@ electrical_parameters {
 			temperature {degrees}C -40
 		}
 		results {
-			0.00125222
+			0.00169247
 		}
 
 		+
@@ -615,7 +615,7 @@ electrical_parameters {
 			temperature {degrees}C -40
 		}
 		results {
-			0.00138695
+			0.00160358
 		}
 
 		+
@@ -635,7 +635,7 @@ electrical_parameters {
 			temperature {degrees}C -40
 		}
 		results {
-			0.00141754
+			0.00167713
 		}
 
 		+
@@ -655,7 +655,7 @@ electrical_parameters {
 			temperature {degrees}C 27
 		}
 		results {
-			0.00081109
+			0.00108575
 		}
 
 		+
@@ -675,7 +675,7 @@ electrical_parameters {
 			temperature {degrees}C 27
 		}
 		results {
-			0.00086396
+			0.00104309
 		}
 
 		+
@@ -695,7 +695,7 @@ electrical_parameters {
 			temperature {degrees}C 27
 		}
 		results {
-			0.00094291
+			0.00114894
 		}
 
 		+
@@ -715,7 +715,7 @@ electrical_parameters {
 			temperature {degrees}C 85
 		}
 		results {
-			0.00044935
+			0.00076452
 		}
 
 		+
@@ -735,7 +735,7 @@ electrical_parameters {
 			temperature {degrees}C 85
 		}
 		results {
-			0.0006647
+			0.0008314
 		}
 
 		+
@@ -755,7 +755,7 @@ electrical_parameters {
 			temperature {degrees}C 85
 		}
 		results {
-			0.000686
+			0.00081448
 		}
 	}
 
@@ -772,9 +772,9 @@ electrical_parameters {
 	}
 	results {
 		name:		schematic
-		minimum:	36.66 pass
-		typical:	63.19 pass
-		maximum:	96.77 pass
+		minimum:	35.59 pass
+		typical:	56.23 pass
+		maximum:	98.71 pass
 	}
 	simulate {
 		tool:		ngspice
@@ -818,7 +818,7 @@ electrical_parameters {
 			temperature {degrees}C -40
 		}
 		results {
-			0.0910576
+			0.083002
 		}
 
 		+
@@ -838,7 +838,7 @@ electrical_parameters {
 			temperature {degrees}C -40
 		}
 		results {
-			0.0923546
+			0.0987068
 		}
 
 		+
@@ -858,7 +858,7 @@ electrical_parameters {
 			temperature {degrees}C -40
 		}
 		results {
-			0.096768
+			0.0948531
 		}
 
 		+
@@ -878,7 +878,7 @@ electrical_parameters {
 			temperature {degrees}C 27
 		}
 		results {
-			0.0569924
+			0.0615834
 		}
 
 		+
@@ -898,7 +898,7 @@ electrical_parameters {
 			temperature {degrees}C 27
 		}
 		results {
-			0.0631876
+			0.0562313
 		}
 
 		+
@@ -918,7 +918,7 @@ electrical_parameters {
 			temperature {degrees}C 27
 		}
 		results {
-			0.0656179
+			0.0668058
 		}
 
 		+
@@ -938,7 +938,7 @@ electrical_parameters {
 			temperature {degrees}C 85
 		}
 		results {
-			0.0366592
+			0.0355908
 		}
 
 		+
@@ -958,7 +958,7 @@ electrical_parameters {
 			temperature {degrees}C 85
 		}
 		results {
-			0.0449571
+			0.0447965
 		}
 
 		+
@@ -978,7 +978,7 @@ electrical_parameters {
 			temperature {degrees}C 85
 		}
 		results {
-			0.0469436
+			0.0365978
 		}
 	}
 

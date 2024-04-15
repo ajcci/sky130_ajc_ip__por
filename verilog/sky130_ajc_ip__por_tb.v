@@ -61,7 +61,7 @@ initial begin
   force_pdn = 1'b0;
   force_ena_rc_osc = 1'b0;
   force_dis_rc_osc = 1'b0;
-  force_short_oneshot = 1'b1;
+  force_short_oneshot = 1'b0;
   isrc_sel = 1'b0;
   ibg_200n = 200e-9;
   #20000000

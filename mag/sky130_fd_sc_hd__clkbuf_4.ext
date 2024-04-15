@@ -1,4 +1,4 @@
-timestamp 1712980491
+timestamp 1707688321
 version 8.3
 tech sky130A
 style ngspice()
@@ -26,21 +26,21 @@ node "a_27_47#" 4280 542.977 27 47 ndif 0 0 0 0 0 0 0 0 4452 274 10600 506 0 0 0
 node "A" 815 147.639 121 153 li 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 17040 1124 0 0 7980 368 0 0 0 0 0 0 0 0 0 0 0 0
 node "VPB" 1859 604.764 29 527 nw 0 0 0 0 201588 1898 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
 substrate "VNB" 0 0 29 -17 pw 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
-cap "VPWR" "VPB" 63.1721
-cap "X" "VPB" 12.159
-cap "VPB" "a_27_47#" 138.763
 cap "A" "VGND" 43.0943
-cap "A" "VPWR" 21.9525
-cap "A" "X" 13.9505
-cap "A" "a_27_47#" 195.005
-cap "A" "VPB" 32.1387
-cap "VPWR" "VGND" 57.0431
-cap "X" "VGND" 215.59
+cap "VPB" "a_27_47#" 138.763
+cap "VGND" "VPWR" 57.0431
+cap "X" "VPB" 12.159
 cap "VGND" "a_27_47#" 148.483
-cap "VGND" "VPB" 5.82522
-cap "VPWR" "X" 316.967
-cap "VPWR" "a_27_47#" 219.243
+cap "X" "VGND" 215.59
+cap "VPB" "VGND" 5.82522
+cap "A" "VPWR" 21.9525
+cap "A" "a_27_47#" 195.005
+cap "X" "A" 13.9505
+cap "a_27_47#" "VPWR" 219.243
+cap "X" "VPWR" 316.967
 cap "X" "a_27_47#" 327.705
+cap "VPB" "A" 32.1387
+cap "VPB" "VPWR" 63.1721
 device msubckt sky130_fd_pr__nfet_01v8 435 47 436 48 l=30 w=84 "VNB" "a_27_47#" 60 0 "X" 84 2352,140 "VGND" 84 4872,284
 device msubckt sky130_fd_pr__nfet_01v8 349 47 350 48 l=30 w=84 "VNB" "a_27_47#" 60 0 "VGND" 84 2352,140 "X" 84 2352,140
 device msubckt sky130_fd_pr__nfet_01v8 263 47 264 48 l=30 w=84 "VNB" "a_27_47#" 60 0 "X" 84 2352,140 "VGND" 84 2352,140

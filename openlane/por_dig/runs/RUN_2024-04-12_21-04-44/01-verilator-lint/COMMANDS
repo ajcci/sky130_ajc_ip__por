@@ -1,1 +1,0 @@
-verilator --lint-only --Wall --Wno-DECLFILENAME --Wno-EOFNEWLINE --top-module por_dig /home/rtsang/chipalooza/sky130_ajc_ip__por/openlane/por_dig/runs/RUN_2024-04-12_21-04-44/01-verilator-lint/bb.v /home/rtsang/chipalooza/sky130_ajc_ip__por/openlane/por_dig/por_dig.v --Wno-fatal --relative-includes --Werror-LATCH

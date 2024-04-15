@@ -46,8 +46,8 @@ C3 por GND 20p m=1
 * Flag unsafe operating conditions (exceeds models' specified limits)
 .option warn=1
 
-*.option reltol=1e-3
-*.option abstol=1e-3
+.option reltol=1e-3
+.option abstol=1e-3
 
 .save all
 
