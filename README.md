@@ -29,6 +29,11 @@ Results from before layout started.
 Demo of a supply ramp on `avdd` (orange), causing the `porb` (blue) to assert a reset.  The green trace is `osc_ck`, the internal clock that times the one-shot timer window.  Due to long simulation times, both one-shot timers are significantly shortened from 32 and 2048 cycles to 4 and 8 cycles, respectively, using a test mode.
 ![](por_demo.png)
 
+## Mixed-signal design
+This is a mixed-signal design so there is a digital component to it.  Digital circuits are designed using Verilog, compiled and simulated using Icarus Verilog, and viewed using GTKWave.  Location of the digital files are in the `verilog` directory.  Below is a screen capture of some signals of the testbench `sky130_ajc_ip__por_tb.v`.
+
+![](por_verilog_sim.png)
+
 ## Layout
 Most of the circuits in this design is similar to `sky130_ajc_ip__brownout`. In order to speed-up layout, the layout from `sky130_ajc_ip__brownout`
 was used as a starting point.  Unused circuits were tied off/disabled and connections that needed to be changed were modified accordingly to match
@@ -76,7 +81,18 @@ Netlist out `sky130_ajc_ip__por_lvs` in xschem and rename the netlist as `sky130
 .include $PDK_ROOT/$PDK/libs.ref/sky130_fd_sc_hd/spice/sky130_fd_sc_hd.spice
 ```
 
-2. Extract the layout in Magic using the following commands in the Tcl interpreter:
+2. Manually delete the bulk node 'avss' connection of the pnp device in the xschem netlist `sky130_ajc_ip__por_lvs.xschem`.
+
+Search for this line in the file:
+`XQ1 avss avss net8 avss sky130_fd_pr__pnp_05v5_W0p68L0p68 m=1`
+
+and change it to the following:
+
+`XQ1 avss avss net8 sky130_fd_pr__pnp_05v5_W0p68L0p68 m=1`
+
+This step is necessary because the 'combined' models of the sky130 pdk uses a 4-port connection to sky130_fd_pr__pnp_05v5_W0p68L0p68, but Magic only extracts 3 ports, so we manually delete the bulk node (4th port).
+
+3. Extract the layout in Magic using the following commands in the Tcl interpreter:
 
 ```
 extract all
@@ -86,7 +102,7 @@ ext2spice
 
 Magic should generate a file named `sky130_ajc_ip__por.spice`
 
-3. Put the files in the same directory and run the following command:
+4. Put the files in the same directory (mag/lvs) and run the following command in that directory:
 
 ```netgen -batch lvs "sky130_ajc_ip__por.spice sky130_ajc_ip__por" "sky130_ajc_ip__por_lvs.xschem sky130_ajc_ip__por_lvs" $PDK_ROOT/$PDK/libs.tech/netgen/sky130A_setup.tcl```
 
