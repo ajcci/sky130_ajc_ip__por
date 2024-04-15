@@ -195,7 +195,7 @@ ext2spice cthresh 0.1
 ext2spice extresist on
 ext2spice -p extfiles
 ```
-A netlist should be created named `por_ana_rcx.spice`, which has a top-level subckt named `por_ana_rcx`.  As a side note, `extresist tolerance 0.001` was used here to reduce the number of nodes created by the extraction algorithm, which created convergence problems for Ngspice later during simulation.  Changing `extresist tolerance 10` to `extresist tolerance 0.001`, for this circuit, roughly reduced the number of nodes by 30%.
+A netlist should be created named `por_ana_rcx.spice`, which has a top-level subckt named `por_ana_rcx`.  Create the directory `mag/rcx` and put `por_ana_rcx.spice` in there.  As a side note, `extresist tolerance 0.001` was used here to reduce the number of nodes created by the extraction algorithm, which created convergence problems for Ngspice later during simulation.  Changing `extresist tolerance 10` to `extresist tolerance 0.001`, for this circuit, roughly reduced the number of nodes by 30%.
 
 In order to use `por_ana_rcx` in a simulation, do the following:
 1. Create a blackbox schematic named `por_ana_rcx` with all the associated pins and pin-order exactly the same as `por_ana.sym`
