@@ -1,0 +1,23 @@
+{
+	"design__max_slew_violation__count__corner:nom_tt_025C_1v80": 0,
+	"design__max_fanout_violation__count__corner:nom_tt_025C_1v80": 0,
+	"design__max_cap_violation__count__corner:nom_tt_025C_1v80": 0,
+	"power__internal__total": 2.52345e-06,
+	"power__switching__total": 1.33706e-06,
+	"power__leakage__total": 7.15855e-10,
+	"power__total": 3.86122e-06,
+	"clock__skew__worst_hold__corner:nom_tt_025C_1v80": -2e-06,
+	"clock__skew__worst_setup__corner:nom_tt_025C_1v80": -2e-06,
+	"timing__hold__ws__corner:nom_tt_025C_1v80": -0.099237,
+	"timing__setup__ws__corner:nom_tt_025C_1v80": 599.018,
+	"timing__hold__tns__corner:nom_tt_025C_1v80": -1.29513,
+	"timing__setup__tns__corner:nom_tt_025C_1v80": 0,
+	"timing__hold__wns__corner:nom_tt_025C_1v80": -0.099237,
+	"timing__setup__wns__corner:nom_tt_025C_1v80": 0,
+	"timing__hold_vio__count__corner:nom_tt_025C_1v80": 16,
+	"timing__hold_r2r__ws__corner:nom_tt_025C_1v80": -0.099237,
+	"timing__hold_r2r_vio__count__corner:nom_tt_025C_1v80": 16,
+	"timing__setup_vio__count__corner:nom_tt_025C_1v80": 0,
+	"timing__setup_r2r__ws__corner:nom_tt_025C_1v80": 999.294,
+	"timing__setup_r2r_vio__count__corner:nom_tt_025C_1v80": 0
+}

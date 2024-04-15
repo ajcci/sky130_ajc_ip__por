@@ -1,0 +1,1087 @@
+{
+  "creator": "Yosys 0.38 (git sha1 543faed9c8c, clang++ 16.0.6 -fPIC -Os)",
+  "modules": {
+    "por_dig": {
+      "attributes": {
+        "top": "00000000000000000000000000000001",
+        "src": "/home/rtsang/chipalooza/sky130_ajc_ip__por/openlane/por_dig/por_dig.v:8.1-86.10"
+      },
+      "ports": {
+        "otrip": {
+          "direction": "input",
+          "bits": [ 2, 3, 4 ]
+        },
+        "force_pdn": {
+          "direction": "input",
+          "bits": [ 5 ]
+        },
+        "force_ena_rc_osc": {
+          "direction": "input",
+          "bits": [ 6 ]
+        },
+        "force_dis_rc_osc": {
+          "direction": "input",
+          "bits": [ 7 ]
+        },
+        "force_short_oneshot": {
+          "direction": "input",
+          "bits": [ 8 ]
+        },
+        "pwup_filt": {
+          "direction": "input",
+          "bits": [ 9 ]
+        },
+        "osc_ck": {
+          "direction": "input",
+          "bits": [ 10 ]
+        },
+        "osc_ena": {
+          "direction": "output",
+          "bits": [ 11 ]
+        },
+        "otrip_decoded": {
+          "direction": "output",
+          "bits": [ 12, 13, 14, 15, 16, 17, 18, 19 ]
+        },
+        "force_pdnb": {
+          "direction": "output",
+          "bits": [ 20 ]
+        },
+        "por_unbuf": {
+          "direction": "output",
+          "bits": [ 21 ]
+        },
+        "startup_timed_out": {
+          "direction": "output",
+          "bits": [ 22 ]
+        },
+        "por_timed_out": {
+          "direction": "output",
+          "bits": [ 23 ]
+        }
+      },
+      "cells": {
+        "$add$/home/rtsang/chipalooza/sky130_ajc_ip__por/openlane/por_dig/por_dig.v:66$14": {
+          "hide_name": 1,
+          "type": "$add",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000100000",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000101",
+            "Y_WIDTH": "00000000000000000000000000100000"
+          },
+          "attributes": {
+            "src": "/home/rtsang/chipalooza/sky130_ajc_ip__por/openlane/por_dig/por_dig.v:66.68-66.98"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ "0", "0", "0", 24, 25, "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0" ],
+            "B": [ "1", "1", "1", "1", "0" ],
+            "Y": [ 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57 ]
+          }
+        },
+        "$add$/home/rtsang/chipalooza/sky130_ajc_ip__por/openlane/por_dig/por_dig.v:66$15": {
+          "hide_name": 1,
+          "type": "$add",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000101",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000100000",
+            "Y_WIDTH": "00000000000000000000000000100000"
+          },
+          "attributes": {
+            "src": "/home/rtsang/chipalooza/sky130_ajc_ip__por/openlane/por_dig/por_dig.v:66.101-66.111"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 58, 59, 60, 24, 25 ],
+            "B": [ "1", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0" ],
+            "Y": [ 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92 ]
+          }
+        },
+        "$add$/home/rtsang/chipalooza/sky130_ajc_ip__por/openlane/por_dig/por_dig.v:82$25": {
+          "hide_name": 1,
+          "type": "$add",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000100000",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000001011",
+            "Y_WIDTH": "00000000000000000000000000100000"
+          },
+          "attributes": {
+            "src": "/home/rtsang/chipalooza/sky130_ajc_ip__por/openlane/por_dig/por_dig.v:82.52-82.97"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ "0", "0", "0", "0", "0", "0", "0", "0", 93, 94, 95, "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0" ],
+            "B": [ "1", "1", "1", "1", "1", "1", "1", "1", "1", "0", "0" ],
+            "Y": [ 96, 97, 98, 99, 100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119, 120, 121, 122, 123, 124, 125, 126, 127 ]
+          }
+        },
+        "$add$/home/rtsang/chipalooza/sky130_ajc_ip__por/openlane/por_dig/por_dig.v:82$26": {
+          "hide_name": 1,
+          "type": "$add",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000001011",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000100000",
+            "Y_WIDTH": "00000000000000000000000000100000"
+          },
+          "attributes": {
+            "src": "/home/rtsang/chipalooza/sky130_ajc_ip__por/openlane/por_dig/por_dig.v:82.100-82.111"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 128, 129, 130, 131, 132, 133, 134, 135, 93, 94, 95 ],
+            "B": [ "1", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0" ],
+            "Y": [ 136, 137, 138, 139, 140, 141, 142, 143, 144, 145, 146, 147, 148, 149, 150, 151, 152, 153, 154, 155, 156, 157, 158, 159, 160, 161, 162, 163, 164, 165, 166, 167 ]
+          }
+        },
+        "$and$/home/rtsang/chipalooza/sky130_ajc_ip__por/openlane/por_dig/por_dig.v:28$4": {
+          "hide_name": 1,
+          "type": "$and",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000001",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000001",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/home/rtsang/chipalooza/sky130_ajc_ip__por/openlane/por_dig/por_dig.v:28.61-28.87"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 9 ],
+            "B": [ 168 ],
+            "Y": [ 169 ]
+          }
+        },
+        "$and$/home/rtsang/chipalooza/sky130_ajc_ip__por/openlane/por_dig/por_dig.v:28$5": {
+          "hide_name": 1,
+          "type": "$and",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000001",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000001",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/home/rtsang/chipalooza/sky130_ajc_ip__por/openlane/por_dig/por_dig.v:28.40-28.88"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 170 ],
+            "B": [ 169 ],
+            "Y": [ 171 ]
+          }
+        },
+        "$and$/home/rtsang/chipalooza/sky130_ajc_ip__por/openlane/por_dig/por_dig.v:71$20": {
+          "hide_name": 1,
+          "type": "$and",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000001",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000001",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/home/rtsang/chipalooza/sky130_ajc_ip__por/openlane/por_dig/por_dig.v:71.22-71.58"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 22 ],
+            "B": [ 172 ],
+            "Y": [ 21 ]
+          }
+        },
+        "$auto$mem.cc:282:emit$32": {
+          "hide_name": 1,
+          "type": "$memrd_v2",
+          "parameters": {
+            "ABITS": "00000000000000000000000000000011",
+            "ARST_VALUE": "xxxxxxxx",
+            "CE_OVER_SRST": "00000000000000000000000000000000",
+            "CLK_ENABLE": "00000000000000000000000000000000",
+            "CLK_POLARITY": "00000000000000000000000000000001",
+            "COLLISION_X_MASK": "",
+            "INIT_VALUE": "xxxxxxxx",
+            "MEMID": "$auto$proc_rom.cc:150:do_switch$31",
+            "SRST_VALUE": "xxxxxxxx",
+            "TRANSPARENCY_MASK": "",
+            "WIDTH": "00000000000000000000000000001000"
+          },
+          "attributes": {
+          },
+          "port_directions": {
+            "ADDR": "input",
+            "ARST": "input",
+            "CLK": "input",
+            "DATA": "output",
+            "EN": "input",
+            "SRST": "input"
+          },
+          "connections": {
+            "ADDR": [ 2, 3, 4 ],
+            "ARST": [ "0" ],
+            "CLK": [ "x" ],
+            "DATA": [ 12, 13, 14, 15, 16, 17, 18, 19 ],
+            "EN": [ "1" ],
+            "SRST": [ "0" ]
+          }
+        },
+        "$auto$mem.cc:328:emit$33": {
+          "hide_name": 1,
+          "type": "$meminit",
+          "parameters": {
+            "ABITS": "00000000000000000000000000100000",
+            "MEMID": "$auto$proc_rom.cc:150:do_switch$31",
+            "PRIORITY": "00000000000000000000000000000000",
+            "WIDTH": "00000000000000000000000000001000",
+            "WORDS": "00000000000000000000000000001000"
+          },
+          "attributes": {
+          },
+          "port_directions": {
+            "ADDR": "input",
+            "DATA": "input"
+          },
+          "connections": {
+            "ADDR": [ "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0" ],
+            "DATA": [ "1", "0", "0", "0", "0", "0", "0", "0", "0", "1", "0", "0", "0", "0", "0", "0", "0", "0", "1", "0", "0", "0", "0", "0", "0", "0", "0", "1", "0", "0", "0", "0", "0", "0", "0", "0", "1", "0", "0", "0", "0", "0", "0", "0", "0", "1", "0", "0", "0", "0", "0", "0", "0", "0", "1", "0", "0", "0", "0", "0", "0", "0", "0", "1" ]
+          }
+        },
+        "$eq$/home/rtsang/chipalooza/sky130_ajc_ip__por/openlane/por_dig/por_dig.v:60$10": {
+          "hide_name": 1,
+          "type": "$eq",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000101",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000101",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/home/rtsang/chipalooza/sky130_ajc_ip__por/openlane/por_dig/por_dig.v:60.31-60.49"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 58, 59, 60, 24, 25 ],
+            "B": [ "1", "1", "1", "1", "1" ],
+            "Y": [ 22 ]
+          }
+        },
+        "$eq$/home/rtsang/chipalooza/sky130_ajc_ip__por/openlane/por_dig/por_dig.v:76$21": {
+          "hide_name": 1,
+          "type": "$eq",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000001011",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000001011",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/home/rtsang/chipalooza/sky130_ajc_ip__por/openlane/por_dig/por_dig.v:76.27-76.53"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 128, 129, 130, 131, 132, 133, 134, 135, 93, 94, 95 ],
+            "B": [ "1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1" ],
+            "Y": [ 23 ]
+          }
+        },
+        "$extend$/home/rtsang/chipalooza/sky130_ajc_ip__por/openlane/por_dig/por_dig.v:66$17": {
+          "hide_name": 1,
+          "type": "$pos",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000101",
+            "Y_WIDTH": "00000000000000000000000000100000"
+          },
+          "attributes": {
+            "src": "/home/rtsang/chipalooza/sky130_ajc_ip__por/openlane/por_dig/por_dig.v:66.17-66.111"
+          },
+          "port_directions": {
+            "A": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 58, 59, 60, 24, 25 ],
+            "Y": [ 173, 174, 175, 176, 177, 178, 179, 180, 181, 182, 183, 184, 185, 186, 187, 188, 189, 190, 191, 192, 193, 194, 195, 196, 197, 198, 199, 200, 201, 202, 203, 204 ]
+          }
+        },
+        "$extend$/home/rtsang/chipalooza/sky130_ajc_ip__por/openlane/por_dig/por_dig.v:82$28": {
+          "hide_name": 1,
+          "type": "$pos",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000001011",
+            "Y_WIDTH": "00000000000000000000000000100000"
+          },
+          "attributes": {
+            "src": "/home/rtsang/chipalooza/sky130_ajc_ip__por/openlane/por_dig/por_dig.v:82.18-82.121"
+          },
+          "port_directions": {
+            "A": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 128, 129, 130, 131, 132, 133, 134, 135, 93, 94, 95 ],
+            "Y": [ 205, 206, 207, 208, 209, 210, 211, 212, 213, 214, 215, 216, 217, 218, 219, 220, 221, 222, 223, 224, 225, 226, 227, 228, 229, 230, 231, 232, 233, 234, 235, 236 ]
+          }
+        },
+        "$logic_not$/home/rtsang/chipalooza/sky130_ajc_ip__por/openlane/por_dig/por_dig.v:28$2": {
+          "hide_name": 1,
+          "type": "$logic_not",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000001",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/home/rtsang/chipalooza/sky130_ajc_ip__por/openlane/por_dig/por_dig.v:28.40-28.57"
+          },
+          "port_directions": {
+            "A": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 7 ],
+            "Y": [ 170 ]
+          }
+        },
+        "$logic_not$/home/rtsang/chipalooza/sky130_ajc_ip__por/openlane/por_dig/por_dig.v:48$9": {
+          "hide_name": 1,
+          "type": "$logic_not",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000001",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/home/rtsang/chipalooza/sky130_ajc_ip__por/openlane/por_dig/por_dig.v:48.9-48.19"
+          },
+          "port_directions": {
+            "A": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 9 ],
+            "Y": [ 237 ]
+          }
+        },
+        "$logic_not$/home/rtsang/chipalooza/sky130_ajc_ip__por/openlane/por_dig/por_dig.v:63$12": {
+          "hide_name": 1,
+          "type": "$logic_not",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000001",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/home/rtsang/chipalooza/sky130_ajc_ip__por/openlane/por_dig/por_dig.v:63.9-63.17"
+          },
+          "port_directions": {
+            "A": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 238 ],
+            "Y": [ 239 ]
+          }
+        },
+        "$logic_not$/home/rtsang/chipalooza/sky130_ajc_ip__por/openlane/por_dig/por_dig.v:71$19": {
+          "hide_name": 1,
+          "type": "$logic_not",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000001",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/home/rtsang/chipalooza/sky130_ajc_ip__por/openlane/por_dig/por_dig.v:71.43-71.57"
+          },
+          "port_directions": {
+            "A": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 23 ],
+            "Y": [ 172 ]
+          }
+        },
+        "$logic_not$/home/rtsang/chipalooza/sky130_ajc_ip__por/openlane/por_dig/por_dig.v:79$23": {
+          "hide_name": 1,
+          "type": "$logic_not",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000001",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/home/rtsang/chipalooza/sky130_ajc_ip__por/openlane/por_dig/por_dig.v:79.9-79.17"
+          },
+          "port_directions": {
+            "A": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 238 ],
+            "Y": [ 240 ]
+          }
+        },
+        "$not$/home/rtsang/chipalooza/sky130_ajc_ip__por/openlane/por_dig/por_dig.v:27$1": {
+          "hide_name": 1,
+          "type": "$not",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000001",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/home/rtsang/chipalooza/sky130_ajc_ip__por/openlane/por_dig/por_dig.v:27.23-27.33"
+          },
+          "port_directions": {
+            "A": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 5 ],
+            "Y": [ 20 ]
+          }
+        },
+        "$not$/home/rtsang/chipalooza/sky130_ajc_ip__por/openlane/por_dig/por_dig.v:28$3": {
+          "hide_name": 1,
+          "type": "$not",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000001",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/home/rtsang/chipalooza/sky130_ajc_ip__por/openlane/por_dig/por_dig.v:28.73-28.87"
+          },
+          "port_directions": {
+            "A": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 23 ],
+            "Y": [ 168 ]
+          }
+        },
+        "$or$/home/rtsang/chipalooza/sky130_ajc_ip__por/openlane/por_dig/por_dig.v:28$6": {
+          "hide_name": 1,
+          "type": "$or",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000001",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000001",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/home/rtsang/chipalooza/sky130_ajc_ip__por/openlane/por_dig/por_dig.v:28.20-28.89"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 6 ],
+            "B": [ 171 ],
+            "Y": [ 11 ]
+          }
+        },
+        "$procdff$35": {
+          "hide_name": 1,
+          "type": "$adff",
+          "parameters": {
+            "ARST_POLARITY": "0",
+            "ARST_VALUE": "00000000000",
+            "CLK_POLARITY": "1",
+            "WIDTH": "00000000000000000000000000001011"
+          },
+          "attributes": {
+            "src": "/home/rtsang/chipalooza/sky130_ajc_ip__por/openlane/por_dig/por_dig.v:78.3-84.6"
+          },
+          "port_directions": {
+            "ARST": "input",
+            "CLK": "input",
+            "D": "input",
+            "Q": "output"
+          },
+          "connections": {
+            "ARST": [ 238 ],
+            "CLK": [ 10 ],
+            "D": [ 241, 242, 243, 244, 245, 246, 247, 248, 249, 250, 251 ],
+            "Q": [ 128, 129, 130, 131, 132, 133, 134, 135, 93, 94, 95 ]
+          }
+        },
+        "$procdff$36": {
+          "hide_name": 1,
+          "type": "$adff",
+          "parameters": {
+            "ARST_POLARITY": "0",
+            "ARST_VALUE": "00000",
+            "CLK_POLARITY": "1",
+            "WIDTH": "00000000000000000000000000000101"
+          },
+          "attributes": {
+            "src": "/home/rtsang/chipalooza/sky130_ajc_ip__por/openlane/por_dig/por_dig.v:62.3-68.6"
+          },
+          "port_directions": {
+            "ARST": "input",
+            "CLK": "input",
+            "D": "input",
+            "Q": "output"
+          },
+          "connections": {
+            "ARST": [ 238 ],
+            "CLK": [ 10 ],
+            "D": [ 252, 253, 254, 255, 256 ],
+            "Q": [ 58, 59, 60, 24, 25 ]
+          }
+        },
+        "$procdff$37": {
+          "hide_name": 1,
+          "type": "$adff",
+          "parameters": {
+            "ARST_POLARITY": "0",
+            "ARST_VALUE": "0",
+            "CLK_POLARITY": "1",
+            "WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/home/rtsang/chipalooza/sky130_ajc_ip__por/openlane/por_dig/por_dig.v:47.3-55.6"
+          },
+          "port_directions": {
+            "ARST": "input",
+            "CLK": "input",
+            "D": "input",
+            "Q": "output"
+          },
+          "connections": {
+            "ARST": [ 9 ],
+            "CLK": [ 10 ],
+            "D": [ "1" ],
+            "Q": [ 257 ]
+          }
+        },
+        "$procdff$38": {
+          "hide_name": 1,
+          "type": "$adff",
+          "parameters": {
+            "ARST_POLARITY": "0",
+            "ARST_VALUE": "0",
+            "CLK_POLARITY": "1",
+            "WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/home/rtsang/chipalooza/sky130_ajc_ip__por/openlane/por_dig/por_dig.v:47.3-55.6"
+          },
+          "port_directions": {
+            "ARST": "input",
+            "CLK": "input",
+            "D": "input",
+            "Q": "output"
+          },
+          "connections": {
+            "ARST": [ 9 ],
+            "CLK": [ 10 ],
+            "D": [ 257 ],
+            "Q": [ 238 ]
+          }
+        },
+        "$ternary$/home/rtsang/chipalooza/sky130_ajc_ip__por/openlane/por_dig/por_dig.v:66$16": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000100000"
+          },
+          "attributes": {
+            "src": "/home/rtsang/chipalooza/sky130_ajc_ip__por/openlane/por_dig/por_dig.v:66.46-66.111"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92 ],
+            "B": [ 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57 ],
+            "S": [ 8 ],
+            "Y": [ 258, 259, 260, 261, 262, 263, 264, 265, 266, 267, 268, 269, 270, 271, 272, 273, 274, 275, 276, 277, 278, 279, 280, 281, 282, 283, 284, 285, 286, 287, 288, 289 ]
+          }
+        },
+        "$ternary$/home/rtsang/chipalooza/sky130_ajc_ip__por/openlane/por_dig/por_dig.v:66$18": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000100000"
+          },
+          "attributes": {
+            "src": "/home/rtsang/chipalooza/sky130_ajc_ip__por/openlane/por_dig/por_dig.v:66.17-66.111"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 258, 259, 260, 261, 262, 263, 264, 265, 266, 267, 268, 269, 270, 271, 272, 273, 274, 275, 276, 277, 278, 279, 280, 281, 282, 283, 284, 285, 286, 287, 288, 289 ],
+            "B": [ 173, 174, 175, 176, 177, 178, 179, 180, 181, 182, 183, 184, 185, 186, 187, 188, 189, 190, 191, 192, 193, 194, 195, 196, 197, 198, 199, 200, 201, 202, 203, 204 ],
+            "S": [ 22 ],
+            "Y": [ 252, 253, 254, 255, 256, 290, 291, 292, 293, 294, 295, 296, 297, 298, 299, 300, 301, 302, 303, 304, 305, 306, 307, 308, 309, 310, 311, 312, 313, 314, 315, 316 ]
+          }
+        },
+        "$ternary$/home/rtsang/chipalooza/sky130_ajc_ip__por/openlane/por_dig/por_dig.v:82$27": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000100000"
+          },
+          "attributes": {
+            "src": "/home/rtsang/chipalooza/sky130_ajc_ip__por/openlane/por_dig/por_dig.v:82.30-82.111"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 136, 137, 138, 139, 140, 141, 142, 143, 144, 145, 146, 147, 148, 149, 150, 151, 152, 153, 154, 155, 156, 157, 158, 159, 160, 161, 162, 163, 164, 165, 166, 167 ],
+            "B": [ 96, 97, 98, 99, 100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119, 120, 121, 122, 123, 124, 125, 126, 127 ],
+            "S": [ 8 ],
+            "Y": [ 317, 318, 319, 320, 321, 322, 323, 324, 325, 326, 327, 328, 329, 330, 331, 332, 333, 334, 335, 336, 337, 338, 339, 340, 341, 342, 343, 344, 345, 346, 347, 348 ]
+          }
+        },
+        "$ternary$/home/rtsang/chipalooza/sky130_ajc_ip__por/openlane/por_dig/por_dig.v:82$29": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000100000"
+          },
+          "attributes": {
+            "src": "/home/rtsang/chipalooza/sky130_ajc_ip__por/openlane/por_dig/por_dig.v:82.18-82.121"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 205, 206, 207, 208, 209, 210, 211, 212, 213, 214, 215, 216, 217, 218, 219, 220, 221, 222, 223, 224, 225, 226, 227, 228, 229, 230, 231, 232, 233, 234, 235, 236 ],
+            "B": [ 317, 318, 319, 320, 321, 322, 323, 324, 325, 326, 327, 328, 329, 330, 331, 332, 333, 334, 335, 336, 337, 338, 339, 340, 341, 342, 343, 344, 345, 346, 347, 348 ],
+            "S": [ 21 ],
+            "Y": [ 241, 242, 243, 244, 245, 246, 247, 248, 249, 250, 251, 349, 350, 351, 352, 353, 354, 355, 356, 357, 358, 359, 360, 361, 362, 363, 364, 365, 366, 367, 368, 369 ]
+          }
+        }
+      },
+      "memories": {
+        "$auto$proc_rom.cc:150:do_switch$31": {
+          "hide_name": 1,
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src": "/home/rtsang/chipalooza/sky130_ajc_ip__por/openlane/por_dig/por_dig.v:32.5-41.12"
+          },
+          "width": 8,
+          "start_offset": 0,
+          "size": 8
+        }
+      },
+      "netnames": {
+        "$0\\cnt_por[10:0]": {
+          "hide_name": 1,
+          "bits": [ 241, 242, 243, 244, 245, 246, 247, 248, 249, 250, 251 ],
+          "attributes": {
+            "src": "/home/rtsang/chipalooza/sky130_ajc_ip__por/openlane/por_dig/por_dig.v:78.3-84.6"
+          }
+        },
+        "$0\\cnt_rsb[0:0]": {
+          "hide_name": 1,
+          "bits": [ 257 ],
+          "attributes": {
+            "src": "/home/rtsang/chipalooza/sky130_ajc_ip__por/openlane/por_dig/por_dig.v:47.3-55.6"
+          }
+        },
+        "$0\\cnt_rsb_stg1[0:0]": {
+          "hide_name": 1,
+          "bits": [ "1" ],
+          "attributes": {
+            "src": "/home/rtsang/chipalooza/sky130_ajc_ip__por/openlane/por_dig/por_dig.v:47.3-55.6"
+          }
+        },
+        "$0\\cnt_st[4:0]": {
+          "hide_name": 1,
+          "bits": [ 252, 253, 254, 255, 256 ],
+          "attributes": {
+            "src": "/home/rtsang/chipalooza/sky130_ajc_ip__por/openlane/por_dig/por_dig.v:62.3-68.6"
+          }
+        },
+        "$0\\otrip_decoded[7:0]": {
+          "hide_name": 1,
+          "bits": [ 12, 13, 14, 15, 16, 17, 18, 19 ],
+          "attributes": {
+            "src": "/home/rtsang/chipalooza/sky130_ajc_ip__por/openlane/por_dig/por_dig.v:31.3-42.6"
+          }
+        },
+        "$1\\otrip_decoded[7:0]": {
+          "hide_name": 1,
+          "bits": [ 12, 13, 14, 15, 16, 17, 18, 19 ],
+          "attributes": {
+            "src": "/home/rtsang/chipalooza/sky130_ajc_ip__por/openlane/por_dig/por_dig.v:31.3-42.6"
+          }
+        },
+        "$add$/home/rtsang/chipalooza/sky130_ajc_ip__por/openlane/por_dig/por_dig.v:66$14_Y": {
+          "hide_name": 1,
+          "bits": [ 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57 ],
+          "attributes": {
+            "src": "/home/rtsang/chipalooza/sky130_ajc_ip__por/openlane/por_dig/por_dig.v:66.68-66.98"
+          }
+        },
+        "$add$/home/rtsang/chipalooza/sky130_ajc_ip__por/openlane/por_dig/por_dig.v:66$15_Y": {
+          "hide_name": 1,
+          "bits": [ 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92 ],
+          "attributes": {
+            "src": "/home/rtsang/chipalooza/sky130_ajc_ip__por/openlane/por_dig/por_dig.v:66.101-66.111"
+          }
+        },
+        "$add$/home/rtsang/chipalooza/sky130_ajc_ip__por/openlane/por_dig/por_dig.v:82$25_Y": {
+          "hide_name": 1,
+          "bits": [ 96, 97, 98, 99, 100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119, 120, 121, 122, 123, 124, 125, 126, 127 ],
+          "attributes": {
+            "src": "/home/rtsang/chipalooza/sky130_ajc_ip__por/openlane/por_dig/por_dig.v:82.52-82.97"
+          }
+        },
+        "$add$/home/rtsang/chipalooza/sky130_ajc_ip__por/openlane/por_dig/por_dig.v:82$26_Y": {
+          "hide_name": 1,
+          "bits": [ 136, 137, 138, 139, 140, 141, 142, 143, 144, 145, 146, 147, 148, 149, 150, 151, 152, 153, 154, 155, 156, 157, 158, 159, 160, 161, 162, 163, 164, 165, 166, 167 ],
+          "attributes": {
+            "src": "/home/rtsang/chipalooza/sky130_ajc_ip__por/openlane/por_dig/por_dig.v:82.100-82.111"
+          }
+        },
+        "$and$/home/rtsang/chipalooza/sky130_ajc_ip__por/openlane/por_dig/por_dig.v:28$4_Y": {
+          "hide_name": 1,
+          "bits": [ 169 ],
+          "attributes": {
+            "src": "/home/rtsang/chipalooza/sky130_ajc_ip__por/openlane/por_dig/por_dig.v:28.61-28.87"
+          }
+        },
+        "$and$/home/rtsang/chipalooza/sky130_ajc_ip__por/openlane/por_dig/por_dig.v:28$5_Y": {
+          "hide_name": 1,
+          "bits": [ 171 ],
+          "attributes": {
+            "src": "/home/rtsang/chipalooza/sky130_ajc_ip__por/openlane/por_dig/por_dig.v:28.40-28.88"
+          }
+        },
+        "$and$/home/rtsang/chipalooza/sky130_ajc_ip__por/openlane/por_dig/por_dig.v:66$13_Y": {
+          "hide_name": 1,
+          "bits": [ "0", "0", "0", 24, 25, "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0" ],
+          "attributes": {
+            "src": "/home/rtsang/chipalooza/sky130_ajc_ip__por/openlane/por_dig/por_dig.v:66.69-66.86"
+          }
+        },
+        "$and$/home/rtsang/chipalooza/sky130_ajc_ip__por/openlane/por_dig/por_dig.v:71$20_Y": {
+          "hide_name": 1,
+          "bits": [ 21 ],
+          "attributes": {
+            "src": "/home/rtsang/chipalooza/sky130_ajc_ip__por/openlane/por_dig/por_dig.v:71.22-71.58"
+          }
+        },
+        "$and$/home/rtsang/chipalooza/sky130_ajc_ip__por/openlane/por_dig/por_dig.v:82$24_Y": {
+          "hide_name": 1,
+          "bits": [ "0", "0", "0", "0", "0", "0", "0", "0", 93, 94, 95, "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0" ],
+          "attributes": {
+            "src": "/home/rtsang/chipalooza/sky130_ajc_ip__por/openlane/por_dig/por_dig.v:82.53-82.78"
+          }
+        },
+        "$auto$proc_rom.cc:149:do_switch$30": {
+          "hide_name": 1,
+          "bits": [ 12, 13, 14, 15, 16, 17, 18, 19 ],
+          "attributes": {
+          }
+        },
+        "$eq$/home/rtsang/chipalooza/sky130_ajc_ip__por/openlane/por_dig/por_dig.v:60$10_Y": {
+          "hide_name": 1,
+          "bits": [ 22 ],
+          "attributes": {
+            "src": "/home/rtsang/chipalooza/sky130_ajc_ip__por/openlane/por_dig/por_dig.v:60.31-60.49"
+          }
+        },
+        "$eq$/home/rtsang/chipalooza/sky130_ajc_ip__por/openlane/por_dig/por_dig.v:76$21_Y": {
+          "hide_name": 1,
+          "bits": [ 23 ],
+          "attributes": {
+            "src": "/home/rtsang/chipalooza/sky130_ajc_ip__por/openlane/por_dig/por_dig.v:76.27-76.53"
+          }
+        },
+        "$extend$/home/rtsang/chipalooza/sky130_ajc_ip__por/openlane/por_dig/por_dig.v:66$17_Y": {
+          "hide_name": 1,
+          "bits": [ 173, 174, 175, 176, 177, 178, 179, 180, 181, 182, 183, 184, 185, 186, 187, 188, 189, 190, 191, 192, 193, 194, 195, 196, 197, 198, 199, 200, 201, 202, 203, 204 ],
+          "attributes": {
+            "src": "/home/rtsang/chipalooza/sky130_ajc_ip__por/openlane/por_dig/por_dig.v:66.17-66.111"
+          }
+        },
+        "$extend$/home/rtsang/chipalooza/sky130_ajc_ip__por/openlane/por_dig/por_dig.v:82$28_Y": {
+          "hide_name": 1,
+          "bits": [ 205, 206, 207, 208, 209, 210, 211, 212, 213, 214, 215, 216, 217, 218, 219, 220, 221, 222, 223, 224, 225, 226, 227, 228, 229, 230, 231, 232, 233, 234, 235, 236 ],
+          "attributes": {
+            "src": "/home/rtsang/chipalooza/sky130_ajc_ip__por/openlane/por_dig/por_dig.v:82.18-82.121"
+          }
+        },
+        "$logic_not$/home/rtsang/chipalooza/sky130_ajc_ip__por/openlane/por_dig/por_dig.v:28$2_Y": {
+          "hide_name": 1,
+          "bits": [ 170 ],
+          "attributes": {
+            "src": "/home/rtsang/chipalooza/sky130_ajc_ip__por/openlane/por_dig/por_dig.v:28.40-28.57"
+          }
+        },
+        "$logic_not$/home/rtsang/chipalooza/sky130_ajc_ip__por/openlane/por_dig/por_dig.v:48$9_Y": {
+          "hide_name": 1,
+          "bits": [ 237 ],
+          "attributes": {
+            "src": "/home/rtsang/chipalooza/sky130_ajc_ip__por/openlane/por_dig/por_dig.v:48.9-48.19"
+          }
+        },
+        "$logic_not$/home/rtsang/chipalooza/sky130_ajc_ip__por/openlane/por_dig/por_dig.v:63$12_Y": {
+          "hide_name": 1,
+          "bits": [ 239 ],
+          "attributes": {
+            "src": "/home/rtsang/chipalooza/sky130_ajc_ip__por/openlane/por_dig/por_dig.v:63.9-63.17"
+          }
+        },
+        "$logic_not$/home/rtsang/chipalooza/sky130_ajc_ip__por/openlane/por_dig/por_dig.v:71$19_Y": {
+          "hide_name": 1,
+          "bits": [ 172 ],
+          "attributes": {
+            "src": "/home/rtsang/chipalooza/sky130_ajc_ip__por/openlane/por_dig/por_dig.v:71.43-71.57"
+          }
+        },
+        "$logic_not$/home/rtsang/chipalooza/sky130_ajc_ip__por/openlane/por_dig/por_dig.v:79$23_Y": {
+          "hide_name": 1,
+          "bits": [ 240 ],
+          "attributes": {
+            "src": "/home/rtsang/chipalooza/sky130_ajc_ip__por/openlane/por_dig/por_dig.v:79.9-79.17"
+          }
+        },
+        "$not$/home/rtsang/chipalooza/sky130_ajc_ip__por/openlane/por_dig/por_dig.v:27$1_Y": {
+          "hide_name": 1,
+          "bits": [ 20 ],
+          "attributes": {
+            "src": "/home/rtsang/chipalooza/sky130_ajc_ip__por/openlane/por_dig/por_dig.v:27.23-27.33"
+          }
+        },
+        "$not$/home/rtsang/chipalooza/sky130_ajc_ip__por/openlane/por_dig/por_dig.v:28$3_Y": {
+          "hide_name": 1,
+          "bits": [ 168 ],
+          "attributes": {
+            "src": "/home/rtsang/chipalooza/sky130_ajc_ip__por/openlane/por_dig/por_dig.v:28.73-28.87"
+          }
+        },
+        "$or$/home/rtsang/chipalooza/sky130_ajc_ip__por/openlane/por_dig/por_dig.v:28$6_Y": {
+          "hide_name": 1,
+          "bits": [ 11 ],
+          "attributes": {
+            "src": "/home/rtsang/chipalooza/sky130_ajc_ip__por/openlane/por_dig/por_dig.v:28.20-28.89"
+          }
+        },
+        "$ternary$/home/rtsang/chipalooza/sky130_ajc_ip__por/openlane/por_dig/por_dig.v:66$16_Y": {
+          "hide_name": 1,
+          "bits": [ 258, 259, 260, 261, 262, 263, 264, 265, 266, 267, 268, 269, 270, 271, 272, 273, 274, 275, 276, 277, 278, 279, 280, 281, 282, 283, 284, 285, 286, 287, 288, 289 ],
+          "attributes": {
+            "src": "/home/rtsang/chipalooza/sky130_ajc_ip__por/openlane/por_dig/por_dig.v:66.46-66.111"
+          }
+        },
+        "$ternary$/home/rtsang/chipalooza/sky130_ajc_ip__por/openlane/por_dig/por_dig.v:66$18_Y": {
+          "hide_name": 1,
+          "bits": [ 252, 253, 254, 255, 256, 290, 291, 292, 293, 294, 295, 296, 297, 298, 299, 300, 301, 302, 303, 304, 305, 306, 307, 308, 309, 310, 311, 312, 313, 314, 315, 316 ],
+          "attributes": {
+            "src": "/home/rtsang/chipalooza/sky130_ajc_ip__por/openlane/por_dig/por_dig.v:66.17-66.111"
+          }
+        },
+        "$ternary$/home/rtsang/chipalooza/sky130_ajc_ip__por/openlane/por_dig/por_dig.v:82$27_Y": {
+          "hide_name": 1,
+          "bits": [ 317, 318, 319, 320, 321, 322, 323, 324, 325, 326, 327, 328, 329, 330, 331, 332, 333, 334, 335, 336, 337, 338, 339, 340, 341, 342, 343, 344, 345, 346, 347, 348 ],
+          "attributes": {
+            "src": "/home/rtsang/chipalooza/sky130_ajc_ip__por/openlane/por_dig/por_dig.v:82.30-82.111"
+          }
+        },
+        "$ternary$/home/rtsang/chipalooza/sky130_ajc_ip__por/openlane/por_dig/por_dig.v:82$29_Y": {
+          "hide_name": 1,
+          "bits": [ 241, 242, 243, 244, 245, 246, 247, 248, 249, 250, 251, 349, 350, 351, 352, 353, 354, 355, 356, 357, 358, 359, 360, 361, 362, 363, 364, 365, 366, 367, 368, 369 ],
+          "attributes": {
+            "src": "/home/rtsang/chipalooza/sky130_ajc_ip__por/openlane/por_dig/por_dig.v:82.18-82.121"
+          }
+        },
+        "cnt_por": {
+          "hide_name": 0,
+          "bits": [ 128, 129, 130, 131, 132, 133, 134, 135, 93, 94, 95 ],
+          "attributes": {
+            "src": "/home/rtsang/chipalooza/sky130_ajc_ip__por/openlane/por_dig/por_dig.v:74.14-74.21"
+          }
+        },
+        "cnt_rsb": {
+          "hide_name": 0,
+          "bits": [ 238 ],
+          "attributes": {
+            "src": "/home/rtsang/chipalooza/sky130_ajc_ip__por/openlane/por_dig/por_dig.v:45.21-45.28"
+          }
+        },
+        "cnt_rsb_stg1": {
+          "hide_name": 0,
+          "bits": [ 257 ],
+          "attributes": {
+            "src": "/home/rtsang/chipalooza/sky130_ajc_ip__por/openlane/por_dig/por_dig.v:45.7-45.19"
+          }
+        },
+        "cnt_st": {
+          "hide_name": 0,
+          "bits": [ 58, 59, 60, 24, 25 ],
+          "attributes": {
+            "src": "/home/rtsang/chipalooza/sky130_ajc_ip__por/openlane/por_dig/por_dig.v:58.13-58.19"
+          }
+        },
+        "force_dis_rc_osc": {
+          "hide_name": 0,
+          "bits": [ 7 ],
+          "attributes": {
+            "src": "/home/rtsang/chipalooza/sky130_ajc_ip__por/openlane/por_dig/por_dig.v:13.13-13.29"
+          }
+        },
+        "force_ena_rc_osc": {
+          "hide_name": 0,
+          "bits": [ 6 ],
+          "attributes": {
+            "src": "/home/rtsang/chipalooza/sky130_ajc_ip__por/openlane/por_dig/por_dig.v:12.13-12.29"
+          }
+        },
+        "force_pdn": {
+          "hide_name": 0,
+          "bits": [ 5 ],
+          "attributes": {
+            "src": "/home/rtsang/chipalooza/sky130_ajc_ip__por/openlane/por_dig/por_dig.v:11.13-11.22"
+          }
+        },
+        "force_pdnb": {
+          "hide_name": 0,
+          "bits": [ 20 ],
+          "attributes": {
+            "src": "/home/rtsang/chipalooza/sky130_ajc_ip__por/openlane/por_dig/por_dig.v:20.8-20.18"
+          }
+        },
+        "force_short_oneshot": {
+          "hide_name": 0,
+          "bits": [ 8 ],
+          "attributes": {
+            "src": "/home/rtsang/chipalooza/sky130_ajc_ip__por/openlane/por_dig/por_dig.v:14.13-14.32"
+          }
+        },
+        "osc_ck": {
+          "hide_name": 0,
+          "bits": [ 10 ],
+          "attributes": {
+            "src": "/home/rtsang/chipalooza/sky130_ajc_ip__por/openlane/por_dig/por_dig.v:16.13-16.19"
+          }
+        },
+        "osc_ena": {
+          "hide_name": 0,
+          "bits": [ 11 ],
+          "attributes": {
+            "src": "/home/rtsang/chipalooza/sky130_ajc_ip__por/openlane/por_dig/por_dig.v:18.8-18.15"
+          }
+        },
+        "otrip": {
+          "hide_name": 0,
+          "bits": [ 2, 3, 4 ],
+          "attributes": {
+            "src": "/home/rtsang/chipalooza/sky130_ajc_ip__por/openlane/por_dig/por_dig.v:10.19-10.24"
+          }
+        },
+        "otrip_decoded": {
+          "hide_name": 0,
+          "bits": [ 12, 13, 14, 15, 16, 17, 18, 19 ],
+          "attributes": {
+            "src": "/home/rtsang/chipalooza/sky130_ajc_ip__por/openlane/por_dig/por_dig.v:19.20-19.33"
+          }
+        },
+        "por_timed_out": {
+          "hide_name": 0,
+          "bits": [ 23 ],
+          "attributes": {
+            "src": "/home/rtsang/chipalooza/sky130_ajc_ip__por/openlane/por_dig/por_dig.v:24.8-24.21"
+          }
+        },
+        "por_unbuf": {
+          "hide_name": 0,
+          "bits": [ 21 ],
+          "attributes": {
+            "src": "/home/rtsang/chipalooza/sky130_ajc_ip__por/openlane/por_dig/por_dig.v:21.8-21.17"
+          }
+        },
+        "pwup_filt": {
+          "hide_name": 0,
+          "bits": [ 9 ],
+          "attributes": {
+            "src": "/home/rtsang/chipalooza/sky130_ajc_ip__por/openlane/por_dig/por_dig.v:15.13-15.22"
+          }
+        },
+        "startup_timed_out": {
+          "hide_name": 0,
+          "bits": [ 22 ],
+          "attributes": {
+            "src": "/home/rtsang/chipalooza/sky130_ajc_ip__por/openlane/por_dig/por_dig.v:23.8-23.25"
+          }
+        }
+      }
+    }
+  }
+}

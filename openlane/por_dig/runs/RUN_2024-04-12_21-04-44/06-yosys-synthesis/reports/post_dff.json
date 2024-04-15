@@ -1,0 +1,53 @@
+{
+   "creator": "Yosys 0.38 (git sha1 543faed9c8c, clang++ 16.0.6 -fPIC -Os)",
+   "invocation": "stat -json -liberty /home/rtsang/chipalooza/sky130_ajc_ip__por/openlane/por_dig/runs/RUN_2024-04-12_21-04-44/tmp/b5249f3667b24d80a22050fef5d9445a.lib ",
+   "modules": {
+      "\\por_dig": {
+         "num_wires":         96,
+         "num_wire_bits":     119,
+         "num_pub_wires":     17,
+         "num_pub_wire_bits": 40,
+         "num_memories":      0,
+         "num_memory_bits":   0,
+         "num_processes":     0,
+         "num_cells":         110,
+         "area":              472.953600,
+         "num_cells_by_type": {
+            "$_ANDNOT_": 19,
+            "$_AND_": 6,
+            "$_MUX_": 21,
+            "$_NAND_": 7,
+            "$_NOT_": 4,
+            "$_ORNOT_": 4,
+            "$_OR_": 14,
+            "$_XNOR_": 1,
+            "$_XOR_": 16,
+            "sky130_fd_sc_hd__dfrtp_2": 18
+         }
+      }
+   },
+      "design": {
+         "num_wires":         96,
+         "num_wire_bits":     119,
+         "num_pub_wires":     17,
+         "num_pub_wire_bits": 40,
+         "num_memories":      0,
+         "num_memory_bits":   0,
+         "num_processes":     0,
+         "num_cells":         110,
+         "area":              472.953600,
+         "num_cells_by_type": {
+            "$_ANDNOT_": 19,
+            "$_AND_": 6,
+            "$_MUX_": 21,
+            "$_NAND_": 7,
+            "$_NOT_": 4,
+            "$_ORNOT_": 4,
+            "$_OR_": 14,
+            "$_XNOR_": 1,
+            "$_XOR_": 16,
+            "sky130_fd_sc_hd__dfrtp_2": 18
+         }
+      }
+}
+

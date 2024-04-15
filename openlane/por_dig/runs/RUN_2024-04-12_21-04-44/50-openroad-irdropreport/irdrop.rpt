@@ -1,0 +1,22 @@
+[INFO PSM-0022] Using 1.800V for VPWR
+[INFO PSM-0076] Setting metal node density to be standard cell height times 5.
+[INFO PSM-0031] Number of PDN nodes on net VPWR = 119.
+[INFO PSM-0064] Number of voltage sources = 1.
+[INFO PSM-0040] All PDN stripes on net VPWR are connected.
+########## IR report #################
+Corner: nom_tt_025C_1v80
+Worstcase voltage: 1.80e+00 V
+Average IR drop  : 1.62e-06 V
+Worstcase IR drop: 4.62e-06 V
+######################################
+[INFO PSM-0022] Using 0.000V for VGND
+[INFO PSM-0076] Setting metal node density to be standard cell height times 5.
+[INFO PSM-0031] Number of PDN nodes on net VGND = 110.
+[INFO PSM-0064] Number of voltage sources = 1.
+[INFO PSM-0040] All PDN stripes on net VGND are connected.
+########## IR report #################
+Corner: nom_tt_025C_1v80
+Worstcase voltage: 4.60e-06 V
+Average IR drop  : 1.57e-06 V
+Worstcase IR drop: 4.60e-06 V
+######################################
