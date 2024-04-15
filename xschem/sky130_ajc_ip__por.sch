@@ -9,7 +9,7 @@ T {Copyright 2024 Ajacci, Ltd. Co.
 Apache License, Version 2.0 with Addendum, see NOTICE
 Date: 03/12/2024   Rev: 0
 Description: Power-on-reset (analog + digital sections)} -530 150 0 0 0.4 0.4 {}
-C {xschem/por_ana_rcx.sym} 0 0 0 0 {name=xIana}
+C {xschem/por_ana.sym} 0 0 0 0 {name=xIana}
 C {devices/code.sym} -580 -40 0 0 {name=por_dig only_toplevel=false value="
 
 r0 otrip[0] otrip0 1
