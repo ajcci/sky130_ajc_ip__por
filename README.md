@@ -234,7 +234,7 @@ To make it run all the way through, add the following two options to reduce the 
 .option abstol=1e-3
 ```
 
-The result after simulation is shown in the figure below. All pass.
+The result after RCX simulation is shown in the figure below. All pass.
 ![](sky130_ajc_ip__por_cace_rcx.png)
 RCX netlist with .options reltol=1e-3 abstol=1e-3
 
