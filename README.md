@@ -29,7 +29,7 @@ Results from before layout started.
 Demo of a supply ramp on `avdd` (orange), causing the `porb` (blue) to assert a reset.  The green trace is `osc_ck`, the internal clock that times the one-shot timer window.  Due to long simulation times, both one-shot timers are significantly shortened from 32 and 2048 cycles to 4 and 8 cycles, respectively, using a test mode.
 ![](por_demo.png)
 
-
+## Layout
 Most of the circuits in this design is similar to `sky130_ajc_ip__brownout`. In order to speed-up layout, the layout from `sky130_ajc_ip__brownout`
 was used as a starting point.  Unused circuits were tied off/disabled and connections that needed to be changed were modified accordingly to match
 the schematic of this circuit.
@@ -161,7 +161,7 @@ load por_ana_rcx
 select top cell
 extract path extfiles
 extract all
-ln -s extfiles/por_ana_rcx.ext
+ln -s extfiles/por_ana_rcx.ext (enter this line in terminal)
 ext2sim labels on
 ext2sim
 extresist tolerance 0.001
