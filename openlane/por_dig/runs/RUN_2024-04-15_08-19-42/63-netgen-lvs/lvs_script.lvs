@@ -1,0 +1,11 @@
+puts "Reading SPICE netlist file '/home/rtsang/.volare/volare/sky130/versions/bdc9412b3e468c102d01b7cf6337be06ec6e9c9a/sky130A/libs.ref/sky130_fd_sc_hd/spice/sky130_ef_sc_hd__decap_12.spice'..."
+readnet spice /home/rtsang/.volare/volare/sky130/versions/bdc9412b3e468c102d01b7cf6337be06ec6e9c9a/sky130A/libs.ref/sky130_fd_sc_hd/spice/sky130_ef_sc_hd__decap_12.spice 1
+puts "Reading SPICE netlist file '/home/rtsang/.volare/volare/sky130/versions/bdc9412b3e468c102d01b7cf6337be06ec6e9c9a/sky130A/libs.ref/sky130_fd_sc_hd/spice/sky130_ef_sc_hd__fill_12.spice'..."
+readnet spice /home/rtsang/.volare/volare/sky130/versions/bdc9412b3e468c102d01b7cf6337be06ec6e9c9a/sky130A/libs.ref/sky130_fd_sc_hd/spice/sky130_ef_sc_hd__fill_12.spice 1
+puts "Reading SPICE netlist file '/home/rtsang/.volare/volare/sky130/versions/bdc9412b3e468c102d01b7cf6337be06ec6e9c9a/sky130A/libs.ref/sky130_fd_sc_hd/spice/sky130_ef_sc_hd__fill_4.spice'..."
+readnet spice /home/rtsang/.volare/volare/sky130/versions/bdc9412b3e468c102d01b7cf6337be06ec6e9c9a/sky130A/libs.ref/sky130_fd_sc_hd/spice/sky130_ef_sc_hd__fill_4.spice 1
+puts "Reading SPICE netlist file '/home/rtsang/.volare/volare/sky130/versions/bdc9412b3e468c102d01b7cf6337be06ec6e9c9a/sky130A/libs.ref/sky130_fd_sc_hd/spice/sky130_ef_sc_hd__fill_8.spice'..."
+readnet spice /home/rtsang/.volare/volare/sky130/versions/bdc9412b3e468c102d01b7cf6337be06ec6e9c9a/sky130A/libs.ref/sky130_fd_sc_hd/spice/sky130_ef_sc_hd__fill_8.spice 1
+puts "Reading SPICE netlist file '/home/rtsang/.volare/volare/sky130/versions/bdc9412b3e468c102d01b7cf6337be06ec6e9c9a/sky130A/libs.ref/sky130_fd_sc_hd/spice/sky130_fd_sc_hd.spice'..."
+readnet spice /home/rtsang/.volare/volare/sky130/versions/bdc9412b3e468c102d01b7cf6337be06ec6e9c9a/sky130A/libs.ref/sky130_fd_sc_hd/spice/sky130_fd_sc_hd.spice 1
+lvs { /home/rtsang/chipalooza/sky130_ajc_ip__por/openlane/por_dig/runs/RUN_2024-04-15_08-19-42/61-magic-spiceextraction/por_dig.spice por_dig } { /home/rtsang/chipalooza/sky130_ajc_ip__por/openlane/por_dig/runs/RUN_2024-04-15_08-19-42/47-openroad-fillinsertion/por_dig.pnl.v por_dig } /nix/store/gz2n27iaqigc0pl644jsbk5cn7v7gs6p-python3-3.11.6-env/lib/python3.11/site-packages/openlane/scripts/netgen/setup.tcl /home/rtsang/chipalooza/sky130_ajc_ip__por/openlane/por_dig/runs/RUN_2024-04-15_08-19-42/63-netgen-lvs/reports/lvs.netgen.rpt -json

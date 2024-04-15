@@ -1,0 +1,27 @@
+
+===========================================================================
+Violator List
+============================================================================
+[hold reg-reg] _131_/Q -> _115_/RESET_B : -0.097146
+[hold reg-reg] _131_/Q -> _116_/RESET_B : -0.085738
+[hold reg-reg] _131_/Q -> _117_/RESET_B : -0.085738
+[hold reg-reg] _131_/Q -> _118_/RESET_B : -0.085738
+[hold reg-reg] _131_/Q -> _120_/RESET_B : -0.085738
+[hold reg-reg] _131_/Q -> _121_/RESET_B : -0.085738
+[hold reg-reg] _131_/Q -> _122_/RESET_B : -0.085738
+[hold reg-reg] _131_/Q -> _113_/RESET_B : -0.074168
+[hold reg-reg] _131_/Q -> _114_/RESET_B : -0.074168
+[hold reg-reg] _131_/Q -> _123_/RESET_B : -0.074168
+[hold reg-reg] _131_/Q -> _124_/RESET_B : -0.074168
+[hold reg-reg] _131_/Q -> _125_/RESET_B : -0.074168
+[hold reg-reg] _131_/Q -> _126_/RESET_B : -0.074168
+[hold reg-reg] _131_/Q -> _127_/RESET_B : -0.074168
+[hold reg-reg] _131_/Q -> _128_/RESET_B : -0.074168
+[hold reg-reg] _131_/Q -> _129_/RESET_B : -0.074168
+[hold reg-reg] _131_/Q -> _119_/RESET_B : -0.062759
+Writing metric timing__hold_vio__count__corner:nom_tt_025C_1v80: 17
+Writing metric timing__hold_r2r__ws__corner:nom_tt_025C_1v80: -0.097146
+Writing metric timing__hold_r2r_vio__count__corner:nom_tt_025C_1v80: 17
+Writing metric timing__setup_vio__count__corner:nom_tt_025C_1v80: 0
+Writing metric timing__setup_r2r__ws__corner:nom_tt_025C_1v80: 999.293579
+Writing metric timing__setup_r2r_vio__count__corner:nom_tt_025C_1v80: 0

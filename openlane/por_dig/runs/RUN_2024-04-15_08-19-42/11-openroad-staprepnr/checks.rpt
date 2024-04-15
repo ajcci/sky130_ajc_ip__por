@@ -1,0 +1,203 @@
+
+===========================================================================
+report_checks -unconstrained
+===========================================================================
+======================= nom_tt_025C_1v80 Corner ===================================
+
+Startpoint: pwup_filt (input port clocked by osc_ck)
+Endpoint: _130_ (recovery check against rising-edge clock osc_ck)
+Path Group: asynchronous
+Path Type: max
+
+Fanout         Cap        Slew       Delay        Time   Description
+---------------------------------------------------------------------------------------------
+                                  0.000000    0.000000   clock osc_ck (rise edge)
+                                  0.000000    0.000000   clock network delay (propagated)
+                                200.000000  200.000000 ^ input external delay
+     3    0.009682    0.051268    0.032941  200.032928 ^ pwup_filt (in)
+                                                         pwup_filt (net)
+                      0.051268    0.000000  200.032928 ^ _130_/RESET_B (sky130_fd_sc_hd__dfrtp_2)
+                                            200.032928   data arrival time
+
+                               1000.000000 1000.000000   clock osc_ck (rise edge)
+                                  0.000000 1000.000000   clock source latency
+    19    0.035530    0.167062    0.113914 1000.113953 ^ osc_ck (in)
+                                                         osc_ck (net)
+                      0.167062    0.000000 1000.113953 ^ _130_/CLK (sky130_fd_sc_hd__dfrtp_2)
+                                 -0.250000  999.863953   clock uncertainty
+                                  0.000000  999.863953   clock reconvergence pessimism
+                                  0.254818 1000.118713   library recovery time
+                                           1000.118713   data required time
+---------------------------------------------------------------------------------------------
+                                           1000.118713   data required time
+                                           -200.032928   data arrival time
+---------------------------------------------------------------------------------------------
+                                            800.085815   slack (MET)
+
+
+Startpoint: otrip[0] (input port clocked by osc_ck)
+Endpoint: otrip_decoded[1] (output port clocked by osc_ck)
+Path Group: osc_ck
+Path Type: max
+
+Fanout         Cap        Slew       Delay        Time   Description
+---------------------------------------------------------------------------------------------
+                                  0.000000    0.000000   clock osc_ck (rise edge)
+                                  0.000000    0.000000   clock network delay (propagated)
+                                200.000000  200.000000 ^ input external delay
+     8    0.021739    0.105263    0.070912  200.070908 ^ otrip[0] (in)
+                                                         otrip[0] (net)
+                      0.105263    0.000000  200.070908 ^ _062_/C_N (sky130_fd_sc_hd__nor3b_2)
+     1    0.033442    0.575540    0.505139  200.576050 ^ _062_/Y (sky130_fd_sc_hd__nor3b_2)
+                                                         otrip_decoded[1] (net)
+                      0.575540    0.000000  200.576050 ^ otrip_decoded[1] (out)
+                                            200.576050   data arrival time
+
+                               1000.000000 1000.000000   clock osc_ck (rise edge)
+                                  0.000000 1000.000000   clock network delay (propagated)
+                                 -0.250000  999.750000   clock uncertainty
+                                  0.000000  999.750000   clock reconvergence pessimism
+                               -200.000000  799.750061   output external delay
+                                            799.750061   data required time
+---------------------------------------------------------------------------------------------
+                                            799.750061   data required time
+                                           -200.576050   data arrival time
+---------------------------------------------------------------------------------------------
+                                            599.174011   slack (MET)
+
+
+
+
+===========================================================================
+report_checks --slack_max -0.01
+============================================================================
+======================= nom_tt_025C_1v80 Corner ===================================
+
+No paths found.
+
+
+===========================================================================
+ report_check_types -max_slew -max_cap -max_fanout -violators
+============================================================================
+======================= nom_tt_025C_1v80 Corner ===================================
+
+max fanout
+
+Pin                                   Limit Fanout  Slack
+---------------------------------------------------------
+osc_ck                                   10     19     -9 (VIOLATED)
+_131_/Q                                  10     17     -7 (VIOLATED)
+_053_/X                                  10     12     -2 (VIOLATED)
+force_short_oneshot                      10     11        (VIOLATED)
+_059_/X                                  10     11        (VIOLATED)
+
+
+
+===========================================================================
+report_parasitic_annotation -report_unannotated
+============================================================================
+Found 91 unannotated drivers.
+ force_dis_rc_osc
+ force_ena_rc_osc
+ force_pdn
+ force_short_oneshot
+ osc_ck
+ otrip[0]
+ otrip[1]
+ otrip[2]
+ pwup_filt
+ _050_/Y
+ _051_/Y
+ _052_/X
+ _053_/X
+ _054_/Y
+ _055_/X
+ _056_/X
+ _057_/X
+ _058_/X
+ _059_/X
+ _060_/Y
+ _061_/Y
+ _062_/Y
+ _063_/Y
+ _064_/X
+ _065_/Y
+ _066_/X
+ _067_/X
+ _068_/X
+ _069_/X
+ _070_/Y
+ _071_/Y
+ _072_/X
+ _073_/Y
+ _074_/Y
+ _075_/Y
+ _076_/X
+ _077_/Y
+ _078_/Y
+ _079_/X
+ _080_/X
+ _081_/X
+ _082_/Y
+ _083_/X
+ _084_/X
+ _085_/X
+ _086_/X
+ _087_/X
+ _088_/X
+ _089_/X
+ _090_/Y
+ _091_/X
+ _092_/X
+ _093_/X
+ _094_/X
+ _095_/X
+ _096_/Y
+ _097_/X
+ _098_/Y
+ _099_/X
+ _100_/X
+ _101_/X
+ _102_/X
+ _103_/X
+ _104_/X
+ _105_/X
+ _106_/X
+ _107_/X
+ _108_/X
+ _109_/X
+ _110_/X
+ _111_/X
+ _112_/X
+ _113_/Q
+ _114_/Q
+ _115_/Q
+ _116_/Q
+ _117_/Q
+ _118_/Q
+ _119_/Q
+ _120_/Q
+ _121_/Q
+ _122_/Q
+ _123_/Q
+ _124_/Q
+ _125_/Q
+ _126_/Q
+ _127_/Q
+ _128_/Q
+ _129_/Q
+ _130_/Q
+ _131_/Q
+Found 0 partially unannotated drivers.
+
+===========================================================================
+max slew violation count 0
+max fanout violation count 5
+max cap violation count 0
+============================================================================
+
+===========================================================================
+check_setup -verbose -unconstrained_endpoints -multiple_clock -no_clock -no_input_delay -loops -generated_clocks
+===========================================================================
+Warning: There is 1 unconstrained endpoint.
+  _130_/D

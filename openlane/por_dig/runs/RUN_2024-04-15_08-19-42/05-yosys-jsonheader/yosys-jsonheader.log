@@ -1,0 +1,119 @@
+
+ /----------------------------------------------------------------------------\
+ |                                                                            |
+ |  yosys -- Yosys Open SYnthesis Suite                                       |
+ |                                                                            |
+ |  Copyright (C) 2012 - 2020  Claire Xenia Wolf <claire@yosyshq.com>         |
+ |                                                                            |
+ |  Permission to use, copy, modify, and/or distribute this software for any  |
+ |  purpose with or without fee is hereby granted, provided that the above    |
+ |  copyright notice and this permission notice appear in all copies.         |
+ |                                                                            |
+ |  THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES  |
+ |  WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF          |
+ |  MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR   |
+ |  ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES    |
+ |  WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN     |
+ |  ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF   |
+ |  OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.            |
+ |                                                                            |
+ \----------------------------------------------------------------------------/
+
+ Yosys 0.38 (git sha1 543faed9c8c, clang++ 16.0.6 -fPIC -Os)
+
+Loaded SDC plugin
+[TCL: yosys -import] Command name collision: found pre-existing command `cd' -> skip.
+[TCL: yosys -import] Command name collision: found pre-existing command `eval' -> skip.
+[TCL: yosys -import] Command name collision: found pre-existing command `exec' -> skip.
+[TCL: yosys -import] Command name collision: found pre-existing command `read' -> skip.
+[TCL: yosys -import] Command name collision: found pre-existing command `trace' -> skip.
+
+1. Executing Liberty frontend: /home/rtsang/.volare/volare/sky130/versions/bdc9412b3e468c102d01b7cf6337be06ec6e9c9a/sky130A/libs.ref/sky130_fd_sc_hd/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+Imported 428 cell types from liberty file.
+
+2. Executing Verilog-2005 frontend: /home/rtsang/chipalooza/sky130_ajc_ip__por/openlane/por_dig/por_dig.v
+Parsing SystemVerilog input from `/home/rtsang/chipalooza/sky130_ajc_ip__por/openlane/por_dig/por_dig.v' to AST representation.
+Generating RTLIL representation for module `\por_dig'.
+Note: Assuming pure combinatorial block at /home/rtsang/chipalooza/sky130_ajc_ip__por/openlane/por_dig/por_dig.v:31.3-42.6 in
+compliance with IEC 62142(E):2005 / IEEE Std. 1364.1(E):2002. Recommending
+use of @* instead of @(...) for better match of synthesis and simulation.
+Successfully finished Verilog frontend.
+
+3. Executing HIERARCHY pass (managing design hierarchy).
+
+3.1. Analyzing design hierarchy..
+Top module:  \por_dig
+
+3.2. Analyzing design hierarchy..
+Top module:  \por_dig
+Removed 0 unused modules.
+Renaming module por_dig to por_dig.
+
+4. Executing PROC pass (convert processes to netlists).
+
+4.1. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Cleaned up 0 empty switches.
+
+4.2. Executing PROC_RMDEAD pass (remove dead branches from decision trees).
+Marked 1 switch rules as full_case in process $proc$/home/rtsang/chipalooza/sky130_ajc_ip__por/openlane/por_dig/por_dig.v:78$22 in module por_dig.
+Marked 1 switch rules as full_case in process $proc$/home/rtsang/chipalooza/sky130_ajc_ip__por/openlane/por_dig/por_dig.v:62$11 in module por_dig.
+Marked 1 switch rules as full_case in process $proc$/home/rtsang/chipalooza/sky130_ajc_ip__por/openlane/por_dig/por_dig.v:47$8 in module por_dig.
+Removed 1 dead cases from process $proc$/home/rtsang/chipalooza/sky130_ajc_ip__por/openlane/por_dig/por_dig.v:31$7 in module por_dig.
+Marked 1 switch rules as full_case in process $proc$/home/rtsang/chipalooza/sky130_ajc_ip__por/openlane/por_dig/por_dig.v:31$7 in module por_dig.
+Removed a total of 1 dead cases.
+
+4.3. Executing PROC_PRUNE pass (remove redundant assignments in processes).
+Removed 4 redundant assignments.
+Promoted 1 assignment to connection.
+
+4.4. Executing PROC_INIT pass (extract init attributes).
+
+4.5. Executing PROC_ARST pass (detect async resets in processes).
+Found async reset \cnt_rsb in `\por_dig.$proc$/home/rtsang/chipalooza/sky130_ajc_ip__por/openlane/por_dig/por_dig.v:78$22'.
+Found async reset \cnt_rsb in `\por_dig.$proc$/home/rtsang/chipalooza/sky130_ajc_ip__por/openlane/por_dig/por_dig.v:62$11'.
+Found async reset \pwup_filt in `\por_dig.$proc$/home/rtsang/chipalooza/sky130_ajc_ip__por/openlane/por_dig/por_dig.v:47$8'.
+
+4.6. Executing PROC_ROM pass (convert switches to ROMs).
+Converted 1 switch.
+
+4.7. Executing PROC_MUX pass (convert decision trees to multiplexers).
+Creating decoders for process `\por_dig.$proc$/home/rtsang/chipalooza/sky130_ajc_ip__por/openlane/por_dig/por_dig.v:78$22'.
+     1/1: $0\cnt_por[10:0]
+Creating decoders for process `\por_dig.$proc$/home/rtsang/chipalooza/sky130_ajc_ip__por/openlane/por_dig/por_dig.v:62$11'.
+     1/1: $0\cnt_st[5:0]
+Creating decoders for process `\por_dig.$proc$/home/rtsang/chipalooza/sky130_ajc_ip__por/openlane/por_dig/por_dig.v:47$8'.
+     1/2: $0\cnt_rsb[0:0]
+     2/2: $0\cnt_rsb_stg1[0:0]
+Creating decoders for process `\por_dig.$proc$/home/rtsang/chipalooza/sky130_ajc_ip__por/openlane/por_dig/por_dig.v:31$7'.
+     1/1: $1\otrip_decoded[7:0]
+
+4.8. Executing PROC_DLATCH pass (convert process syncs to latches).
+No latch inferred for signal `\por_dig.\otrip_decoded' from process `\por_dig.$proc$/home/rtsang/chipalooza/sky130_ajc_ip__por/openlane/por_dig/por_dig.v:31$7'.
+
+4.9. Executing PROC_DFF pass (convert process syncs to FFs).
+Creating register for signal `\por_dig.\cnt_por' using process `\por_dig.$proc$/home/rtsang/chipalooza/sky130_ajc_ip__por/openlane/por_dig/por_dig.v:78$22'.
+  created $adff cell `$procdff$35' with positive edge clock and negative level reset.
+Creating register for signal `\por_dig.\cnt_st' using process `\por_dig.$proc$/home/rtsang/chipalooza/sky130_ajc_ip__por/openlane/por_dig/por_dig.v:62$11'.
+  created $adff cell `$procdff$36' with positive edge clock and negative level reset.
+Creating register for signal `\por_dig.\cnt_rsb_stg1' using process `\por_dig.$proc$/home/rtsang/chipalooza/sky130_ajc_ip__por/openlane/por_dig/por_dig.v:47$8'.
+  created $adff cell `$procdff$37' with positive edge clock and negative level reset.
+Creating register for signal `\por_dig.\cnt_rsb' using process `\por_dig.$proc$/home/rtsang/chipalooza/sky130_ajc_ip__por/openlane/por_dig/por_dig.v:47$8'.
+  created $adff cell `$procdff$38' with positive edge clock and negative level reset.
+
+4.10. Executing PROC_MEMWR pass (convert process memory writes to cells).
+
+4.11. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Removing empty process `por_dig.$proc$/home/rtsang/chipalooza/sky130_ajc_ip__por/openlane/por_dig/por_dig.v:78$22'.
+Removing empty process `por_dig.$proc$/home/rtsang/chipalooza/sky130_ajc_ip__por/openlane/por_dig/por_dig.v:62$11'.
+Removing empty process `por_dig.$proc$/home/rtsang/chipalooza/sky130_ajc_ip__por/openlane/por_dig/por_dig.v:47$8'.
+Found and cleaned up 1 empty switch in `\por_dig.$proc$/home/rtsang/chipalooza/sky130_ajc_ip__por/openlane/por_dig/por_dig.v:31$7'.
+Removing empty process `por_dig.$proc$/home/rtsang/chipalooza/sky130_ajc_ip__por/openlane/por_dig/por_dig.v:31$7'.
+Cleaned up 1 empty switch.
+
+4.12. Executing OPT_EXPR pass (perform const folding).
+Optimizing module por_dig.
+<suppressed ~2 debug messages>
+
+End of script. Logfile hash: 0deb4411f5, CPU: user 0.34s system 0.04s, MEM: 52.25 MB peak
+Yosys 0.38 (git sha1 543faed9c8c, clang++ 16.0.6 -fPIC -Os)
+Time spent: 72% 2x read_liberty (0 sec), 20% 1x proc_dff (0 sec), ...
