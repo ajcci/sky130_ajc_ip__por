@@ -51,7 +51,8 @@ Layout of `sky130_ajc_ip__por`, approximate size is 230um x 230um sq.
 
 
 ## Design-Rule-Check (DRC)
-DRC is automatic in Magic.  Design passes all rules in Magic except the 'MV diffusion spacing rules'.  However, according to Tim Edwards at eFabless Inc., these are not actual violations and are false positives, see picture below.
+DRC is automatic in Magic.  Design passes all rules in Magic except the 'MV diffusion spacing rules'.  
+However, according to Tim Edwards at eFabless Inc., these are not actual violations and are false positives, see picture below.
 
 ![](magic_drc_violation.png)
 DRC rule violations that are false positives (not actual violations) related to 'MV diffusion spacing'
@@ -82,7 +83,8 @@ Run using Magic for layout-to-spice netlist extraction, and then Netgen for netl
 Steps taken to perform LVS:
 
 1. Created a blackbox for the digital block `por_dig` and replace the xspice model of `por_dig` with the blackbox `por_dig`.  Save the new schematic as `sky130_ajc_ip__por_lvs`.
-Netlist out `sky130_ajc_ip__por_lvs` in xschem and rename the netlist as `sky130_ajc_ip__por_lvs.xschem`.  Edit `sky130_ajc_ip__por_lvs.xschem` and add the following lines to the file (change $PDK_ROOT/$PDK to the location of your setup):
+Netlist out `sky130_ajc_ip__por_lvs` in xschem and rename the netlist as `sky130_ajc_ip__por_lvs.xschem`.  Edit `sky130_ajc_ip__por_lvs.xschem` and add the following lines to the 
+file (change $PDK_ROOT/$PDK to the location of your setup):
 
 ```
 .include $PDK_ROOT/$PDK/libs.ref/sky130_fd_sc_hvl/spice/sky130_fd_sc_hvl.spice
@@ -98,7 +100,8 @@ and change it to the following:
 
 `XQ1 avss avss net8 sky130_fd_pr__pnp_05v5_W0p68L0p68 m=1`
 
-This step is necessary because the 'combined' models of the sky130 pdk uses a 4-port connection to sky130_fd_pr__pnp_05v5_W0p68L0p68, but Magic only extracts 3 ports, so we manually delete the bulk node (4th port).
+This step is necessary because the 'combined' models of the sky130 pdk uses a 4-port connection to sky130_fd_pr__pnp_05v5_W0p68L0p68, but Magic only extracts 3 ports, so we manually delete 
+the bulk node (4th port).
 
 3. Extract the layout in Magic using the following commands in the Tcl interpreter:
 
@@ -175,9 +178,11 @@ LVS Done.
 ## Parasitic Resistance and Capacitance Extraction (RCX)
 Perform RCX using Magic after passing DRC and LVS.  The purpose is to check how parasitics (interconnect resistance and capacitance) from layout affects the circuit.
 
-This circuit includes a digital route which is not included in RCX because we will rely on Openlane to make sure timing is done correctly in the digital route.  Therefore, only the analog section of the circuit is extracted.
+This circuit includes a digital route which is not included in RCX because we will rely on Openlane to make sure timing is done correctly in the digital route.  
+Therefore, only the analog section of the circuit is extracted.
 
-Open up `por_ana.mag` (analog section of `sky130_ajc_ip__por`) and enter the following in the Tcl interpreter to generate an extracted spice netlist with parasitic resistance and capacitance included in the netlist:
+Open up `por_ana.mag` (analog section of `sky130_ajc_ip__por`) and enter the following in the Tcl interpreter to generate an extracted spice netlist with parasitic resistance 
+and capacitance included in the netlist:
 
 ```
 flatten por_ana_rcx
@@ -195,7 +200,10 @@ ext2spice cthresh 0.1
 ext2spice extresist on
 ext2spice -p extfiles
 ```
-A netlist should be created named `por_ana_rcx.spice`, which has a top-level subckt named `por_ana_rcx`.  Create the directory `mag/rcx` and put `por_ana_rcx.spice` in there.  As a side note, `extresist tolerance 0.001` was used here to reduce the number of nodes created by the extraction algorithm, which created convergence problems for Ngspice later during simulation.  Changing `extresist tolerance 10` to `extresist tolerance 0.001`, for this circuit, roughly reduced the number of nodes by 30%.
+A netlist should be created named `por_ana_rcx.spice`, which has a top-level subckt named `por_ana_rcx`.  Create the directory `mag/rcx` and put `por_ana_rcx.spice` in there.  
+
+As a side note, `extresist tolerance 0.001` was used here to reduce the number of nodes created by the extraction algorithm, which created convergence problems for Ngspice 
+later during simulation.  Changing `extresist tolerance 10` to `extresist tolerance 0.001`, for this circuit, roughly reduced the number of nodes by 30%.
 
 In order to use `por_ana_rcx` in a simulation, do the following:
 1. Create a blackbox schematic named `por_ana_rcx` with all the associated pins and pin-order exactly the same as `por_ana.sym`
@@ -204,14 +212,15 @@ In order to use `por_ana_rcx` in a simulation, do the following:
 4. In the `code.sym` block, instantiate `por_ana_rcx` and include the extracted netlist subckt definition (in this case it is located at `mag/rcx/por_ana_rcx.spice`:
 
 ```
-name=por_ana only_toplevel=false value="
+name=overvoltage_ana only_toplevel=false value="
 
-.include mag/rcx/por_ana_rcx.spice
+.include mag/rcx/overvoltage_ana_rcx.spice
 
-xIana vin otrip_decoded[7] otrip_decoded[6] otrip_decoded[5] otrip_decoded[4] 
-+otrip_decoded[3] otrip_decoded[2] otrip_decoded[1] otrip_decoded[0]
-+vbg_1v2 avdd itest avss ibg_200n force_pdnb dvdd dvss dcomp isrc_sel
-+pwup_filt osc_ck osc_ena porb_h por_unbuf por porb por_ana
+xIana otrip_decoded[14] otrip_decoded[13] otrip_decoded[11]
++ otrip_decoded[10] otrip_decoded[1] otrip_decoded[0] ena itest ibg_200n otrip_decoded[7]
++ otrip_decoded[4] vbg_1v2 vin isrc_sel otrip_decoded[5] otrip_decoded[8] otrip_decoded[2]
++ ovout otrip_decoded[15] otrip_decoded[9] otrip_decoded[12] otrip_decoded[3] otrip_decoded[6]
++ avss dvdd dvss avdd overvoltage_ana_rcx
 "
 ```
 
@@ -223,7 +232,8 @@ Original `sky130_ajc_ip__por` showing `por_ana` (schematic-based, no RC parasiti
 ![](por_ana_rcx.png)
 New `sky130_ajc_ip__por` showing `por_ana_rcx` (extracted from layout, with RC parasitics)
 
-Save it and run CACE the usual way __without__ selecting `R-C Extracted` from the `cace-gui` window.  Once again, this is done because this circuit uses xspice models to simulate the behavior of the digital route and the digital route was not extracted from the layout for faster simulation (as well as a higher likelihood of simulation convergence).
+Save it and run CACE the usual way __without__ selecting `R-C Extracted` from the `cace-gui` window.  Once again, this is done because this circuit uses xspice models to simulate the behavior 
+of the digital route and the digital route was not extracted from the layout for faster simulation (as well as a higher likelihood of simulation convergence).
 
 Without any changes to Ngspice parameters, the extracted netlist will run into __'Timestep too small'__ issues due to limitations of the simulator, and cause the simulation to quit prematurely.
 
@@ -238,7 +248,8 @@ The result after RCX simulation is shown in the figure below. All pass.
 ![](sky130_ajc_ip__por_cace_rcx.png)
 RCX netlist with .options reltol=1e-3 abstol=1e-3
 
-For comparison, run the same simulation with relaxed tolerances using the schematic. All pass.  It should be noted that after the initial design (above), during the layout phase the design was changed to re-center the timing against the spec.
+For comparison, run the same simulation with relaxed tolerances using the schematic. All pass.  It should be noted that after the initial design (above), during the layout phase 
+the design was changed to re-center the timing against the spec.
 
 ![](sky130_ajc_ip__por_cace_schematic.png)
 Schematic netlist with .options reltol=1e-3 abstol=1e-3
@@ -246,3 +257,26 @@ Schematic netlist with .options reltol=1e-3 abstol=1e-3
 ### Digital Route DRC & LVS
 DRC and LVS is performed by Openlane during synthesis.  It performs LVS by extracting the digital route using Magic, and then comparing it to the verilog file generated after fill-insersion.  Here is the result:
 ![](openlane.png)
+
+
+### Simulation convergence issues
+During the design phase it was discovered that the resistor string made up of xhigh_po resistors (2kohm/sq) confuses Ngspice when too many of them are in series.  
+There are a total of 105 resistors in the resistor ladder, and each resistor models second-order effects related to the substrate using hyperbolic-tangent functions (shown below).  
+Manually removing the `tanh` model and substuiting back in a basic resistor solves the convergence issues during simulation.  
+This is not seen as a risk as this is not a precision circuit.
+
+```
+rbody t1 t2 r = {rbody*(1-bp2+bp2*sqrt(1+(bq2*abs(v(t1,t2))*Efac)**2))*
++ (sub1+sub2*tanh(sub3*(min(v(r0,sub)+v(r1,sub),sub4)+sub5))) / (sub1+sub2*tanh(sub3*sub5)) }
++ tc1 = -1.47e-3
++ tc2 = 2.7e-6
++ tnom = 25.0
+```
+
+The above excerpt can be located at
+`$PDK_ROOT/$PDK/libs.ref/sky130_fd_pr/spice/sky130_fd_pr__res_xhigh_po.model.spice`
+
+Replacing the above definition of `rbody` with the following, eliminates convergence or simulator-going-haywire issues for this circuit
+```
+rbody t1 t2 r = rbody
+```
