@@ -1,56 +1,61 @@
-v {xschem version=3.4.5 file_version=1.2}
-K {type=subcircuit
+v {xschem version=3.4.5 file_version=1.2
+}
+G {}
+K {type=primative
 format="@name @pinlist @symname"
 template="name=x1"
 }
-T {@symname} -49.5 -6 0 0 0.3 0.3 {}
-T {@name} 135 -102 0 0 0.2 0.2 {}
+V {}
+S {}
+E {}
 L 4 -130 -90 130 -90 {}
 L 4 -130 90 130 90 {}
 L 4 -130 -90 -130 90 {}
 L 4 130 -90 130 90 {}
-B 5 147.5 -82.5 152.5 -77.5 {name=por_unbuf dir=out}
 L 4 130 -80 150 -80 {}
-T {por_unbuf} 125 -84 0 1 0.2 0.2 {}
-B 5 -152.5 -82.5 -147.5 -77.5 {name=VPWR dir=in}
 L 4 -150 -80 -130 -80 {}
-T {VPWR} -125 -84 0 0 0.2 0.2 {}
-B 5 -152.5 -62.5 -147.5 -57.5 {name=VGND dir=in}
 L 4 -150 -60 -130 -60 {}
-T {VGND} -125 -64 0 0 0.2 0.2 {}
-B 5 147.5 -62.5 152.5 -57.5 {name=force_pdnb dir=out}
 L 4 130 -60 150 -60 {}
-T {force_pdnb} 125 -64 0 1 0.2 0.2 {}
-B 5 147.5 -42.5 152.5 -37.5 {name=osc_ena dir=out}
 L 4 130 -40 150 -40 {}
-T {osc_ena} 125 -44 0 1 0.2 0.2 {}
-B 5 -152.5 -42.5 -147.5 -37.5 {name=otrip[2:0] dir=in}
 L 4 -150 -40 -130 -40 {}
-T {otrip[2:0]} -125 -44 0 0 0.2 0.2 {}
-B 5 147.5 -22.5 152.5 -17.5 {name=otrip_decoded[7:0] dir=out}
 L 4 130 -20 150 -20 {}
-T {otrip_decoded[7:0]} 125 -24 0 1 0.2 0.2 {}
-B 5 -152.5 -22.5 -147.5 -17.5 {name=force_dis_rc_osc dir=in}
 L 4 -150 -20 -130 -20 {}
-T {force_dis_rc_osc} -125 -24 0 0 0.2 0.2 {}
-B 5 -152.5 -2.5 -147.5 2.5 {name=force_ena_rc_osc dir=in}
 L 4 -150 0 -130 0 {}
-T {force_ena_rc_osc} -125 -4 0 0 0.2 0.2 {}
-B 5 147.5 -2.5 152.5 2.5 {name=startup_timed_out dir=out}
 L 4 130 0 150 0 {}
-T {startup_timed_out} 125 -4 0 1 0.2 0.2 {}
-B 5 147.5 17.5 152.5 22.5 {name=por_timed_out dir=out}
 L 4 130 20 150 20 {}
-T {por_timed_out} 125 16 0 1 0.2 0.2 {}
-B 5 -152.5 17.5 -147.5 22.5 {name=force_pdn dir=in}
 L 4 -150 20 -130 20 {}
-T {force_pdn} -125 16 0 0 0.2 0.2 {}
-B 5 -152.5 37.5 -147.5 42.5 {name=pwup_filt dir=in}
 L 4 -150 40 -130 40 {}
-T {pwup_filt} -125 36 0 0 0.2 0.2 {}
-B 5 -152.5 57.5 -147.5 62.5 {name=force_short_oneshot dir=in}
 L 4 -150 60 -130 60 {}
-T {force_short_oneshot} -125 56 0 0 0.2 0.2 {}
-B 5 -152.5 77.5 -147.5 82.5 {name=osc_ck dir=in}
 L 4 -150 80 -130 80 {}
+B 5 -152.5 -22.5 -147.5 -17.5 {name=force_dis_rc_osc dir=in}
+B 5 -152.5 -2.5 -147.5 2.5 {name=force_ena_rc_osc dir=in}
+B 5 -152.5 17.5 -147.5 22.5 {name=force_pdn dir=in}
+B 5 147.5 -62.5 152.5 -57.5 {name=force_pdnb dir=out}
+B 5 -152.5 57.5 -147.5 62.5 {name=force_short_oneshot dir=in}
+B 5 -152.5 77.5 -147.5 82.5 {name=osc_ck dir=in}
+B 5 147.5 -42.5 152.5 -37.5 {name=osc_ena dir=out}
+B 5 147.5 17.5 152.5 22.5 {name=por_timed_out dir=out}
+B 5 147.5 -82.5 152.5 -77.5 {name=por_unbuf dir=out}
+B 5 -152.5 37.5 -147.5 42.5 {name=pwup_filt dir=in}
+B 5 147.5 -2.5 152.5 2.5 {name=startup_timed_out dir=out}
+B 5 -152.5 -82.5 -147.5 -77.5 {name=VPWR dir=in}
+B 5 -152.5 -62.5 -147.5 -57.5 {name=VGND dir=in}
+B 5 -152.5 -42.5 -147.5 -37.5 {name=otrip[2:0] dir=in}
+B 5 147.5 -22.5 152.5 -17.5 {name=otrip_decoded[7:0] dir=out}
+T {@symname} -49.5 -6 0 0 0.3 0.3 {}
+T {@name} 135 -102 0 0 0.2 0.2 {}
+T {por_unbuf} 125 -84 0 1 0.2 0.2 {}
+T {VPWR} -125 -84 0 0 0.2 0.2 {}
+T {VGND} -125 -64 0 0 0.2 0.2 {}
+T {force_pdnb} 125 -64 0 1 0.2 0.2 {}
+T {osc_ena} 125 -44 0 1 0.2 0.2 {}
+T {otrip[2:0]} -125 -44 0 0 0.2 0.2 {}
+T {otrip_decoded[7:0]} 125 -24 0 1 0.2 0.2 {}
+T {force_dis_rc_osc} -125 -24 0 0 0.2 0.2 {}
+T {force_ena_rc_osc} -125 -4 0 0 0.2 0.2 {}
+T {startup_timed_out} 125 -4 0 1 0.2 0.2 {}
+T {por_timed_out} 125 16 0 1 0.2 0.2 {}
+T {force_pdn} -125 16 0 0 0.2 0.2 {}
+T {pwup_filt} -125 36 0 0 0.2 0.2 {}
+T {force_short_oneshot} -125 56 0 0 0.2 0.2 {}
 T {osc_ck} -125 76 0 0 0.2 0.2 {}

@@ -1,0 +1,5 @@
+set layout [readnet spice "sky130_ajc_ip__por.spice"]
+set source [readnet spice "$env(PDK_ROOT)/$env(PDK)/libs.ref/sky130_fd_sc_hd/spice/sky130_fd_sc_hd.spice"]
+readnet verilog por_dig.pnl.v $source
+readnet spice "sky130_ajc_ip__por_lvs.xschem" $source
+lvs "$layout sky130_ajc_ip__por" "$source sky130_ajc_ip__por_lvs" $env(PDK_ROOT)/$env(PDK)/libs.tech/netgen/$env(PDK)_setup.tcl lvs.report

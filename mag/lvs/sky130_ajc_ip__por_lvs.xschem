@@ -1,8 +1,6 @@
 ** sch_path: /home/rtsang/chipalooza/sky130_ajc_ip__por/xschem/sky130_ajc_ip__por_lvs.sch
 
 .include /usr/local/share/pdk/sky130A/libs.ref/sky130_fd_sc_hvl/spice/sky130_fd_sc_hvl.spice
-.include /usr/local/share/pdk/sky130A/libs.ref/sky130_fd_sc_hd/spice/sky130_fd_sc_hd.spice
-
 
 .subckt sky130_ajc_ip__por_lvs avdd avss dvdd dvss vbg_1v2 otrip[2] otrip[1] otrip[0] force_pdn force_ena_rc_osc
 + force_short_oneshot isrc_sel ibg_200n vin porb_h porb por osc_ck pwup_filt itest startup_timed_out por_timed_out force_dis_rc_osc dcomp
@@ -10,9 +8,9 @@
 *+ ibg_200n:I vin:O porb_h:O porb:O por:O osc_ck:O pwup_filt:O itest:O startup_timed_out:O por_timed_out:O force_dis_rc_osc:I dcomp:O
 xIana vin otrip_decoded_7_ otrip_decoded_6_ otrip_decoded_5_ otrip_decoded_4_ otrip_decoded_3_ otrip_decoded_2_ otrip_decoded_1_
 + otrip_decoded_0_ vbg_1v2 avdd itest avss ibg_200n force_pdnb dvdd dvss dcomp isrc_sel pwup_filt osc_ck osc_ena porb_h por_unbuf por porb por_ana
-xIdig por_unbuf dvdd dvss force_pdnb osc_ena otrip[2] otrip[1] otrip[0] otrip_decoded_7_ otrip_decoded_6_ otrip_decoded_5_
-+ otrip_decoded_4_ otrip_decoded_3_ otrip_decoded_2_ otrip_decoded_1_ otrip_decoded_0_ force_dis_rc_osc force_ena_rc_osc startup_timed_out
-+ por_timed_out force_pdn pwup_filt force_short_oneshot osc_ck por_dig
+xIdig force_dis_rc_osc force_ena_rc_osc force_pdn force_pdnb force_short_oneshot osc_ck osc_ena por_timed_out por_unbuf pwup_filt
++ startup_timed_out dvdd dvss otrip[2] otrip[1] otrip[0] otrip_decoded_7_ otrip_decoded_6_ otrip_decoded_5_ otrip_decoded_4_ otrip_decoded_3_
++ otrip_decoded_2_ otrip_decoded_1_ otrip_decoded_0_ por_dig
 XMdum0 otrip[2] dvss dvss dvss sky130_fd_pr__nfet_g5v0d10v5 L=0.5 W=1 nf=1 m=2
 XMdum1 otrip[1] dvss dvss dvss sky130_fd_pr__nfet_g5v0d10v5 L=0.5 W=1 nf=1 m=2
 XMdum2 otrip[0] dvss dvss dvss sky130_fd_pr__nfet_g5v0d10v5 L=0.5 W=1 nf=1 m=2
@@ -79,17 +77,6 @@ xIlvls5 net9 dvdd dvss dvss avdd avdd vlu sky130_fd_sc_hvl__lsbufhv2lv_1
 xIinv10 vl dvss dvss dvdd dvdd net10 sky130_fd_sc_hd__inv_4
 xIinv11 net10 dvss dvss dvdd dvdd dcomp sky130_fd_sc_hd__inv_16
 XQ1 avss avss net8 sky130_fd_pr__pnp_05v5_W0p68L0p68 m=1
-.ends
-
-
-* expanding   symbol:  xschem/por_dig.sym # of pins=15
-** sym_path: /home/rtsang/chipalooza/sky130_ajc_ip__por/xschem/por_dig.sym
-** sch_path: /home/rtsang/chipalooza/sky130_ajc_ip__por/xschem/por_dig.sch
-.subckt por_dig por_unbuf VPWR VGND force_pdnb osc_ena otrip[2] otrip[1] otrip[0] otrip_decoded[7] otrip_decoded[6]
-+ otrip_decoded[5] otrip_decoded[4] otrip_decoded[3] otrip_decoded[2] otrip_decoded[1] otrip_decoded[0] force_dis_rc_osc force_ena_rc_osc
-+ startup_timed_out por_timed_out force_pdn pwup_filt force_short_oneshot osc_ck
-*.PININFO VPWR:I VGND:I otrip[2:0]:I por_unbuf:O force_dis_rc_osc:I force_ena_rc_osc:I force_pdn:I force_pdnb:O pwup_filt:I
-*+ force_short_oneshot:I osc_ck:I osc_ena:O otrip_decoded[7:0]:O startup_timed_out:O por_timed_out:O
 .ends
 
 

@@ -1,7 +1,7 @@
 magic
 tech sky130A
 magscale 1 2
-timestamp 1713026247
+timestamp 1713454396
 << error_s >>
 rect 10492 -905 10618 -889
 rect 10454 -2676 10455 -2622
@@ -2756,27 +2756,27 @@ rect 10949 -13261 10973 -13258
 rect 11293 -13261 11317 -12941
 rect 10949 -13285 11317 -13261
 use comparator  comparator_0
-timestamp 1713020960
+timestamp 1713454396
 transform 1 0 -27530 0 1 -21626
 box -811 -2117 11035 9755
 use comparator  comparator_1
-timestamp 1713020960
+timestamp 1713454396
 transform 1 0 -26517 0 1 3604
 box -811 -2117 11035 9755
 use ibias_gen  ibias_gen_0
-timestamp 1713020960
+timestamp 1713454396
 transform 1 0 -27321 0 1 -10450
 box -138 -652 15828 11500
 use rc_osc  rc_osc_0
-timestamp 1713026247
+timestamp 1713454396
 transform 1 0 -12543 0 1 -23191
 box -14232 -2658 25847 4148
 use rstring_mux  rstring_mux_0
-timestamp 1713020960
+timestamp 1713454396
 transform 1 0 -16753 0 1 -15968
 box 464 -3512 27160 9182
 use schmitt_trigger  schmitt_trigger_0
-timestamp 1713020960
+timestamp 1713454396
 transform 1 0 -4393 0 1 2578
 box -91 -52 2297 1163
 use sky130_fd_pr__cap_mim_m3_2_LUWKLG  sky130_fd_pr__cap_mim_m3_2_LUWKLG_0
