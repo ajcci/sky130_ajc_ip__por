@@ -1,11 +1,7 @@
 magic
 tech sky130A
 magscale 1 2
-timestamp 1714586768
-<< error_s >>
-rect 10454 -2676 10455 -2622
-rect 10514 -2726 10515 -2676
-rect 10514 -2996 10515 -2912
+timestamp 1714759624
 << dnwell >>
 rect -28958 13452 -6352 13820
 rect -28958 499 -6351 13452
@@ -2843,7 +2839,7 @@ transform 1 0 10485 0 1 -2363
 box -66 -43 1698 1671
 use sky130_fd_sc_hvl__lsbufhv2lv_1  sky130_fd_sc_hvl__lsbufhv2lv_1_1
 timestamp 1712845802
-transform 1 0 10484 0 1 -4097
+transform 1 0 10485 0 1 -4097
 box -66 -43 1698 1671
 use sky130_fd_sc_hvl__lsbuflv2hv_1  sky130_fd_sc_hvl__lsbuflv2hv_1_0 $PDKPATH/libs.ref/sky130_fd_sc_hvl/mag
 array 0 8 2112 0 1 1734
